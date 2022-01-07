@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct JsonWCF: Codable {
+struct JsonWCF: Decodable {
     var chapters: [JsonWcfChapter]
 }

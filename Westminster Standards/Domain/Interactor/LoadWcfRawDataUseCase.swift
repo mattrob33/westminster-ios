@@ -16,7 +16,7 @@ struct LoadWcfRawDataUseCase {
           do {
               return try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
           } catch _ {
-            // Handle error here
+              return nil
           }
         }
         return nil

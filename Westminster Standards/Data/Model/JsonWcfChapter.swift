@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct JsonWcfChapter: Codable {
+struct JsonWcfChapter: Decodable {
     var title: String
     var sections: [JsonWcfSection]
 }

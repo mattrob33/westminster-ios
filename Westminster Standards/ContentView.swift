@@ -9,8 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        let loadWcfUseCase = LoadWcfUseCase()
+        let wcf = loadWcfUseCase.execute()
+
+        if let wcf = wcf {
+            Text(wcf.title).padding()
+        } else {
+            Text("No WCF").padding()
+        }
     }
 }
 

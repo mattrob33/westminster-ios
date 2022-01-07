@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct JsonWcfSection: Codable {
+struct JsonWcfSection: Decodable {
     var text: String
 }

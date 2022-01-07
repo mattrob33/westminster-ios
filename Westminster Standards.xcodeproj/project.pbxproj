@@ -35,6 +35,7 @@
 		D809496D2788EFF4001AC162 /* JsonWcfSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809496C2788DB55001AC162 /* JsonWcfSection.swift */; };
 		D809496E2788EFF4001AC162 /* JsonWcfChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809496B2788DB55001AC162 /* JsonWcfChapter.swift */; };
 		D809496F2788EFF4001AC162 /* JsonWCF.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809496A2788DB55001AC162 /* JsonWCF.swift */; };
+		D80949712788FD73001AC162 /* wcf.json in Resources */ = {isa = PBXBuildFile; fileRef = D80949702788FB3F001AC162 /* wcf.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +144,7 @@
 		D809496A2788DB55001AC162 /* JsonWCF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonWCF.swift; sourceTree = "<group>"; };
 		D809496B2788DB55001AC162 /* JsonWcfChapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonWcfChapter.swift; sourceTree = "<group>"; };
 		D809496C2788DB55001AC162 /* JsonWcfSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonWcfSection.swift; sourceTree = "<group>"; };
+		D80949702788FB3F001AC162 /* wcf.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = wcf.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -337,6 +339,7 @@
 		D80949682788DB14001AC162 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				D80949702788FB3F001AC162 /* wcf.json */,
 				D80949692788DB4D001AC162 /* Model */,
 			);
 			path = Data;
@@ -548,6 +551,7 @@
 			files = (
 				D80948F22788D2BA001AC162 /* Preview Assets.xcassets in Resources */,
 				D80948EF2788D2BA001AC162 /* Assets.xcassets in Resources */,
+				D80949712788FD73001AC162 /* wcf.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
