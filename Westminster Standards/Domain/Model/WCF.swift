@@ -8,9 +8,17 @@
 import Foundation
 
 /// The WCF.
-struct WCF {
+struct WCF: Hashable, Equatable {
     let title = "Westminster Confession of Faith"
     let abbrv = "WCF"
 
     var chapters: [WcfChapter]
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(abbrv)
+    }
+    
+    static func == (lhs: WCF, rhs: WCF) -> Bool {
+        return lhs.abbrv == rhs.abbrv
+    }
 }
