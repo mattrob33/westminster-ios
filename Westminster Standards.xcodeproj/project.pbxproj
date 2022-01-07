@@ -27,6 +27,14 @@
 		D80949352788D2BD001AC162 /* Westminster_Standards_WatchKit_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80949342788D2BD001AC162 /* Westminster_Standards_WatchKit_AppTests.swift */; };
 		D809493F2788D2BD001AC162 /* Westminster_Standards_WatchKit_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809493E2788D2BD001AC162 /* Westminster_Standards_WatchKit_AppUITests.swift */; };
 		D80949412788D2BD001AC162 /* Westminster_Standards_WatchKit_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80949402788D2BD001AC162 /* Westminster_Standards_WatchKit_AppUITestsLaunchTests.swift */; };
+		D809495E2788D460001AC162 /* WcfSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809495D2788D460001AC162 /* WcfSection.swift */; };
+		D80949602788D5B1001AC162 /* WcfChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809495F2788D5B1001AC162 /* WcfChapter.swift */; };
+		D80949622788D64D001AC162 /* WCF.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80949612788D64D001AC162 /* WCF.swift */; };
+		D80949652788D8C3001AC162 /* LoadWcfRawDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80949642788D8C3001AC162 /* LoadWcfRawDataUseCase.swift */; };
+		D80949672788D956001AC162 /* LoadWcfUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80949662788D956001AC162 /* LoadWcfUseCase.swift */; };
+		D809496D2788EFF4001AC162 /* JsonWcfSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809496C2788DB55001AC162 /* JsonWcfSection.swift */; };
+		D809496E2788EFF4001AC162 /* JsonWcfChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809496B2788DB55001AC162 /* JsonWcfChapter.swift */; };
+		D809496F2788EFF4001AC162 /* JsonWCF.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809496A2788DB55001AC162 /* JsonWCF.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +135,14 @@
 		D809493A2788D2BD001AC162 /* Westminster Standards WatchKit AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Westminster Standards WatchKit AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D809493E2788D2BD001AC162 /* Westminster_Standards_WatchKit_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Westminster_Standards_WatchKit_AppUITests.swift; sourceTree = "<group>"; };
 		D80949402788D2BD001AC162 /* Westminster_Standards_WatchKit_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Westminster_Standards_WatchKit_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D809495D2788D460001AC162 /* WcfSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WcfSection.swift; sourceTree = "<group>"; };
+		D809495F2788D5B1001AC162 /* WcfChapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WcfChapter.swift; sourceTree = "<group>"; };
+		D80949612788D64D001AC162 /* WCF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCF.swift; sourceTree = "<group>"; };
+		D80949642788D8C3001AC162 /* LoadWcfRawDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadWcfRawDataUseCase.swift; sourceTree = "<group>"; };
+		D80949662788D956001AC162 /* LoadWcfUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadWcfUseCase.swift; sourceTree = "<group>"; };
+		D809496A2788DB55001AC162 /* JsonWCF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonWCF.swift; sourceTree = "<group>"; };
+		D809496B2788DB55001AC162 /* JsonWcfChapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonWcfChapter.swift; sourceTree = "<group>"; };
+		D809496C2788DB55001AC162 /* JsonWcfSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonWcfSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +222,8 @@
 		D80948E92788D2B9001AC162 /* Westminster Standards */ = {
 			isa = PBXGroup;
 			children = (
+				D80949682788DB14001AC162 /* Data */,
+				D809495B2788D36F001AC162 /* Domain */,
 				D80948EA2788D2B9001AC162 /* Westminster_StandardsApp.swift */,
 				D80948EC2788D2B9001AC162 /* ContentView.swift */,
 				D80948EE2788D2BA001AC162 /* Assets.xcassets */,
@@ -286,6 +304,52 @@
 				D80949402788D2BD001AC162 /* Westminster_Standards_WatchKit_AppUITestsLaunchTests.swift */,
 			);
 			path = "Westminster Standards WatchKit AppUITests";
+			sourceTree = "<group>";
+		};
+		D809495B2788D36F001AC162 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				D80949632788D8AD001AC162 /* Interactor */,
+				D809495C2788D37C001AC162 /* Model */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		D809495C2788D37C001AC162 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D809495F2788D5B1001AC162 /* WcfChapter.swift */,
+				D80949612788D64D001AC162 /* WCF.swift */,
+				D809495D2788D460001AC162 /* WcfSection.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D80949632788D8AD001AC162 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D80949662788D956001AC162 /* LoadWcfUseCase.swift */,
+				D80949642788D8C3001AC162 /* LoadWcfRawDataUseCase.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		D80949682788DB14001AC162 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D80949692788DB4D001AC162 /* Model */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D80949692788DB4D001AC162 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D809496B2788DB55001AC162 /* JsonWcfChapter.swift */,
+				D809496A2788DB55001AC162 /* JsonWCF.swift */,
+				D809496C2788DB55001AC162 /* JsonWcfSection.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -539,8 +603,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D80949652788D8C3001AC162 /* LoadWcfRawDataUseCase.swift in Sources */,
+				D80949602788D5B1001AC162 /* WcfChapter.swift in Sources */,
+				D809496F2788EFF4001AC162 /* JsonWCF.swift in Sources */,
 				D80948ED2788D2B9001AC162 /* ContentView.swift in Sources */,
+				D80949622788D64D001AC162 /* WCF.swift in Sources */,
+				D809496E2788EFF4001AC162 /* JsonWcfChapter.swift in Sources */,
 				D80948EB2788D2B9001AC162 /* Westminster_StandardsApp.swift in Sources */,
+				D80949672788D956001AC162 /* LoadWcfUseCase.swift in Sources */,
+				D809496D2788EFF4001AC162 /* JsonWcfSection.swift in Sources */,
+				D809495E2788D460001AC162 /* WcfSection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
