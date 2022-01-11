@@ -23,6 +23,9 @@ struct ContentView: View {
                     Image(systemName: "gearshape")
                 }
         }
+        .onAppear() {
+            UITabBar.appearance().backgroundColor = .white
+        }
     }
 }
 
