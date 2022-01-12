@@ -11,7 +11,7 @@ import SwiftUI
 struct Westminster_StandardsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(content: .wcf)
         }
     }
     

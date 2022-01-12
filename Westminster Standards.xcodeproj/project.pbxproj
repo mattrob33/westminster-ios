@@ -30,13 +30,28 @@
 		D809495E2788D460001AC162 /* WcfSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809495D2788D460001AC162 /* WcfSection.swift */; };
 		D80949602788D5B1001AC162 /* WcfChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809495F2788D5B1001AC162 /* WcfChapter.swift */; };
 		D80949622788D64D001AC162 /* WCF.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80949612788D64D001AC162 /* WCF.swift */; };
-		D80949652788D8C3001AC162 /* LoadWcfRawDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80949642788D8C3001AC162 /* LoadWcfRawDataUseCase.swift */; };
 		D80949672788D956001AC162 /* LoadWcfUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80949662788D956001AC162 /* LoadWcfUseCase.swift */; };
 		D809496D2788EFF4001AC162 /* JsonWcfSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809496C2788DB55001AC162 /* JsonWcfSection.swift */; };
 		D809496E2788EFF4001AC162 /* JsonWcfChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809496B2788DB55001AC162 /* JsonWcfChapter.swift */; };
 		D809496F2788EFF4001AC162 /* JsonWCF.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809496A2788DB55001AC162 /* JsonWCF.swift */; };
 		D80949712788FD73001AC162 /* wcf.json in Resources */ = {isa = PBXBuildFile; fileRef = D80949702788FB3F001AC162 /* wcf.json */; };
 		D809497427892DDB001AC162 /* WcfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809497327892DDB001AC162 /* WcfView.swift */; };
+		D8094982278F75F3001AC162 /* LoadWscUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8094981278F75F2001AC162 /* LoadWscUseCase.swift */; };
+		D809498A278F777E001AC162 /* WlcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8094989278F777E001AC162 /* WlcView.swift */; };
+		D809498C278F92F9001AC162 /* TableOfContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809498B278F92F9001AC162 /* TableOfContentsView.swift */; };
+		D8094994278FC2C7001AC162 /* LoadJsonUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8094993278FC2C6001AC162 /* LoadJsonUseCase.swift */; };
+		D8094996278FC50A001AC162 /* LoadWlcUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8094995278FC50A001AC162 /* LoadWlcUseCase.swift */; };
+		D809499A278FC528001AC162 /* WSC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8094998278FC528001AC162 /* WSC.swift */; };
+		D809499B278FC528001AC162 /* WscQA.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8094999278FC528001AC162 /* WscQA.swift */; };
+		D89B891A278FC81E00A326FD /* JsonWLC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89B8916278FC6AD00A326FD /* JsonWLC.swift */; };
+		D89B891B278FC82100A326FD /* JsonWlcQA.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89B8917278FC6AD00A326FD /* JsonWlcQA.swift */; };
+		D89B891C278FC82E00A326FD /* WlcQA.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809499D278FC52B001AC162 /* WlcQA.swift */; };
+		D89B891D278FC83000A326FD /* WLC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809499E278FC52B001AC162 /* WLC.swift */; };
+		D89B891F278FC8D100A326FD /* WscView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89B891E278FC8D100A326FD /* WscView.swift */; };
+		D89B8924278FCF0A00A326FD /* wlc.json in Resources */ = {isa = PBXBuildFile; fileRef = D89B8922278FCF0A00A326FD /* wlc.json */; };
+		D89B8925278FCF0A00A326FD /* wsc.json in Resources */ = {isa = PBXBuildFile; fileRef = D89B8923278FCF0A00A326FD /* wsc.json */; };
+		D89B8926278FD6F400A326FD /* JsonWSC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89B8920278FC9B000A326FD /* JsonWSC.swift */; };
+		D89B8927278FD6F700A326FD /* JsonWscQA.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89B8921278FC9B000A326FD /* JsonWscQA.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,13 +155,28 @@
 		D809495D2788D460001AC162 /* WcfSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WcfSection.swift; sourceTree = "<group>"; };
 		D809495F2788D5B1001AC162 /* WcfChapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WcfChapter.swift; sourceTree = "<group>"; };
 		D80949612788D64D001AC162 /* WCF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCF.swift; sourceTree = "<group>"; };
-		D80949642788D8C3001AC162 /* LoadWcfRawDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadWcfRawDataUseCase.swift; sourceTree = "<group>"; };
 		D80949662788D956001AC162 /* LoadWcfUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadWcfUseCase.swift; sourceTree = "<group>"; };
 		D809496A2788DB55001AC162 /* JsonWCF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonWCF.swift; sourceTree = "<group>"; };
 		D809496B2788DB55001AC162 /* JsonWcfChapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonWcfChapter.swift; sourceTree = "<group>"; };
 		D809496C2788DB55001AC162 /* JsonWcfSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonWcfSection.swift; sourceTree = "<group>"; };
 		D80949702788FB3F001AC162 /* wcf.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = wcf.json; sourceTree = "<group>"; };
 		D809497327892DDB001AC162 /* WcfView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WcfView.swift; sourceTree = "<group>"; };
+		D8094981278F75F2001AC162 /* LoadWscUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadWscUseCase.swift; sourceTree = "<group>"; };
+		D8094989278F777E001AC162 /* WlcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WlcView.swift; sourceTree = "<group>"; };
+		D809498B278F92F9001AC162 /* TableOfContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableOfContentsView.swift; sourceTree = "<group>"; };
+		D8094993278FC2C6001AC162 /* LoadJsonUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadJsonUseCase.swift; sourceTree = "<group>"; };
+		D8094995278FC50A001AC162 /* LoadWlcUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadWlcUseCase.swift; sourceTree = "<group>"; };
+		D8094998278FC528001AC162 /* WSC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSC.swift; sourceTree = "<group>"; };
+		D8094999278FC528001AC162 /* WscQA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WscQA.swift; sourceTree = "<group>"; };
+		D809499D278FC52B001AC162 /* WlcQA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WlcQA.swift; sourceTree = "<group>"; };
+		D809499E278FC52B001AC162 /* WLC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLC.swift; sourceTree = "<group>"; };
+		D89B8916278FC6AD00A326FD /* JsonWLC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonWLC.swift; sourceTree = "<group>"; };
+		D89B8917278FC6AD00A326FD /* JsonWlcQA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonWlcQA.swift; sourceTree = "<group>"; };
+		D89B891E278FC8D100A326FD /* WscView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WscView.swift; sourceTree = "<group>"; };
+		D89B8920278FC9B000A326FD /* JsonWSC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonWSC.swift; sourceTree = "<group>"; };
+		D89B8921278FC9B000A326FD /* JsonWscQA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonWscQA.swift; sourceTree = "<group>"; };
+		D89B8922278FCF0A00A326FD /* wlc.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wlc.json; sourceTree = "<group>"; };
+		D89B8923278FCF0A00A326FD /* wsc.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wsc.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -322,9 +352,9 @@
 		D809495C2788D37C001AC162 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D809495F2788D5B1001AC162 /* WcfChapter.swift */,
-				D80949612788D64D001AC162 /* WCF.swift */,
-				D809495D2788D460001AC162 /* WcfSection.swift */,
+				D8094979278F74C9001AC162 /* wcf */,
+				D809499C278FC52B001AC162 /* wlc */,
+				D8094997278FC528001AC162 /* wsc */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -333,7 +363,9 @@
 			isa = PBXGroup;
 			children = (
 				D80949662788D956001AC162 /* LoadWcfUseCase.swift */,
-				D80949642788D8C3001AC162 /* LoadWcfRawDataUseCase.swift */,
+				D8094993278FC2C6001AC162 /* LoadJsonUseCase.swift */,
+				D8094995278FC50A001AC162 /* LoadWlcUseCase.swift */,
+				D8094981278F75F2001AC162 /* LoadWscUseCase.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -342,6 +374,8 @@
 			isa = PBXGroup;
 			children = (
 				D80949702788FB3F001AC162 /* wcf.json */,
+				D89B8922278FCF0A00A326FD /* wlc.json */,
+				D89B8923278FCF0A00A326FD /* wsc.json */,
 				D80949692788DB4D001AC162 /* Model */,
 			);
 			path = Data;
@@ -350,9 +384,9 @@
 		D80949692788DB4D001AC162 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D809496B2788DB55001AC162 /* JsonWcfChapter.swift */,
-				D809496A2788DB55001AC162 /* JsonWCF.swift */,
-				D809496C2788DB55001AC162 /* JsonWcfSection.swift */,
+				D8094983278F766D001AC162 /* wcf */,
+				D89B8915278FC6AD00A326FD /* wlc */,
+				D8094984278F7674001AC162 /* wsc */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -361,9 +395,68 @@
 			isa = PBXGroup;
 			children = (
 				D809497327892DDB001AC162 /* WcfView.swift */,
+				D8094989278F777E001AC162 /* WlcView.swift */,
+				D89B891E278FC8D100A326FD /* WscView.swift */,
 				D80948EC2788D2B9001AC162 /* ContentView.swift */,
+				D809498B278F92F9001AC162 /* TableOfContentsView.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		D8094979278F74C9001AC162 /* wcf */ = {
+			isa = PBXGroup;
+			children = (
+				D809495F2788D5B1001AC162 /* WcfChapter.swift */,
+				D80949612788D64D001AC162 /* WCF.swift */,
+				D809495D2788D460001AC162 /* WcfSection.swift */,
+			);
+			path = wcf;
+			sourceTree = "<group>";
+		};
+		D8094983278F766D001AC162 /* wcf */ = {
+			isa = PBXGroup;
+			children = (
+				D809496B2788DB55001AC162 /* JsonWcfChapter.swift */,
+				D809496A2788DB55001AC162 /* JsonWCF.swift */,
+				D809496C2788DB55001AC162 /* JsonWcfSection.swift */,
+			);
+			path = wcf;
+			sourceTree = "<group>";
+		};
+		D8094984278F7674001AC162 /* wsc */ = {
+			isa = PBXGroup;
+			children = (
+				D89B8920278FC9B000A326FD /* JsonWSC.swift */,
+				D89B8921278FC9B000A326FD /* JsonWscQA.swift */,
+			);
+			path = wsc;
+			sourceTree = "<group>";
+		};
+		D8094997278FC528001AC162 /* wsc */ = {
+			isa = PBXGroup;
+			children = (
+				D8094998278FC528001AC162 /* WSC.swift */,
+				D8094999278FC528001AC162 /* WscQA.swift */,
+			);
+			path = wsc;
+			sourceTree = "<group>";
+		};
+		D809499C278FC52B001AC162 /* wlc */ = {
+			isa = PBXGroup;
+			children = (
+				D809499D278FC52B001AC162 /* WlcQA.swift */,
+				D809499E278FC52B001AC162 /* WLC.swift */,
+			);
+			path = wlc;
+			sourceTree = "<group>";
+		};
+		D89B8915278FC6AD00A326FD /* wlc */ = {
+			isa = PBXGroup;
+			children = (
+				D89B8916278FC6AD00A326FD /* JsonWLC.swift */,
+				D89B8917278FC6AD00A326FD /* JsonWlcQA.swift */,
+			);
+			path = wlc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -562,6 +655,8 @@
 			files = (
 				D80948F22788D2BA001AC162 /* Preview Assets.xcassets in Resources */,
 				D80948EF2788D2BA001AC162 /* Assets.xcassets in Resources */,
+				D89B8924278FCF0A00A326FD /* wlc.json in Resources */,
+				D89B8925278FCF0A00A326FD /* wsc.json in Resources */,
 				D80949712788FD73001AC162 /* wcf.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -618,17 +713,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D80949652788D8C3001AC162 /* LoadWcfRawDataUseCase.swift in Sources */,
+				D809498A278F777E001AC162 /* WlcView.swift in Sources */,
 				D80949602788D5B1001AC162 /* WcfChapter.swift in Sources */,
 				D809496F2788EFF4001AC162 /* JsonWCF.swift in Sources */,
+				D809498C278F92F9001AC162 /* TableOfContentsView.swift in Sources */,
 				D80948ED2788D2B9001AC162 /* ContentView.swift in Sources */,
+				D8094996278FC50A001AC162 /* LoadWlcUseCase.swift in Sources */,
+				D89B891F278FC8D100A326FD /* WscView.swift in Sources */,
+				D8094982278F75F3001AC162 /* LoadWscUseCase.swift in Sources */,
+				D8094994278FC2C7001AC162 /* LoadJsonUseCase.swift in Sources */,
+				D89B891A278FC81E00A326FD /* JsonWLC.swift in Sources */,
 				D80949622788D64D001AC162 /* WCF.swift in Sources */,
 				D809496E2788EFF4001AC162 /* JsonWcfChapter.swift in Sources */,
+				D89B891D278FC83000A326FD /* WLC.swift in Sources */,
+				D89B8926278FD6F400A326FD /* JsonWSC.swift in Sources */,
+				D89B8927278FD6F700A326FD /* JsonWscQA.swift in Sources */,
 				D80948EB2788D2B9001AC162 /* Westminster_StandardsApp.swift in Sources */,
+				D809499B278FC528001AC162 /* WscQA.swift in Sources */,
+				D809499A278FC528001AC162 /* WSC.swift in Sources */,
 				D80949672788D956001AC162 /* LoadWcfUseCase.swift in Sources */,
 				D809497427892DDB001AC162 /* WcfView.swift in Sources */,
+				D89B891B278FC82100A326FD /* JsonWlcQA.swift in Sources */,
 				D809496D2788EFF4001AC162 /* JsonWcfSection.swift in Sources */,
 				D809495E2788D460001AC162 /* WcfSection.swift in Sources */,
+				D89B891C278FC82E00A326FD /* WlcQA.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

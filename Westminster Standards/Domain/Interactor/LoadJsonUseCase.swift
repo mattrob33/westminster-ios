@@ -7,12 +7,10 @@
 
 import Foundation
 
+struct LoadJsonUseCase {
 
-/// Loads the plain text for the WCF
-struct LoadWcfRawDataUseCase {
-    
-    func execute() -> Data? {
-        if let path = Bundle.main.path(forResource: "wcf", ofType: "json") {
+    func execute(filename: String) -> Data? {
+        if let path = Bundle.main.path(forResource: filename, ofType: "json") {
           do {
               return try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
           } catch _ {

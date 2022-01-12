@@ -9,11 +9,11 @@ import Foundation
 
 /// Loads the WCF model.
 struct LoadWcfUseCase {
-
-    private let loadRawDataUseCase = LoadWcfRawDataUseCase()
+    
+    private let loadJson = LoadJsonUseCase()
 
     func execute() -> WCF? {
-        if let rawData = loadRawDataUseCase.execute() {
+        if let rawData = loadJson.execute(filename: "wcf") {
             return parseWcf(rawData: rawData)
         }
         return nil
