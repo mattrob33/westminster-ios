@@ -12,8 +12,8 @@ struct ContentView: View {
     @State var content: Content
 
     @State private var isShowingSheet = false
-    @State private var selectedTab = 0
-    
+    @State var sheet: Sheet? = nil
+
     @State private var scrollPosition: Int = 0
     
     @State private var recentWcfChapter: Int = 0
@@ -63,13 +63,21 @@ struct ContentView: View {
                     Spacer()
                     Image(systemName: "book")
                         .onTapGesture {
+                            sheet = .content
                             isShowingSheet = true
-                            selectedTab = 1
                         }
                     Spacer()
                     Image(systemName: "magnifyingglass")
+                        .onTapGesture {
+                            sheet = .search
+                            isShowingSheet = true
+                        }
                     Spacer()
                     Image(systemName: "gearshape")
+                        .onTapGesture {
+                            sheet = .settings
+                            isShowingSheet = true
+                        }
                     Spacer()
                 }
                 .padding(.top)
@@ -82,38 +90,49 @@ struct ContentView: View {
                     isShowingSheet = false
                 },
                 content: {
-                    TableOfContentsView(
-                        content: $content,
-                        wcf: wcf,
-                        wlc: wlc,
-                        wsc: wsc,
-                        recentWcfChapter: recentWcfChapter,
-                        recentWlcQuestion: recentWlcQuestion,
-                        recentWscQuestion: recentWscQuestion,
-                        onItemSelected: { item in
-                            scrollPosition = item
-                            isShowingSheet = false
+                    if let sheet = sheet {
+                        switch (sheet) {
+                        case .content:
+                            TableOfContentsView(
+                                content: $content,
+                                wcf: wcf,
+                                wlc: wlc,
+                                wsc: wsc,
+                                recentWcfChapter: recentWcfChapter,
+                                recentWlcQuestion: recentWlcQuestion,
+                                recentWscQuestion: recentWscQuestion,
+                                onItemSelected: { item in
+                                    scrollPosition = item
+                                    isShowingSheet = false
+                                    
+                                    switch (content) {
+                                    case .wcf:
+                                        recentWcfChapter = item
+                                    case .wlc:
+                                        recentWlcQuestion = item
+                                    case .wsc:
+                                        recentWscQuestion = item
+                                    }
+                                }
+                            )
                             
-                            switch (content) {
-                            case .wcf:
-                                recentWcfChapter = item
-                            case .wlc:
-                                recentWlcQuestion = item
-                            case .wsc:
-                                recentWscQuestion = item
-                            }
+                        case .search:
+                            SearchView(wcf: wcf, wlc: wlc, wsc: wsc)
+                            
+                        case .settings:
+                            Text("Settings Screen")
                         }
-                    )
+                    }
                 }
             )
         }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView(content: .wcf)
-    }
+enum Sheet {
+    case content
+    case search
+    case settings
 }
 
 enum Content {
