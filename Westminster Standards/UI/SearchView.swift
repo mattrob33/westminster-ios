@@ -104,7 +104,7 @@ struct SearchResultsView: View {
                                         Text("\(i + 1).\(j + 1) (\(wcf.chapters[i].title))")
                                             .font(.system(size: 18, weight: .bold))
                                             .padding(.bottom, 2)
-                                        Text(section.text)
+                                        highlightSearchHits(matchedText: section.text, searchText: searchText)
                                             .font(.system(size: 18))
                                     }
                                     .padding(.top)
@@ -122,11 +122,19 @@ struct SearchResultsView: View {
 
                             if matchesQuestion || matchesAnswer {
                                 VStack(alignment: .leading) {
-                                    Text("Q\(i + 1). \(question)")
-                                        .font(.system(size: 18, weight: .bold))
-                                    Text("A. \(answer)")
-                                        .font(.system(size: 18))
+                                    Group {
+                                        Text("Q\(i + 1). ") + highlightSearchHits(matchedText: question, searchText: searchText)
+                                    }
+                                    .font(.system(size: 18, weight: .bold))
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    
+                                    Group {
+                                        Text("A. ") + highlightSearchHits(matchedText: answer, searchText: searchText)
+                                    }
+                                    .font(.system(size: 18))
+                                    .frame(maxWidth: .infinity, alignment: .leading)
                                 }
+                                .frame(maxWidth: .infinity, alignment: .leading)
                                 .padding(.top)
                             }
                         }
@@ -141,11 +149,19 @@ struct SearchResultsView: View {
 
                             if matchesQuestion || matchesAnswer {
                                 VStack(alignment: .leading) {
-                                    Text("Q\(i + 1). \(question)")
-                                        .font(.system(size: 18, weight: .bold))
-                                    Text("A. \(answer)")
-                                        .font(.system(size: 18))
+                                    Group {
+                                        Text("Q\(i + 1). ") + highlightSearchHits(matchedText: question, searchText: searchText)
+                                    }
+                                    .font(.system(size: 18, weight: .bold))
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    
+                                    Group {
+                                        Text("A. ") + highlightSearchHits(matchedText: answer, searchText: searchText)
+                                    }
+                                    .font(.system(size: 18))
+                                    .frame(maxWidth: .infinity, alignment: .leading)
                                 }
+                                .frame(maxWidth: .infinity, alignment: .leading)
                                 .padding(.top)
                             }
                         }
@@ -159,5 +175,21 @@ struct SearchResultsView: View {
         }
         .padding(.leading)
         .padding(.trailing)
+    }
+
+    private func highlightSearchHits(matchedText: String, searchText: String) -> Text {
+        
+        let sections = matchedText.components(separatedBy: searchText)
+        
+        var compositeText = Text("")
+        
+        for i in sections.indices {
+            compositeText = compositeText + Text("\(sections[i])")
+            if i < (sections.endIndex - 1) {
+                compositeText = compositeText + Text(searchText).foregroundColor(Color.red).underline(color: .red)
+            }
+        }
+
+        return compositeText
     }
 }
