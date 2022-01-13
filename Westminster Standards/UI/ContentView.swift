@@ -16,6 +16,10 @@ struct ContentView: View {
     
     @State private var scrollPosition: Int = 0
     
+    @State private var recentWcfChapter: Int = 0
+    @State private var recentWlcQuestion: Int = 0
+    @State private var recentWscQuestion: Int = 0
+
     var body: some View {
         
         let loadWcfUseCase = LoadWcfUseCase()
@@ -83,20 +87,21 @@ struct ContentView: View {
                         wcf: wcf,
                         wlc: wlc,
                         wsc: wsc,
-                        recentWcfChapter: 0,
-                        recentWlcQuestion: 0,
-                        recentWscQuestion: 0,
-                        onWcfChapterSelected: { chapter in
-                            scrollPosition = chapter
+                        recentWcfChapter: recentWcfChapter,
+                        recentWlcQuestion: recentWlcQuestion,
+                        recentWscQuestion: recentWscQuestion,
+                        onItemSelected: { item in
+                            scrollPosition = item
                             isShowingSheet = false
-                        },
-                        onWlcQuestionSelected: { question in
-                            scrollPosition = question
-                            isShowingSheet = false
-                        },
-                        onWscQuestionSelected: { question in
-                            scrollPosition = question
-                            isShowingSheet = false
+                            
+                            switch (content) {
+                            case .wcf:
+                                recentWcfChapter = item
+                            case .wlc:
+                                recentWlcQuestion = item
+                            case .wsc:
+                                recentWscQuestion = item
+                            }
                         }
                     )
                 }

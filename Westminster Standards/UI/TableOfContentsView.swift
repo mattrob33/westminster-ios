@@ -19,9 +19,7 @@ struct TableOfContentsView: View {
     var recentWlcQuestion: Int
     var recentWscQuestion: Int
     
-    var onWcfChapterSelected: (Int) -> Void
-    var onWlcQuestionSelected: (Int) -> Void
-    var onWscQuestionSelected: (Int) -> Void
+    var onItemSelected: (Int) -> Void
 
     var body: some View {
         
@@ -37,19 +35,19 @@ struct TableOfContentsView: View {
             WcfTableOfContentsView(
                 wcf: wcf,
                 recentWcfChapter: recentWcfChapter,
-                onWcfChapterSelected: onWcfChapterSelected
+                onWcfChapterSelected: onItemSelected
             )
         case .wlc:
             WlcTableOfContentsView(
                 wlc: wlc,
                 recentWlcQuestion: recentWlcQuestion,
-                onWlcQuestionSelected: onWlcQuestionSelected
+                onWlcQuestionSelected: onItemSelected
             )
         case .wsc:
             WscTableOfContentsView(
                 wsc: wsc,
                 recentWscQuestion: recentWscQuestion,
-                onWscQuestionSelected: onWscQuestionSelected
+                onWscQuestionSelected: onItemSelected
             )
         }
     }
