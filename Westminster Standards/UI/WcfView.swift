@@ -39,7 +39,7 @@ struct WcfView: View {
                                 let section = chapter.sections[j]
 
                                 Text("\(j + 1). \(section.text)")
-                                    .font(.system(size: 18, design: .serif))
+                                    .font(.system(size: 20, design: .serif))
                                     .lineSpacing(9)
                                     .padding(.top)
                             }

@@ -74,7 +74,7 @@ struct ContentView: View {
                 }
                 .padding(.top)
                 .padding(.bottom)
-                .background(Color.white)
+                .background(.background)
             }
             .sheet(
                 isPresented: $isShowingSheet,

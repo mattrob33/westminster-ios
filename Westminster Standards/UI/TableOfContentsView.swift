@@ -99,7 +99,7 @@ struct WcfTableOfContentsView: View {
             .padding(.leading)
             .padding(.trailing)
         }
-        .background(Color.white)
+        .background(.background)
     }
 }
 
@@ -148,7 +148,7 @@ struct WlcTableOfContentsView: View {
             .padding(.leading)
             .padding(.trailing)
         }
-        .background(Color.white)
+        .background(.background)
     }
 }
 
@@ -198,6 +198,6 @@ struct WscTableOfContentsView: View {
             .padding(.leading)
             .padding(.trailing)
         }
-        .background(Color.white)
+        .background(.background)
     }
 }

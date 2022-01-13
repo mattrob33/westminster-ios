@@ -41,7 +41,7 @@ struct WscView: View {
                             
                             ForEach(proofs.indices) { j in
                                 Text(proofs[j])
-                                    .font(.system(size: 20, design: .serif))
+                                    .font(.system(size: 18, design: .serif))
                                     .italic()
                                     .frame(maxWidth: .infinity, alignment: .leading)
                             }
