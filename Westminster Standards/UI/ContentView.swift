@@ -8,19 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
-     
-    @State var content: Content
+    
+    @State var contentLocation: ContentLocation
 
     @State private var isShowingSheet = false
-    @State var sheet: Sheet? = nil
 
-    @State private var scrollPosition: Int = 0
-    
     @State private var recentWcfChapter: Int = 0
     @State private var recentWlcQuestion: Int = 0
     @State private var recentWscQuestion: Int = 0
 
     var body: some View {
+        
+        var sheet: Sheet? = nil
         
         let loadWcfUseCase = LoadWcfUseCase()
         let wcf = loadWcfUseCase.execute()
@@ -35,22 +34,49 @@ struct ContentView: View {
             
             let wcfView = WcfView(
                 wcf: wcf,
-                scrollPosition: $scrollPosition
+                scrollPosition: $contentLocation.location
             )
             
             let wlcView = WlcView(
                 wlc: wlc,
-                scrollPosition: $scrollPosition
+                scrollPosition: $contentLocation.location
             )
             
             let wscView = WscView(
                 wsc: wsc,
-                scrollPosition: $scrollPosition
+                scrollPosition: $contentLocation.location
+            )
+            
+            let tocView = TableOfContentsView(
+                content: contentLocation.content,
+                wcf: wcf,
+                wlc: wlc,
+                wsc: wsc,
+                recentWcfChapter: recentWcfChapter,
+                recentWlcQuestion: recentWlcQuestion,
+                recentWscQuestion: recentWscQuestion,
+                onItemSelected: { newContent, item in
+                    contentLocation = ContentLocation(content: newContent, location: item)
+                    
+                    switch (newContent) {
+                    case .wcf:
+                        recentWcfChapter = item
+                    case .wlc:
+                        recentWlcQuestion = item
+                    case .wsc:
+                        recentWscQuestion = item
+                    }
+                    
+                    isShowingSheet = false
+                },
+                onTapDone: {
+                    isShowingSheet = false
+                }
             )
             
             ZStack(alignment: .bottom) {
                 
-                switch content {
+                switch contentLocation.content {
                 case .wcf:
                     wcfView
                 case .wlc:
@@ -93,31 +119,17 @@ struct ContentView: View {
                     if let sheet = sheet {
                         switch (sheet) {
                         case .content:
-                            TableOfContentsView(
-                                content: $content,
+                            tocView
+                            
+                        case .search:
+                            SearchView(
                                 wcf: wcf,
                                 wlc: wlc,
                                 wsc: wsc,
-                                recentWcfChapter: recentWcfChapter,
-                                recentWlcQuestion: recentWlcQuestion,
-                                recentWscQuestion: recentWscQuestion,
-                                onItemSelected: { item in
-                                    scrollPosition = item
+                                onTapDone: {
                                     isShowingSheet = false
-                                    
-                                    switch (content) {
-                                    case .wcf:
-                                        recentWcfChapter = item
-                                    case .wlc:
-                                        recentWlcQuestion = item
-                                    case .wsc:
-                                        recentWscQuestion = item
-                                    }
                                 }
                             )
-                            
-                        case .search:
-                            SearchView(wcf: wcf, wlc: wlc, wsc: wsc)
                             
                         case .settings:
                             Text("Settings Screen")
@@ -139,4 +151,9 @@ enum Content {
     case wcf
     case wlc
     case wsc
+}
+
+struct ContentLocation {
+    var content: Content
+    var location: Int
 }

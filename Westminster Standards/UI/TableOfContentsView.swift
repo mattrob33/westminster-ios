@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TableOfContentsView: View {
     
-    @Binding var content: Content
+    @State var content: Content
     
     var wcf: WCF
     var wlc: WLC
@@ -19,36 +19,70 @@ struct TableOfContentsView: View {
     var recentWlcQuestion: Int
     var recentWscQuestion: Int
     
-    var onItemSelected: (Int) -> Void
+    var onItemSelected: (Content, Int) -> Void
+    var onTapDone: () -> Void
 
     var body: some View {
         
-        Picker("Content", selection: $content) {
-            Text("Confession").tag(Content.wcf)
-            Text("Larger").tag(Content.wlc)
-            Text("Shorter").tag(Content.wsc)
-        }
-        .pickerStyle(SegmentedPickerStyle())
+        let wcfView = WcfTableOfContentsView(
+            wcf: wcf,
+            recentWcfChapter: recentWcfChapter,
+            onWcfChapterSelected: { chapter in
+                onItemSelected(.wcf, chapter)
+            }
+        )
         
-        switch (content) {
-        case .wcf:
-            WcfTableOfContentsView(
-                wcf: wcf,
-                recentWcfChapter: recentWcfChapter,
-                onWcfChapterSelected: onItemSelected
-            )
-        case .wlc:
-            WlcTableOfContentsView(
-                wlc: wlc,
-                recentWlcQuestion: recentWlcQuestion,
-                onWlcQuestionSelected: onItemSelected
-            )
-        case .wsc:
-            WscTableOfContentsView(
-                wsc: wsc,
-                recentWscQuestion: recentWscQuestion,
-                onWscQuestionSelected: onItemSelected
-            )
+        let wlcView = WlcTableOfContentsView(
+            wlc: wlc,
+            recentWlcQuestion: recentWlcQuestion,
+            onWlcQuestionSelected: { question in
+                onItemSelected(.wlc, question)
+            }
+        )
+        
+        let wscView = WscTableOfContentsView(
+            wsc: wsc,
+            recentWscQuestion: recentWscQuestion,
+            onWscQuestionSelected: { question in
+                onItemSelected(.wsc, question)
+            }
+        )
+
+        VStack {
+            
+            ZStack {
+                Text("Contents")
+                    .font(.system(size: 20, design: .serif))
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .padding(.top).padding(.trailing)
+                
+                Text("Done")
+                    .font(.system(size: 16, weight: .bold))
+                    .foregroundColor(Color.accentColor)
+                    .onTapGesture {
+                        onTapDone()
+                    }
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+                    .padding(.top).padding(.trailing)
+            }
+            
+            Divider()
+            
+            Picker("Content", selection: $content) {
+                Text("Confession").tag(Content.wcf)
+                Text("Larger").tag(Content.wlc)
+                Text("Shorter").tag(Content.wsc)
+            }
+            .pickerStyle(SegmentedPickerStyle())
+            
+            switch (content) {
+            case .wcf:
+                wcfView
+            case .wlc:
+                wlcView
+            case .wsc:
+                wscView
+            }
         }
     }
 }

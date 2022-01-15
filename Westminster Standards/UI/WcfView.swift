@@ -50,6 +50,7 @@ struct WcfView: View {
                 }
                 .onAppear {
                     scrollProxy = proxy
+                    proxy.scrollTo(scrollPosition, anchor: .top)
                 }
             }
         }

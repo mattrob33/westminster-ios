@@ -11,7 +11,12 @@ import SwiftUI
 struct Westminster_StandardsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(content: .wcf)
+            ContentView(
+                contentLocation: ContentLocation(
+                    content: Content.wcf,
+                    location: 0
+                )
+            )
         }
     }
     

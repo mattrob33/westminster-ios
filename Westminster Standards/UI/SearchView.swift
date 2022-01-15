@@ -13,6 +13,8 @@ struct SearchView: View {
     var wlc: WLC
     var wsc: WSC
 
+    var onTapDone: () -> Void
+
     @State private var content: Content = Content.wcf
     @State private var searchText : String = ""
 
@@ -20,7 +22,16 @@ struct SearchView: View {
         
         VStack {
             
-            SearchBar(text: $searchText)
+            HStack {
+                SearchBar(text: $searchText)
+                Text("Done")
+                    .font(.system(size: 16, weight: .bold))
+                    .foregroundColor(Color.accentColor)
+                    .onTapGesture {
+                        onTapDone()
+                    }
+            }
+            .padding(.leading).padding(.trailing)
             
             Picker("Content", selection: $content) {
                 Text("Confession").tag(Content.wcf)
