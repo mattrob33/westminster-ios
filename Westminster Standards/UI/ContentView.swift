@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+
     @State var contentLocation: ContentLocation
 
     @State private var isShowingSheet = false
@@ -16,6 +16,8 @@ struct ContentView: View {
     @State private var recentWcfChapter: Int = 0
     @State private var recentWlcQuestion: Int = 0
     @State private var recentWscQuestion: Int = 0
+
+    @EnvironmentObject var settings: Settings
 
     var body: some View {
         
@@ -36,6 +38,7 @@ struct ContentView: View {
                 wcf: wcf,
                 scrollPosition: $contentLocation.location
             )
+            .environmentObject(settings)
             
             let wlcView = WlcView(
                 wlc: wlc,
@@ -132,7 +135,8 @@ struct ContentView: View {
                             )
                             
                         case .settings:
-                            Text("Settings Screen")
+                            SettingsView()
+                                .environmentObject(settings)
                         }
                     }
                 }

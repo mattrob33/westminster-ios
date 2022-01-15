@@ -43,6 +43,8 @@
 		D8094996278FC50A001AC162 /* LoadWlcUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8094995278FC50A001AC162 /* LoadWlcUseCase.swift */; };
 		D809499A278FC528001AC162 /* WSC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8094998278FC528001AC162 /* WSC.swift */; };
 		D809499B278FC528001AC162 /* WscQA.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8094999278FC528001AC162 /* WscQA.swift */; };
+		D87199AE27931AF900F27816 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87199AD27931AF900F27816 /* Settings.swift */; };
+		D87199B02793237400F27816 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87199AF2793237400F27816 /* SettingsView.swift */; };
 		D89B891A278FC81E00A326FD /* JsonWLC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89B8916278FC6AD00A326FD /* JsonWLC.swift */; };
 		D89B891B278FC82100A326FD /* JsonWlcQA.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89B8917278FC6AD00A326FD /* JsonWlcQA.swift */; };
 		D89B891C278FC82E00A326FD /* WlcQA.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809499D278FC52B001AC162 /* WlcQA.swift */; };
@@ -171,6 +173,8 @@
 		D8094999278FC528001AC162 /* WscQA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WscQA.swift; sourceTree = "<group>"; };
 		D809499D278FC52B001AC162 /* WlcQA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WlcQA.swift; sourceTree = "<group>"; };
 		D809499E278FC52B001AC162 /* WLC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLC.swift; sourceTree = "<group>"; };
+		D87199AD27931AF900F27816 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		D87199AF2793237400F27816 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		D89B8916278FC6AD00A326FD /* JsonWLC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonWLC.swift; sourceTree = "<group>"; };
 		D89B8917278FC6AD00A326FD /* JsonWlcQA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonWlcQA.swift; sourceTree = "<group>"; };
 		D89B891E278FC8D100A326FD /* WscView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WscView.swift; sourceTree = "<group>"; };
@@ -389,6 +393,7 @@
 				D8094983278F766D001AC162 /* wcf */,
 				D89B8915278FC6AD00A326FD /* wlc */,
 				D8094984278F7674001AC162 /* wsc */,
+				D87199AD27931AF900F27816 /* Settings.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -402,6 +407,7 @@
 				D89B891E278FC8D100A326FD /* WscView.swift */,
 				D80948EC2788D2B9001AC162 /* ContentView.swift */,
 				D809498B278F92F9001AC162 /* TableOfContentsView.swift */,
+				D87199AF2793237400F27816 /* SettingsView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -718,6 +724,7 @@
 			files = (
 				D809498A278F777E001AC162 /* WlcView.swift in Sources */,
 				D80949602788D5B1001AC162 /* WcfChapter.swift in Sources */,
+				D87199AE27931AF900F27816 /* Settings.swift in Sources */,
 				D809496F2788EFF4001AC162 /* JsonWCF.swift in Sources */,
 				D809498C278F92F9001AC162 /* TableOfContentsView.swift in Sources */,
 				D80948ED2788D2B9001AC162 /* ContentView.swift in Sources */,
@@ -736,6 +743,7 @@
 				D809499B278FC528001AC162 /* WscQA.swift in Sources */,
 				D809499A278FC528001AC162 /* WSC.swift in Sources */,
 				D80949672788D956001AC162 /* LoadWcfUseCase.swift in Sources */,
+				D87199B02793237400F27816 /* SettingsView.swift in Sources */,
 				D809497427892DDB001AC162 /* WcfView.swift in Sources */,
 				D89B891B278FC82100A326FD /* JsonWlcQA.swift in Sources */,
 				D809496D2788EFF4001AC162 /* JsonWcfSection.swift in Sources */,

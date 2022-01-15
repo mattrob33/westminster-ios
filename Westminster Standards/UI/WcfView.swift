@@ -17,6 +17,8 @@ struct WcfView: View {
     @Binding var scrollPosition: Int
     @State private var scrollProxy: ScrollViewProxy? = nil
 
+    @EnvironmentObject var settings: Settings
+
     var body: some View {
         ScrollView {
             ScrollViewReader { proxy in
@@ -27,19 +29,19 @@ struct WcfView: View {
                             let chapter = wcf.chapters[i]
                             
                             Text("Chapter \(i + 1)")
-                                .font(.system(size: 24, weight: .bold, design: .serif))
+                                .font(.system(size: CGFloat(Double(settings.fontSize) * 1.2), weight: .bold, design: .serif))
                                 .frame(maxWidth: .infinity, alignment: .center)
                                 .padding(.top)
                             
                             Text(chapter.title)
-                                .font(.system(size: 22, weight: .bold, design: .serif))
+                                .font(.system(size: CGFloat(Double(settings.fontSize) * 1.1), weight: .bold, design: .serif))
                                 .frame(maxWidth: .infinity, alignment: .center)
                             
                             ForEach(chapter.sections.indices) { j in
                                 let section = chapter.sections[j]
 
                                 Text("\(j + 1). \(section.text)")
-                                    .font(.system(size: 20, design: .serif))
+                                    .font(.system(size: CGFloat(settings.fontSize), design: .serif))
                                     .lineSpacing(9)
                                     .padding(.top)
                             }

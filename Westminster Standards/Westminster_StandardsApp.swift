@@ -9,6 +9,9 @@ import SwiftUI
 
 @main
 struct Westminster_StandardsApp: App {
+    
+    @StateObject var settings = Settings()
+    
     var body: some Scene {
         WindowGroup {
             ContentView(
@@ -17,6 +20,7 @@ struct Westminster_StandardsApp: App {
                     location: 0
                 )
             )
+            .environmentObject(settings)
         }
     }
     
