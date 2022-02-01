@@ -26,6 +26,7 @@ struct LoadWscUseCase {
             return jsonWsc.toModel()
         }
         catch {
+            print("WSC Error: \(error)")
             return nil
         }
     }
@@ -42,7 +43,16 @@ extension JsonWSC {
 extension JsonWscQA {
     
     func toModel() -> WscQA {
-        return WscQA(question: question, answer: answer, proofs: proofs)
+        return WscQA(question: question, answer: answer, proofs: proofs.map { $0.toModel() } )
     }
     
 }
+
+extension JsonWscProofs {
+    
+    func toModel() -> Proofs {
+        return Proofs(letter: letter, refs: refs)
+    }
+    
+}
+

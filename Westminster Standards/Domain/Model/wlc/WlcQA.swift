@@ -10,4 +10,5 @@ import Foundation
 struct WlcQA: Hashable, Equatable {
     var question: String
     var answer: String
+    var proofs: [Proofs]
 }

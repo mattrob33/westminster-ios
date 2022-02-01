@@ -26,6 +26,7 @@ struct LoadWlcUseCase {
             return jsonWlc.toModel()
         }
         catch {
+            print("WLC Error: \(error)")
             return nil
         }
     }
@@ -42,7 +43,15 @@ extension JsonWLC {
 extension JsonWlcQA {
     
     func toModel() -> WlcQA {
-        return WlcQA(question: question, answer: answer)
+        return WlcQA(question: question, answer: answer, proofs: proofs.map { $0.toModel() })
+    }
+    
+}
+
+extension JsonWlcProofs {
+    
+    func toModel() -> Proofs {
+        return Proofs(letter: letter, refs: refs)
     }
     
 }

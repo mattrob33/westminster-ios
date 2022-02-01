@@ -37,14 +37,12 @@ struct WscView: View {
                             
                             Spacer()
                             
-                            let proofs = qa.proofs.components(separatedBy: "\n")
-                            
-                            ForEach(proofs.indices) { j in
-                                Text(proofs[j])
-                                    .font(.system(size: 18, design: .serif))
-                                    .italic()
-                                    .frame(maxWidth: .infinity, alignment: .leading)
+                            ForEach(qa.proofs.indices) { k in
+                                let proofs = qa.proofs[k]
+                                buildProofsText(proofs)
                             }
+                            
+                            Spacer()
                         }
                         .padding(.bottom, 20)
                         .id(i)

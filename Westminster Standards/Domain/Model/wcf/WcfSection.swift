@@ -10,6 +10,7 @@ import Foundation
 /// A section of the WCF.
 struct WcfSection: Hashable, Equatable {
     var text: String
+    var proofs: [Proofs]
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(text)

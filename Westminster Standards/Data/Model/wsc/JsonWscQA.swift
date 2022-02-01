@@ -10,5 +10,10 @@ import Foundation
 struct JsonWscQA: Decodable {
     var question: String
     var answer: String
-    var proofs: String
+    var proofs: [JsonWscProofs]
+}
+
+struct JsonWscProofs: Decodable {
+    var letter: String
+    var refs: [String]
 }

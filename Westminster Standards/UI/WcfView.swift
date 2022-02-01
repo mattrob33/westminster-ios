@@ -39,11 +39,16 @@ struct WcfView: View {
                             
                             ForEach(chapter.sections.indices) { j in
                                 let section = chapter.sections[j]
-
-                                Text("\(j + 1). \(section.text)")
+                                
+                                buildSectionText(num: j + 1, section: section, normalFontSize: settings.fontSize)
                                     .font(.system(size: CGFloat(settings.fontSize), design: .serif))
                                     .lineSpacing(9)
                                     .padding(.top)
+                                
+                                ForEach(section.proofs.indices) { k in
+                                    let proofs = section.proofs[k]
+                                    buildProofsText(proofs)
+                                }
                             }
                         }
                         .padding(.bottom, 60)
@@ -59,6 +64,65 @@ struct WcfView: View {
         .padding(.leading).padding(.trailing)
         .onChange(of: scrollPosition) { target in
             scrollProxy?.scrollTo(target, anchor: .top)
+        }
+    }
+}
+
+func buildSectionText(num: Int, section: WcfSection, normalFontSize: Int) -> Text {
+    
+    let parts = section.text.split(usingRegex: "\\[[a-z]\\]")
+    
+    var tb = Text("\(num). ")
+    
+    for i in parts.indices {
+        tb = tb + buildSectionPartText(text: parts[i], normalFontSize: normalFontSize)
+    }
+    
+    return tb
+}
+
+func buildSectionPartText(text: String, normalFontSize: Int) -> Text {
+    
+    let isFootnote = text.matches("\\[[a-z]\\]")
+
+    let fontSize = isFootnote ? normalFontSize - 2 : normalFontSize
+    let textColor = isFootnote ? UIColor.blue : UIColor.textColor
+    
+    return Text(text)
+            .font(.system(size: CGFloat(fontSize), design: .serif))
+            .foregroundColor(Color(textColor))
+}
+
+func buildProofsText(_ proofs: Proofs) -> Text {
+    
+    let text = proofs.refs.joined(separator: "; ")
+    
+    return Text("[\(proofs.letter)] \(text)")
+}
+
+extension String {
+    func split(usingRegex pattern: String) -> [String] {
+        let regex = try! NSRegularExpression(pattern: pattern)
+        let matches = regex.matches(in: self, range: NSRange(startIndex..., in: self))
+        let splits = [startIndex]
+            + matches
+                .map { Range($0.range, in: self)! }
+                .flatMap { [ $0.lowerBound, $0.upperBound ] }
+            + [endIndex]
+
+        return zip(splits, splits.dropFirst())
+            .map { String(self[$0 ..< $1])}
+    }
+    
+    func matches(_ regex: String) -> Bool {
+        return self.range(of: regex, options: .regularExpression, range: nil, locale: nil) != nil
+    }
+}
+
+extension UIColor{
+    static var textColor: UIColor{
+        return UIColor.init { (trait) -> UIColor in
+            return trait.userInterfaceStyle == .dark ? UIColor.white : UIColor.black
         }
     }
 }

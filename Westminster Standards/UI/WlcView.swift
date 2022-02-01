@@ -34,6 +34,15 @@ struct WlcView: View {
                             Text(qa.answer)
                                 .font(.system(size: 20, design: .serif))
                                 .frame(maxWidth: .infinity, alignment: .leading)
+                            
+                            Spacer()
+                            
+                            ForEach(qa.proofs.indices) { k in
+                                let proofs = qa.proofs[k]
+                                buildProofsText(proofs)
+                            }
+                            
+                            Spacer()
                         }
                         .padding(.bottom, 20)
                         .id(i)

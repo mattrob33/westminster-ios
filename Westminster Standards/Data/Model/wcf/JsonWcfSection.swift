@@ -9,4 +9,10 @@ import Foundation
 
 struct JsonWcfSection: Decodable {
     var text: String
+    var proofs: [JsonWcfProofs]
+}
+
+struct JsonWcfProofs: Decodable {
+    var letter: String
+    var refs: [String]
 }

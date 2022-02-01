@@ -10,5 +10,5 @@ import Foundation
 struct WscQA: Hashable, Equatable {
     var question: String
     var answer: String
-    var proofs: String
+    var proofs: [Proofs]
 }

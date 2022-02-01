@@ -16,12 +16,12 @@ struct ContentView: View {
     @State private var recentWcfChapter: Int = 0
     @State private var recentWlcQuestion: Int = 0
     @State private var recentWscQuestion: Int = 0
+    
+    @State var sheet: Sheet? = nil
 
     @EnvironmentObject var settings: Settings
 
     var body: some View {
-        
-        var sheet: Sheet? = nil
         
         let loadWcfUseCase = LoadWcfUseCase()
         let wcf = loadWcfUseCase.execute()
@@ -44,11 +44,13 @@ struct ContentView: View {
                 wlc: wlc,
                 scrollPosition: $contentLocation.location
             )
+            .environmentObject(settings)
             
             let wscView = WscView(
                 wsc: wsc,
                 scrollPosition: $contentLocation.location
             )
+            .environmentObject(settings)
             
             let tocView = TableOfContentsView(
                 content: contentLocation.content,
@@ -76,6 +78,11 @@ struct ContentView: View {
                     isShowingSheet = false
                 }
             )
+            .environmentObject(settings)
+            
+            let settingsView = SettingsView(
+                fontSize: settings.fontSize
+            ).environmentObject(settings)
             
             ZStack(alignment: .bottom) {
                 
@@ -135,12 +142,13 @@ struct ContentView: View {
                             )
                             
                         case .settings:
-                            SettingsView()
-                                .environmentObject(settings)
+                            settingsView
                         }
                     }
                 }
             )
+        } else {
+            Text("No data")
         }
     }
 }
