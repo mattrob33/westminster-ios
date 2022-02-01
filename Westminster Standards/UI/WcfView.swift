@@ -16,6 +16,9 @@ struct WcfView: View {
 
     @Binding var scrollPosition: Int
     @State private var scrollProxy: ScrollViewProxy? = nil
+    
+    @State private var proofRefs = ""
+    @State private var showingProofsAlert = false
 
     @EnvironmentObject var settings: Settings
 
@@ -39,11 +42,20 @@ struct WcfView: View {
                             
                             ForEach(chapter.sections.indices) { j in
                                 let section = chapter.sections[j]
-                                
-                                buildSectionText(num: j + 1, section: section, normalFontSize: settings.fontSize)
-                                    .font(.system(size: CGFloat(settings.fontSize), design: .serif))
-                                    .lineSpacing(9)
-                                    .padding(.top)
+
+                                let parts = section.text.split(usingRegex: "\\[[a-z]\\]")
+    
+                                    ForEach(parts.indices) { k in
+                                        SectionPartText(text: parts[k], fontSize: 20, onTap: { letter in
+                                            let letter = parts[k]
+                                                .removeAll("[")
+                                                .removeAll("]")
+                                            let proofs = section.proofs.first(where: { $0.letter == letter })
+                                            proofRefs = proofs!.refs.joined(separator: "\n")
+                                            showingProofsAlert = true
+                                        })
+                                    }
+                                .frame(maxWidth: .infinity)
                                 
                                 ForEach(section.proofs.indices) { k in
                                     let proofs = section.proofs[k]
@@ -65,38 +77,58 @@ struct WcfView: View {
         .onChange(of: scrollPosition) { target in
             scrollProxy?.scrollTo(target, anchor: .top)
         }
+        .alert(proofRefs, isPresented: $showingProofsAlert) {
+            Button("Close") {
+                showingProofsAlert = false
+            }
+        }
     }
 }
 
-func buildSectionText(num: Int, section: WcfSection, normalFontSize: Int) -> Text {
-    
-    let parts = section.text.split(usingRegex: "\\[[a-z]\\]")
-    
-    var tb = Text("\(num). ")
-    
-    for i in parts.indices {
-        tb = tb + buildSectionPartText(text: parts[i], normalFontSize: normalFontSize)
+struct SectionPartText: View {
+
+    var text: String
+    var fontSize: Int
+    var onTap: (String) -> Void
+
+    var body: some View {
+        let isFootnote = text.matches("\\[[a-z]\\]")
+
+        let fontSize = isFootnote ? fontSize - 2 : fontSize
+        let textColor = isFootnote ? UIColor.blue : UIColor.textColor
+ 
+        Text(text)
+                .font(.system(size: CGFloat(fontSize), design: .serif))
+                .foregroundColor(Color(textColor))
+                .onTapGesture {
+                    if isFootnote {
+                        let letter = text.removeAll("")
+                        onTap(letter)
+                    }
+                }
     }
-    
-    return tb
 }
 
-func buildSectionPartText(text: String, normalFontSize: Int) -> Text {
-    
+func buildSectionPartText(text: String, normalFontSize: Int, onTap: @escaping (String) -> Void) -> some View {
+
     let isFootnote = text.matches("\\[[a-z]\\]")
 
     let fontSize = isFootnote ? normalFontSize - 2 : normalFontSize
     let textColor = isFootnote ? UIColor.blue : UIColor.textColor
-    
+
     return Text(text)
             .font(.system(size: CGFloat(fontSize), design: .serif))
             .foregroundColor(Color(textColor))
+            .onTapGesture {
+                if isFootnote {
+                    let letter = text.removeAll("")
+                    onTap(letter)
+                }
+            }
 }
 
 func buildProofsText(_ proofs: Proofs) -> Text {
-    
     let text = proofs.refs.joined(separator: "; ")
-    
     return Text("[\(proofs.letter)] \(text)")
 }
 
@@ -116,6 +148,10 @@ extension String {
     
     func matches(_ regex: String) -> Bool {
         return self.range(of: regex, options: .regularExpression, range: nil, locale: nil) != nil
+    }
+    
+    func removeAll(_ chars: String) -> String {
+        return replacingOccurrences(of: chars, with: "")
     }
 }
 
