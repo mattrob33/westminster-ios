@@ -7,6 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F54BFE72A3A433B006818F2 /* WestminsterWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F54BFE62A3A433B006818F2 /* WestminsterWatchApp.swift */; };
+		0F54BFE92A3A433B006818F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F54BFE82A3A433B006818F2 /* ContentView.swift */; };
+		0F54BFEB2A3A433D006818F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F54BFEA2A3A433D006818F2 /* Assets.xcassets */; };
+		0F54BFEE2A3A433D006818F2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F54BFED2A3A433D006818F2 /* Preview Assets.xcassets */; };
+		0F54BFF12A3A433D006818F2 /* WestminsterWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 0F54BFE42A3A433B006818F2 /* WestminsterWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0F54BFFA2A3A4475006818F2 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FEA20002A3A3FF2001242A0 /* WidgetKit.framework */; };
+		0F54BFFB2A3A4475006818F2 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FEA20022A3A3FF2001242A0 /* SwiftUI.framework */; };
+		0F54BFFE2A3A4475006818F2 /* WestminsterChiefEnd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F54BFFD2A3A4475006818F2 /* WestminsterChiefEnd.swift */; };
+		0F54C0002A3A4477006818F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F54BFFF2A3A4477006818F2 /* Assets.xcassets */; };
+		0F54C0042A3A4477006818F2 /* WestminsterChiefEndExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 0F54BFF92A3A4475006818F2 /* WestminsterChiefEndExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0F54C00A2A3A47E3006818F2 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F54C0092A3A47E3006818F2 /* ComplicationController.swift */; };
+		0F83B0AD2AC21CA900F4A059 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 0F83B0AC2AC21CA900F4A059 /* Fonts */; };
+		0F83B0AE2AC21CA900F4A059 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 0F83B0AC2AC21CA900F4A059 /* Fonts */; };
+		0F83B0AF2AC21CA900F4A059 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 0F83B0AC2AC21CA900F4A059 /* Fonts */; };
+		0FEA1FF22A3A3932001242A0 /* wlc.json in Resources */ = {isa = PBXBuildFile; fileRef = 0FEA1FEF2A3A3930001242A0 /* wlc.json */; };
+		0FEA1FF42A3A3932001242A0 /* wsc.json in Resources */ = {isa = PBXBuildFile; fileRef = 0FEA1FF02A3A3931001242A0 /* wsc.json */; };
+		0FEA1FF62A3A3932001242A0 /* wcf.json in Resources */ = {isa = PBXBuildFile; fileRef = 0FEA1FF12A3A3931001242A0 /* wcf.json */; };
 		D805C4FC27A87307003A9AAF /* Proofs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D805C4FB27A87307003A9AAF /* Proofs.swift */; };
 		D80948EB2788D2B9001AC162 /* Westminster_StandardsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80948EA2788D2B9001AC162 /* Westminster_StandardsApp.swift */; };
 		D80948ED2788D2B9001AC162 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80948EC2788D2B9001AC162 /* ContentView.swift */; };
@@ -15,19 +32,6 @@
 		D80948FC2788D2BA001AC162 /* Westminster_StandardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80948FB2788D2BA001AC162 /* Westminster_StandardsTests.swift */; };
 		D80949062788D2BB001AC162 /* Westminster_StandardsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80949052788D2BB001AC162 /* Westminster_StandardsUITests.swift */; };
 		D80949082788D2BB001AC162 /* Westminster_StandardsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80949072788D2BB001AC162 /* Westminster_StandardsUITestsLaunchTests.swift */; };
-		D809490C2788D2BB001AC162 /* Westminster Standards WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D809490B2788D2BB001AC162 /* Westminster Standards WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		D80949112788D2BB001AC162 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D80949102788D2BB001AC162 /* Assets.xcassets */; };
-		D80949172788D2BC001AC162 /* Westminster Standards WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D80949162788D2BC001AC162 /* Westminster Standards WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		D809491C2788D2BC001AC162 /* Westminster_StandardsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809491B2788D2BC001AC162 /* Westminster_StandardsApp.swift */; };
-		D809491E2788D2BC001AC162 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809491D2788D2BC001AC162 /* ContentView.swift */; };
-		D80949202788D2BC001AC162 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809491F2788D2BC001AC162 /* NotificationController.swift */; };
-		D80949222788D2BC001AC162 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80949212788D2BC001AC162 /* NotificationView.swift */; };
-		D80949242788D2BC001AC162 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80949232788D2BC001AC162 /* ComplicationController.swift */; };
-		D80949262788D2BC001AC162 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D80949252788D2BC001AC162 /* Assets.xcassets */; };
-		D80949292788D2BC001AC162 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D80949282788D2BC001AC162 /* Preview Assets.xcassets */; };
-		D80949352788D2BD001AC162 /* Westminster_Standards_WatchKit_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80949342788D2BD001AC162 /* Westminster_Standards_WatchKit_AppTests.swift */; };
-		D809493F2788D2BD001AC162 /* Westminster_Standards_WatchKit_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809493E2788D2BD001AC162 /* Westminster_Standards_WatchKit_AppUITests.swift */; };
-		D80949412788D2BD001AC162 /* Westminster_Standards_WatchKit_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80949402788D2BD001AC162 /* Westminster_Standards_WatchKit_AppUITestsLaunchTests.swift */; };
 		D809495E2788D460001AC162 /* WcfSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809495D2788D460001AC162 /* WcfSection.swift */; };
 		D80949602788D5B1001AC162 /* WcfChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809495F2788D5B1001AC162 /* WcfChapter.swift */; };
 		D80949622788D64D001AC162 /* WCF.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80949612788D64D001AC162 /* WCF.swift */; };
@@ -45,9 +49,6 @@
 		D809499B278FC528001AC162 /* WscQA.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8094999278FC528001AC162 /* WscQA.swift */; };
 		D87199AE27931AF900F27816 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87199AD27931AF900F27816 /* Settings.swift */; };
 		D87199B02793237400F27816 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87199AF2793237400F27816 /* SettingsView.swift */; };
-		D87564A827A58DB200765DB7 /* wlc.json in Resources */ = {isa = PBXBuildFile; fileRef = D87564A527A58DB200765DB7 /* wlc.json */; };
-		D87564A927A58DB200765DB7 /* wsc.json in Resources */ = {isa = PBXBuildFile; fileRef = D87564A627A58DB200765DB7 /* wsc.json */; };
-		D87564AA27A58DB200765DB7 /* wcf.json in Resources */ = {isa = PBXBuildFile; fileRef = D87564A727A58DB200765DB7 /* wcf.json */; };
 		D89B891A278FC81E00A326FD /* JsonWLC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89B8916278FC6AD00A326FD /* JsonWLC.swift */; };
 		D89B891B278FC82100A326FD /* JsonWlcQA.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89B8917278FC6AD00A326FD /* JsonWlcQA.swift */; };
 		D89B891C278FC82E00A326FD /* WlcQA.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809499D278FC52B001AC162 /* WlcQA.swift */; };
@@ -59,6 +60,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0F54BFEF2A3A433D006818F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D80948DF2788D2B9001AC162 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0F54BFE32A3A433B006818F2;
+			remoteInfo = "WestminsterWatch Watch App";
+		};
+		0F54C0022A3A4477006818F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D80948DF2788D2B9001AC162 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0F54BFF82A3A4475006818F2;
+			remoteInfo = WestminsterChiefEndExtension;
+		};
 		D80948F82788D2BA001AC162 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D80948DF2788D2B9001AC162 /* Project object */;
@@ -73,46 +88,18 @@
 			remoteGlobalIDString = D80948E62788D2B9001AC162;
 			remoteInfo = "Westminster Standards";
 		};
-		D809490D2788D2BB001AC162 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D80948DF2788D2B9001AC162 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D809490A2788D2BB001AC162;
-			remoteInfo = "Westminster Standards WatchKit App";
-		};
-		D80949182788D2BC001AC162 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D80948DF2788D2B9001AC162 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D80949152788D2BC001AC162;
-			remoteInfo = "Westminster Standards WatchKit Extension";
-		};
-		D80949312788D2BD001AC162 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D80948DF2788D2B9001AC162 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D80949152788D2BC001AC162;
-			remoteInfo = "Westminster Standards WatchKit Extension";
-		};
-		D809493B2788D2BD001AC162 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D80948DF2788D2B9001AC162 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D809490A2788D2BB001AC162;
-			remoteInfo = "Westminster Standards WatchKit App";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		D80949472788D2BD001AC162 /* Embed App Extensions */ = {
+		0F54C0082A3A4477006818F2 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				D80949172788D2BC001AC162 /* Westminster Standards WatchKit Extension.appex in Embed App Extensions */,
+				0F54C0042A3A4477006818F2 /* WestminsterChiefEndExtension.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		D809494B2788D2BD001AC162 /* Embed Watch Content */ = {
@@ -121,7 +108,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				D809490C2788D2BB001AC162 /* Westminster Standards WatchKit App.app in Embed Watch Content */,
+				0F54BFF12A3A433D006818F2 /* WestminsterWatch Watch App.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -129,6 +116,23 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0F54BFE42A3A433B006818F2 /* WestminsterWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WestminsterWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F54BFE62A3A433B006818F2 /* WestminsterWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WestminsterWatchApp.swift; sourceTree = "<group>"; };
+		0F54BFE82A3A433B006818F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0F54BFEA2A3A433D006818F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0F54BFED2A3A433D006818F2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0F54BFF92A3A4475006818F2 /* WestminsterChiefEndExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WestminsterChiefEndExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F54BFFD2A3A4475006818F2 /* WestminsterChiefEnd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WestminsterChiefEnd.swift; sourceTree = "<group>"; };
+		0F54BFFF2A3A4477006818F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0F54C0012A3A4477006818F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "/Users/mrobertson/Code/iOS/westminster-ios/WestminsterChiefEnd/Info.plist"; sourceTree = "<absolute>"; };
+		0F54C0092A3A47E3006818F2 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		0F83B09D2AC20FFB00F4A059 /* Westminster-Standards-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Westminster-Standards-Info.plist"; path = "../Westminster-Standards-Info.plist"; sourceTree = "<group>"; };
+		0F83B0AC2AC21CA900F4A059 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
+		0FEA1FEF2A3A3930001242A0 /* wlc.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wlc.json; sourceTree = "<group>"; };
+		0FEA1FF02A3A3931001242A0 /* wsc.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wsc.json; sourceTree = "<group>"; };
+		0FEA1FF12A3A3931001242A0 /* wcf.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wcf.json; sourceTree = "<group>"; };
+		0FEA20002A3A3FF2001242A0 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		0FEA20022A3A3FF2001242A0 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		D805C4FB27A87307003A9AAF /* Proofs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Proofs.swift; sourceTree = "<group>"; };
 		D80948E72788D2B9001AC162 /* Westminster Standards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Westminster Standards.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D80948EA2788D2B9001AC162 /* Westminster_StandardsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Westminster_StandardsApp.swift; sourceTree = "<group>"; };
@@ -140,23 +144,6 @@
 		D80949012788D2BB001AC162 /* Westminster StandardsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Westminster StandardsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D80949052788D2BB001AC162 /* Westminster_StandardsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Westminster_StandardsUITests.swift; sourceTree = "<group>"; };
 		D80949072788D2BB001AC162 /* Westminster_StandardsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Westminster_StandardsUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		D809490B2788D2BB001AC162 /* Westminster Standards WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Westminster Standards WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D80949102788D2BB001AC162 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D80949162788D2BC001AC162 /* Westminster Standards WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Westminster Standards WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D809491B2788D2BC001AC162 /* Westminster_StandardsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Westminster_StandardsApp.swift; sourceTree = "<group>"; };
-		D809491D2788D2BC001AC162 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		D809491F2788D2BC001AC162 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
-		D80949212788D2BC001AC162 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
-		D80949232788D2BC001AC162 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
-		D80949252788D2BC001AC162 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D80949282788D2BC001AC162 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		D809492A2788D2BD001AC162 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D809492B2788D2BD001AC162 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		D80949302788D2BD001AC162 /* Westminster Standards WatchKit AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Westminster Standards WatchKit AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D80949342788D2BD001AC162 /* Westminster_Standards_WatchKit_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Westminster_Standards_WatchKit_AppTests.swift; sourceTree = "<group>"; };
-		D809493A2788D2BD001AC162 /* Westminster Standards WatchKit AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Westminster Standards WatchKit AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D809493E2788D2BD001AC162 /* Westminster_Standards_WatchKit_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Westminster_Standards_WatchKit_AppUITests.swift; sourceTree = "<group>"; };
-		D80949402788D2BD001AC162 /* Westminster_Standards_WatchKit_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Westminster_Standards_WatchKit_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D809495D2788D460001AC162 /* WcfSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WcfSection.swift; sourceTree = "<group>"; };
 		D809495F2788D5B1001AC162 /* WcfChapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WcfChapter.swift; sourceTree = "<group>"; };
 		D80949612788D64D001AC162 /* WCF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCF.swift; sourceTree = "<group>"; };
@@ -176,9 +163,6 @@
 		D809499E278FC52B001AC162 /* WLC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLC.swift; sourceTree = "<group>"; };
 		D87199AD27931AF900F27816 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		D87199AF2793237400F27816 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		D87564A527A58DB200765DB7 /* wlc.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = wlc.json; path = "../../../../../Desktop/confession_texts/with-proofs/wlc.json"; sourceTree = "<group>"; };
-		D87564A627A58DB200765DB7 /* wsc.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = wsc.json; path = "../../../../../Desktop/confession_texts/with-proofs/wsc.json"; sourceTree = "<group>"; };
-		D87564A727A58DB200765DB7 /* wcf.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = wcf.json; path = "../../../../../Desktop/confession_texts/with-proofs/wcf.json"; sourceTree = "<group>"; };
 		D89B8916278FC6AD00A326FD /* JsonWLC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonWLC.swift; sourceTree = "<group>"; };
 		D89B8917278FC6AD00A326FD /* JsonWlcQA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonWlcQA.swift; sourceTree = "<group>"; };
 		D89B891E278FC8D100A326FD /* WscView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WscView.swift; sourceTree = "<group>"; };
@@ -188,6 +172,22 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0F54BFE12A3A433B006818F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0F54BFF62A3A4475006818F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F54BFFB2A3A4475006818F2 /* SwiftUI.framework in Frameworks */,
+				0F54BFFA2A3A4475006818F2 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D80948E42788D2B9001AC162 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -209,40 +209,58 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D80949132788D2BC001AC162 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D809492D2788D2BD001AC162 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D80949372788D2BD001AC162 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F54BFE52A3A433B006818F2 /* WestminsterWatch Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				0F54BFE62A3A433B006818F2 /* WestminsterWatchApp.swift */,
+				0F54BFE82A3A433B006818F2 /* ContentView.swift */,
+				0F54BFEA2A3A433D006818F2 /* Assets.xcassets */,
+				0F54BFEC2A3A433D006818F2 /* Preview Content */,
+				0F54C0092A3A47E3006818F2 /* ComplicationController.swift */,
+			);
+			path = "WestminsterWatch Watch App";
+			sourceTree = "<group>";
+		};
+		0F54BFEC2A3A433D006818F2 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				0F54BFED2A3A433D006818F2 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0F54BFFC2A3A4475006818F2 /* WestminsterChiefEnd */ = {
+			isa = PBXGroup;
+			children = (
+				0F54BFFD2A3A4475006818F2 /* WestminsterChiefEnd.swift */,
+				0F54BFFF2A3A4477006818F2 /* Assets.xcassets */,
+				0F54C0012A3A4477006818F2 /* Info.plist */,
+			);
+			path = WestminsterChiefEnd;
+			sourceTree = "<group>";
+		};
+		0FEA1FFF2A3A3FF2001242A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0FEA20002A3A3FF2001242A0 /* WidgetKit.framework */,
+				0FEA20022A3A3FF2001242A0 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D80948DE2788D2B9001AC162 = {
 			isa = PBXGroup;
 			children = (
+				0F83B0AC2AC21CA900F4A059 /* Fonts */,
 				D80948E92788D2B9001AC162 /* Westminster Standards */,
 				D80948FA2788D2BA001AC162 /* Westminster StandardsTests */,
 				D80949042788D2BB001AC162 /* Westminster StandardsUITests */,
-				D809490F2788D2BB001AC162 /* Westminster Standards WatchKit App */,
-				D809491A2788D2BC001AC162 /* Westminster Standards WatchKit Extension */,
-				D80949332788D2BD001AC162 /* Westminster Standards WatchKit AppTests */,
-				D809493D2788D2BD001AC162 /* Westminster Standards WatchKit AppUITests */,
+				0F54BFE52A3A433B006818F2 /* WestminsterWatch Watch App */,
+				0F54BFFC2A3A4475006818F2 /* WestminsterChiefEnd */,
+				0FEA1FFF2A3A3FF2001242A0 /* Frameworks */,
 				D80948E82788D2B9001AC162 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -253,10 +271,8 @@
 				D80948E72788D2B9001AC162 /* Westminster Standards.app */,
 				D80948F72788D2BA001AC162 /* Westminster StandardsTests.xctest */,
 				D80949012788D2BB001AC162 /* Westminster StandardsUITests.xctest */,
-				D809490B2788D2BB001AC162 /* Westminster Standards WatchKit App.app */,
-				D80949162788D2BC001AC162 /* Westminster Standards WatchKit Extension.appex */,
-				D80949302788D2BD001AC162 /* Westminster Standards WatchKit AppTests.xctest */,
-				D809493A2788D2BD001AC162 /* Westminster Standards WatchKit AppUITests.xctest */,
+				0F54BFE42A3A433B006818F2 /* WestminsterWatch Watch App.app */,
+				0F54BFF92A3A4475006818F2 /* WestminsterChiefEndExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -264,6 +280,7 @@
 		D80948E92788D2B9001AC162 /* Westminster Standards */ = {
 			isa = PBXGroup;
 			children = (
+				0F83B09D2AC20FFB00F4A059 /* Westminster-Standards-Info.plist */,
 				D809495B2788D36F001AC162 /* Domain */,
 				D80949682788DB14001AC162 /* Data */,
 				D809497227892DA4001AC162 /* UI */,
@@ -297,55 +314,6 @@
 				D80949072788D2BB001AC162 /* Westminster_StandardsUITestsLaunchTests.swift */,
 			);
 			path = "Westminster StandardsUITests";
-			sourceTree = "<group>";
-		};
-		D809490F2788D2BB001AC162 /* Westminster Standards WatchKit App */ = {
-			isa = PBXGroup;
-			children = (
-				D80949102788D2BB001AC162 /* Assets.xcassets */,
-			);
-			path = "Westminster Standards WatchKit App";
-			sourceTree = "<group>";
-		};
-		D809491A2788D2BC001AC162 /* Westminster Standards WatchKit Extension */ = {
-			isa = PBXGroup;
-			children = (
-				D809491B2788D2BC001AC162 /* Westminster_StandardsApp.swift */,
-				D809491D2788D2BC001AC162 /* ContentView.swift */,
-				D809491F2788D2BC001AC162 /* NotificationController.swift */,
-				D80949212788D2BC001AC162 /* NotificationView.swift */,
-				D80949232788D2BC001AC162 /* ComplicationController.swift */,
-				D80949252788D2BC001AC162 /* Assets.xcassets */,
-				D809492A2788D2BD001AC162 /* Info.plist */,
-				D809492B2788D2BD001AC162 /* PushNotificationPayload.apns */,
-				D80949272788D2BC001AC162 /* Preview Content */,
-			);
-			path = "Westminster Standards WatchKit Extension";
-			sourceTree = "<group>";
-		};
-		D80949272788D2BC001AC162 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				D80949282788D2BC001AC162 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		D80949332788D2BD001AC162 /* Westminster Standards WatchKit AppTests */ = {
-			isa = PBXGroup;
-			children = (
-				D80949342788D2BD001AC162 /* Westminster_Standards_WatchKit_AppTests.swift */,
-			);
-			path = "Westminster Standards WatchKit AppTests";
-			sourceTree = "<group>";
-		};
-		D809493D2788D2BD001AC162 /* Westminster Standards WatchKit AppUITests */ = {
-			isa = PBXGroup;
-			children = (
-				D809493E2788D2BD001AC162 /* Westminster_Standards_WatchKit_AppUITests.swift */,
-				D80949402788D2BD001AC162 /* Westminster_Standards_WatchKit_AppUITestsLaunchTests.swift */,
-			);
-			path = "Westminster Standards WatchKit AppUITests";
 			sourceTree = "<group>";
 		};
 		D809495B2788D36F001AC162 /* Domain */ = {
@@ -382,9 +350,9 @@
 		D80949682788DB14001AC162 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				D87564A727A58DB200765DB7 /* wcf.json */,
-				D87564A527A58DB200765DB7 /* wlc.json */,
-				D87564A627A58DB200765DB7 /* wsc.json */,
+				0FEA1FF12A3A3931001242A0 /* wcf.json */,
+				0FEA1FEF2A3A3930001242A0 /* wlc.json */,
+				0FEA1FF02A3A3931001242A0 /* wsc.json */,
 				D80949692788DB4D001AC162 /* Model */,
 			);
 			path = Data;
@@ -474,6 +442,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0F54BFE32A3A433B006818F2 /* WestminsterWatch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0F54BFF22A3A433D006818F2 /* Build configuration list for PBXNativeTarget "WestminsterWatch Watch App" */;
+			buildPhases = (
+				0F54BFE02A3A433B006818F2 /* Sources */,
+				0F54BFE12A3A433B006818F2 /* Frameworks */,
+				0F54BFE22A3A433B006818F2 /* Resources */,
+				0F54C0082A3A4477006818F2 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0F54C0032A3A4477006818F2 /* PBXTargetDependency */,
+			);
+			name = "WestminsterWatch Watch App";
+			productName = "WestminsterWatch Watch App";
+			productReference = 0F54BFE42A3A433B006818F2 /* WestminsterWatch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0F54BFF82A3A4475006818F2 /* WestminsterChiefEndExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0F54C0052A3A4477006818F2 /* Build configuration list for PBXNativeTarget "WestminsterChiefEndExtension" */;
+			buildPhases = (
+				0F54BFF52A3A4475006818F2 /* Sources */,
+				0F54BFF62A3A4475006818F2 /* Frameworks */,
+				0F54BFF72A3A4475006818F2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WestminsterChiefEndExtension;
+			productName = WestminsterChiefEndExtension;
+			productReference = 0F54BFF92A3A4475006818F2 /* WestminsterChiefEndExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		D80948E62788D2B9001AC162 /* Westminster Standards */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D809494C2788D2BD001AC162 /* Build configuration list for PBXNativeTarget "Westminster Standards" */;
@@ -486,7 +490,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				D809490E2788D2BB001AC162 /* PBXTargetDependency */,
+				0F54BFF02A3A433D006818F2 /* PBXTargetDependency */,
 			);
 			name = "Westminster Standards";
 			productName = "Westminster Standards";
@@ -529,76 +533,6 @@
 			productReference = D80949012788D2BB001AC162 /* Westminster StandardsUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		D809490A2788D2BB001AC162 /* Westminster Standards WatchKit App */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D80949482788D2BD001AC162 /* Build configuration list for PBXNativeTarget "Westminster Standards WatchKit App" */;
-			buildPhases = (
-				D80949092788D2BB001AC162 /* Resources */,
-				D80949472788D2BD001AC162 /* Embed App Extensions */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D80949192788D2BC001AC162 /* PBXTargetDependency */,
-			);
-			name = "Westminster Standards WatchKit App";
-			productName = "Westminster Standards WatchKit App";
-			productReference = D809490B2788D2BB001AC162 /* Westminster Standards WatchKit App.app */;
-			productType = "com.apple.product-type.application.watchapp2";
-		};
-		D80949152788D2BC001AC162 /* Westminster Standards WatchKit Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D80949442788D2BD001AC162 /* Build configuration list for PBXNativeTarget "Westminster Standards WatchKit Extension" */;
-			buildPhases = (
-				D80949122788D2BC001AC162 /* Sources */,
-				D80949132788D2BC001AC162 /* Frameworks */,
-				D80949142788D2BC001AC162 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Westminster Standards WatchKit Extension";
-			productName = "Westminster Standards WatchKit Extension";
-			productReference = D80949162788D2BC001AC162 /* Westminster Standards WatchKit Extension.appex */;
-			productType = "com.apple.product-type.watchkit2-extension";
-		};
-		D809492F2788D2BD001AC162 /* Westminster Standards WatchKit AppTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D80949552788D2BD001AC162 /* Build configuration list for PBXNativeTarget "Westminster Standards WatchKit AppTests" */;
-			buildPhases = (
-				D809492C2788D2BD001AC162 /* Sources */,
-				D809492D2788D2BD001AC162 /* Frameworks */,
-				D809492E2788D2BD001AC162 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D80949322788D2BD001AC162 /* PBXTargetDependency */,
-			);
-			name = "Westminster Standards WatchKit AppTests";
-			productName = "Westminster Standards WatchKit AppTests";
-			productReference = D80949302788D2BD001AC162 /* Westminster Standards WatchKit AppTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		D80949392788D2BD001AC162 /* Westminster Standards WatchKit AppUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D80949582788D2BD001AC162 /* Build configuration list for PBXNativeTarget "Westminster Standards WatchKit AppUITests" */;
-			buildPhases = (
-				D80949362788D2BD001AC162 /* Sources */,
-				D80949372788D2BD001AC162 /* Frameworks */,
-				D80949382788D2BD001AC162 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D809493C2788D2BD001AC162 /* PBXTargetDependency */,
-			);
-			name = "Westminster Standards WatchKit AppUITests";
-			productName = "Westminster Standards WatchKit AppUITests";
-			productReference = D809493A2788D2BD001AC162 /* Westminster Standards WatchKit AppUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -606,9 +540,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1300;
+				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1300;
 				TargetAttributes = {
+					0F54BFE32A3A433B006818F2 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					0F54BFF82A3A4475006818F2 = {
+						CreatedOnToolsVersion = 14.3;
+					};
 					D80948E62788D2B9001AC162 = {
 						CreatedOnToolsVersion = 13.0;
 					};
@@ -619,20 +559,6 @@
 					D80949002788D2BB001AC162 = {
 						CreatedOnToolsVersion = 13.0;
 						TestTargetID = D80948E62788D2B9001AC162;
-					};
-					D809490A2788D2BB001AC162 = {
-						CreatedOnToolsVersion = 13.0;
-					};
-					D80949152788D2BC001AC162 = {
-						CreatedOnToolsVersion = 13.0;
-					};
-					D809492F2788D2BD001AC162 = {
-						CreatedOnToolsVersion = 13.0;
-						TestTargetID = D80949152788D2BC001AC162;
-					};
-					D80949392788D2BD001AC162 = {
-						CreatedOnToolsVersion = 13.0;
-						TestTargetID = D809490A2788D2BB001AC162;
 					};
 				};
 			};
@@ -652,24 +578,42 @@
 				D80948E62788D2B9001AC162 /* Westminster Standards */,
 				D80948F62788D2BA001AC162 /* Westminster StandardsTests */,
 				D80949002788D2BB001AC162 /* Westminster StandardsUITests */,
-				D809490A2788D2BB001AC162 /* Westminster Standards WatchKit App */,
-				D80949152788D2BC001AC162 /* Westminster Standards WatchKit Extension */,
-				D809492F2788D2BD001AC162 /* Westminster Standards WatchKit AppTests */,
-				D80949392788D2BD001AC162 /* Westminster Standards WatchKit AppUITests */,
+				0F54BFE32A3A433B006818F2 /* WestminsterWatch Watch App */,
+				0F54BFF82A3A4475006818F2 /* WestminsterChiefEndExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0F54BFE22A3A433B006818F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F83B0AE2AC21CA900F4A059 /* Fonts in Resources */,
+				0F54BFEE2A3A433D006818F2 /* Preview Assets.xcassets in Resources */,
+				0F54BFEB2A3A433D006818F2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0F54BFF72A3A4475006818F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F54C0002A3A4477006818F2 /* Assets.xcassets in Resources */,
+				0F83B0AF2AC21CA900F4A059 /* Fonts in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D80948E52788D2B9001AC162 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D87564AA27A58DB200765DB7 /* wcf.json in Resources */,
+				0FEA1FF62A3A3932001242A0 /* wcf.json in Resources */,
+				0FEA1FF42A3A3932001242A0 /* wsc.json in Resources */,
 				D80948F22788D2BA001AC162 /* Preview Assets.xcassets in Resources */,
-				D87564A927A58DB200765DB7 /* wsc.json in Resources */,
+				0FEA1FF22A3A3932001242A0 /* wlc.json in Resources */,
 				D80948EF2788D2BA001AC162 /* Assets.xcassets in Resources */,
-				D87564A827A58DB200765DB7 /* wlc.json in Resources */,
+				0F83B0AD2AC21CA900F4A059 /* Fonts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,40 +631,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D80949092788D2BB001AC162 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D80949112788D2BB001AC162 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D80949142788D2BC001AC162 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D80949292788D2BC001AC162 /* Preview Assets.xcassets in Resources */,
-				D80949262788D2BC001AC162 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D809492E2788D2BD001AC162 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D80949382788D2BD001AC162 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0F54BFE02A3A433B006818F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F54BFE92A3A433B006818F2 /* ContentView.swift in Sources */,
+				0F54BFE72A3A433B006818F2 /* WestminsterWatchApp.swift in Sources */,
+				0F54C00A2A3A47E3006818F2 /* ComplicationController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0F54BFF52A3A4475006818F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F54BFFE2A3A4475006818F2 /* WestminsterChiefEnd.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D80948E32788D2B9001AC162 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -773,38 +704,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D80949122788D2BC001AC162 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D80949202788D2BC001AC162 /* NotificationController.swift in Sources */,
-				D809491E2788D2BC001AC162 /* ContentView.swift in Sources */,
-				D80949242788D2BC001AC162 /* ComplicationController.swift in Sources */,
-				D809491C2788D2BC001AC162 /* Westminster_StandardsApp.swift in Sources */,
-				D80949222788D2BC001AC162 /* NotificationView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D809492C2788D2BD001AC162 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D80949352788D2BD001AC162 /* Westminster_Standards_WatchKit_AppTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D80949362788D2BD001AC162 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D80949412788D2BD001AC162 /* Westminster_Standards_WatchKit_AppUITestsLaunchTests.swift in Sources */,
-				D809493F2788D2BD001AC162 /* Westminster_Standards_WatchKit_AppUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0F54BFF02A3A433D006818F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0F54BFE32A3A433B006818F2 /* WestminsterWatch Watch App */;
+			targetProxy = 0F54BFEF2A3A433D006818F2 /* PBXContainerItemProxy */;
+		};
+		0F54C0032A3A4477006818F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0F54BFF82A3A4475006818F2 /* WestminsterChiefEndExtension */;
+			targetProxy = 0F54C0022A3A4477006818F2 /* PBXContainerItemProxy */;
+		};
 		D80948F92788D2BA001AC162 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D80948E62788D2B9001AC162 /* Westminster Standards */;
@@ -815,29 +727,137 @@
 			target = D80948E62788D2B9001AC162 /* Westminster Standards */;
 			targetProxy = D80949022788D2BB001AC162 /* PBXContainerItemProxy */;
 		};
-		D809490E2788D2BB001AC162 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D809490A2788D2BB001AC162 /* Westminster Standards WatchKit App */;
-			targetProxy = D809490D2788D2BB001AC162 /* PBXContainerItemProxy */;
-		};
-		D80949192788D2BC001AC162 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D80949152788D2BC001AC162 /* Westminster Standards WatchKit Extension */;
-			targetProxy = D80949182788D2BC001AC162 /* PBXContainerItemProxy */;
-		};
-		D80949322788D2BD001AC162 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D80949152788D2BC001AC162 /* Westminster Standards WatchKit Extension */;
-			targetProxy = D80949312788D2BD001AC162 /* PBXContainerItemProxy */;
-		};
-		D809493C2788D2BD001AC162 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D809490A2788D2BB001AC162 /* Westminster Standards WatchKit App */;
-			targetProxy = D809493B2788D2BD001AC162 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		0F54BFF32A3A433D006818F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WestminsterWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = YUCN7Q2M34;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = WestminsterWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.mattrobertson.Westminster-Standards";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mattrobertson.Westminster-Standards.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		0F54BFF42A3A433D006818F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WestminsterWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = YUCN7Q2M34;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = WestminsterWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.mattrobertson.Westminster-Standards";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mattrobertson.Westminster-Standards.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
+		0F54C0062A3A4477006818F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YUCN7Q2M34;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WestminsterChiefEnd/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WestminsterChiefEnd;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mattrobertson.Westminster-Standards.watchkitapp.WestminsterChiefEnd";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		0F54C0072A3A4477006818F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YUCN7Q2M34;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WestminsterChiefEnd/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WestminsterChiefEnd;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mattrobertson.Westminster-Standards.watchkitapp.WestminsterChiefEnd";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
 		D80949422788D2BD001AC162 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -949,127 +969,10 @@
 			};
 			name = Release;
 		};
-		D80949452788D2BD001AC162 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Westminster Standards WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = YUCN7Q2M34;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Westminster Standards WatchKit Extension/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Westminster Standards WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mattrobertson.Westminster-Standards.watchkitapp.watchkitextension";
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 8.0;
-			};
-			name = Debug;
-		};
-		D80949462788D2BD001AC162 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Westminster Standards WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = YUCN7Q2M34;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Westminster Standards WatchKit Extension/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Westminster Standards WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mattrobertson.Westminster-Standards.watchkitapp.watchkitextension";
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 8.0;
-			};
-			name = Release;
-		};
-		D80949492788D2BD001AC162 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YUCN7Q2M34;
-				GENERATE_INFOPLIST_FILE = YES;
-				IBSC_MODULE = Westminster_Standards_WatchKit_Extension;
-				INFOPLIST_KEY_CFBundleDisplayName = "Westminster Standards WatchKit App";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.mattrobertson.Westminster-Standards";
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mattrobertson.Westminster-Standards.watchkitapp";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 8.0;
-			};
-			name = Debug;
-		};
-		D809494A2788D2BD001AC162 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YUCN7Q2M34;
-				GENERATE_INFOPLIST_FILE = YES;
-				IBSC_MODULE = Westminster_Standards_WatchKit_Extension;
-				INFOPLIST_KEY_CFBundleDisplayName = "Westminster Standards WatchKit App";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.mattrobertson.Westminster-Standards";
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mattrobertson.Westminster-Standards.watchkitapp";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 8.0;
-			};
-			name = Release;
-		};
 		D809494D2788D2BD001AC162 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -1078,12 +981,13 @@
 				DEVELOPMENT_TEAM = YUCN7Q2M34;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Westminster-Standards-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1101,6 +1005,7 @@
 		D809494E2788D2BD001AC162 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -1109,12 +1014,13 @@
 				DEVELOPMENT_TEAM = YUCN7Q2M34;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Westminster-Standards-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1234,134 +1140,32 @@
 			};
 			name = Release;
 		};
-		D80949562788D2BD001AC162 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YUCN7Q2M34;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mattrobertson.Westminster-Standards-WatchKit-AppTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Westminster Standards WatchKit Extension.appex/Westminster Standards WatchKit Extension";
-				WATCHOS_DEPLOYMENT_TARGET = 8.0;
-			};
-			name = Debug;
-		};
-		D80949572788D2BD001AC162 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YUCN7Q2M34;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mattrobertson.Westminster-Standards-WatchKit-AppTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Westminster Standards WatchKit Extension.appex/Westminster Standards WatchKit Extension";
-				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 8.0;
-			};
-			name = Release;
-		};
-		D80949592788D2BD001AC162 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YUCN7Q2M34;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mattrobertson.Westminster-Standards-WatchKit-AppUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				TEST_TARGET_NAME = "Westminster Standards WatchKit App";
-				WATCHOS_DEPLOYMENT_TARGET = 8.0;
-			};
-			name = Debug;
-		};
-		D809495A2788D2BD001AC162 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YUCN7Q2M34;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mattrobertson.Westminster-Standards-WatchKit-AppUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				TEST_TARGET_NAME = "Westminster Standards WatchKit App";
-				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 8.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0F54BFF22A3A433D006818F2 /* Build configuration list for PBXNativeTarget "WestminsterWatch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0F54BFF32A3A433D006818F2 /* Debug */,
+				0F54BFF42A3A433D006818F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0F54C0052A3A4477006818F2 /* Build configuration list for PBXNativeTarget "WestminsterChiefEndExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0F54C0062A3A4477006818F2 /* Debug */,
+				0F54C0072A3A4477006818F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D80948E22788D2B9001AC162 /* Build configuration list for PBXProject "Westminster Standards" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D80949422788D2BD001AC162 /* Debug */,
 				D80949432788D2BD001AC162 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D80949442788D2BD001AC162 /* Build configuration list for PBXNativeTarget "Westminster Standards WatchKit Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D80949452788D2BD001AC162 /* Debug */,
-				D80949462788D2BD001AC162 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D80949482788D2BD001AC162 /* Build configuration list for PBXNativeTarget "Westminster Standards WatchKit App" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D80949492788D2BD001AC162 /* Debug */,
-				D809494A2788D2BD001AC162 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1389,24 +1193,6 @@
 			buildConfigurations = (
 				D80949532788D2BD001AC162 /* Debug */,
 				D80949542788D2BD001AC162 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D80949552788D2BD001AC162 /* Build configuration list for PBXNativeTarget "Westminster Standards WatchKit AppTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D80949562788D2BD001AC162 /* Debug */,
-				D80949572788D2BD001AC162 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D80949582788D2BD001AC162 /* Build configuration list for PBXNativeTarget "Westminster Standards WatchKit AppUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D80949592788D2BD001AC162 /* Debug */,
-				D809495A2788D2BD001AC162 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

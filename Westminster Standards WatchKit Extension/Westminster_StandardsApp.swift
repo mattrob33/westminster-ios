@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-@main
 struct Westminster_StandardsApp: App {
     @SceneBuilder var body: some Scene {
         WindowGroup {

@@ -21,6 +21,17 @@ struct WcfView: View {
     @State private var showingProofsAlert = false
 
     @EnvironmentObject var settings: Settings
+    
+    private func romanNumeral(_ int: Int) -> String {
+        switch (int) {
+        case 1: return "I"
+        case 2: return "II"
+        case 3: return "III"
+        case 4: return "IV"
+        case 5: return "V"
+        default: return ""
+        }
+    }
 
     var body: some View {
         ScrollView {
@@ -31,14 +42,10 @@ struct WcfView: View {
                         VStack(alignment: .leading) {
                             let chapter = wcf.chapters[i]
                             
-                            Text("Chapter \(i + 1)")
-                                .font(.system(size: CGFloat(Double(settings.fontSize) * 1.2), weight: .bold, design: .serif))
+                            Text("\(romanNumeral(i+1)). \(chapter.title)")
+                                .font(.custom("EBGaramond-Medium", size: CGFloat(Double(settings.fontSize) * 1.1)))
                                 .frame(maxWidth: .infinity, alignment: .center)
                                 .padding(.top)
-                            
-                            Text(chapter.title)
-                                .font(.system(size: CGFloat(Double(settings.fontSize) * 1.1), weight: .bold, design: .serif))
-                                .frame(maxWidth: .infinity, alignment: .center)
                             
                             ForEach(chapter.sections.indices) { j in
                                 let section = chapter.sections[j]
@@ -54,6 +61,7 @@ struct WcfView: View {
                                             proofRefs = proofs!.refs.joined(separator: "\n")
                                             showingProofsAlert = true
                                         })
+                                        .font(.custom("EBGaramond-Regular", size: CGFloat(settings.fontSize)))
                                     }
                                 .frame(maxWidth: .infinity)
                                 
@@ -98,7 +106,7 @@ struct SectionPartText: View {
         let textColor = isFootnote ? UIColor.blue : UIColor.textColor
  
         Text(text)
-                .font(.system(size: CGFloat(fontSize), design: .serif))
+                .font(Font.custom("EBGaramond-Regular", size: CGFloat(fontSize)))
                 .foregroundColor(Color(textColor))
                 .onTapGesture {
                     if isFootnote {
@@ -117,7 +125,7 @@ func buildSectionPartText(text: String, normalFontSize: Int, onTap: @escaping (S
     let textColor = isFootnote ? UIColor.blue : UIColor.textColor
 
     return Text(text)
-            .font(.system(size: CGFloat(fontSize), design: .serif))
+            .font(.custom("EBGaramond-Regular", size: CGFloat(fontSize)))
             .foregroundColor(Color(textColor))
             .onTapGesture {
                 if isFootnote {
@@ -130,6 +138,8 @@ func buildSectionPartText(text: String, normalFontSize: Int, onTap: @escaping (S
 func buildProofsText(_ proofs: Proofs) -> Text {
     let text = proofs.refs.joined(separator: "; ")
     return Text("[\(proofs.letter)] \(text)")
+        .font(.custom("EBGaramond-Regular", size: CGFloat(18)))
+        .foregroundColor(Color(red: 0.67, green: 0.62, blue: 0.44))
 }
 
 extension String {

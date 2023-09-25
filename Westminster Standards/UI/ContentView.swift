@@ -95,30 +95,65 @@ struct ContentView: View {
                     wscView
                 }
                 
-                HStack {
-                    Spacer()
-                    Image(systemName: "book")
-                        .onTapGesture {
-                            sheet = .content
-                            isShowingSheet = true
+                VStack {
+                    Divider()
+                    
+                    HStack {
+                        Spacer()
+                        
+                        VStack {
+                            Image(systemName: "book")
+                                .resizable()
+                                .frame(width: 24.0, height: 24.0)
+                                .onTapGesture {
+                                    sheet = .content
+                                    isShowingSheet = true
+                                }
+                            
+                            Text("Contents")
+                                .font(.system(size: 10))
+                                .padding(.top, 0.2)
                         }
-                    Spacer()
-                    Image(systemName: "magnifyingglass")
-                        .onTapGesture {
-                            sheet = .search
-                            isShowingSheet = true
+                        
+                        Spacer()
+                        Spacer()
+                        
+                        VStack {
+                            Image(systemName: "magnifyingglass")
+                                .resizable()
+                                .frame(width: 24.0, height: 24.0)
+                                .onTapGesture {
+                                    sheet = .search
+                                    isShowingSheet = true
+                                }
+                            
+                            Text("Search")
+                                .font(.system(size: 10))
+                                .padding(.top, 0.2)
                         }
-                    Spacer()
-                    Image(systemName: "gearshape")
-                        .onTapGesture {
-                            sheet = .settings
-                            isShowingSheet = true
+                        
+                        Spacer()
+                        Spacer()
+                        
+                        VStack {
+                            Image(systemName: "gearshape")
+                                .resizable()
+                                .frame(width: 24.0, height: 24.0)
+                                .onTapGesture {
+                                    sheet = .settings
+                                    isShowingSheet = true
+                                }
+                            
+                            Text("Settings")
+                                .font(.system(size: 10))
+                                .padding(.top, 0.2)
                         }
-                    Spacer()
+                        
+                        Spacer()
+                    }
+                    .padding(.top, 4)
                 }
-                .padding(.top)
-                .padding(.bottom)
-                .background(.background)
+                .background(Color(red: 0.13, green: 0.13, blue: 0.13))
             }
             .sheet(
                 isPresented: $isShowingSheet,

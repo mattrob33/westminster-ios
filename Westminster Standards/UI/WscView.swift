@@ -21,18 +21,21 @@ struct WscView: View {
             ScrollViewReader { proxy in
                 
                 VStack(alignment: .leading) {
+                    
                     ForEach(wsc.questions.indices) { i in
                         VStack(alignment: .leading) {
                             let qa = wsc.questions[i]
                             
                             Text("Q\(i + 1). \(qa.question)")
-                                .font(.system(size: 20, weight: .bold, design: .serif))
+                                .font(.custom("EBGaramond-Bold", size: 20))
+                                .foregroundColor(Color(red: 0.83, green: 0.84, blue: 0.85))
                                 .frame(maxWidth: .infinity, alignment: .leading)
                             
                             Spacer()
                             
                             Text(qa.answer)
-                                .font(.system(size: 20, design: .serif))
+                                .font(.custom("EBGaramond-Regular", size: 20))
+                                .foregroundColor(Color(red: 0.83, green: 0.84, blue: 0.85))
                                 .frame(maxWidth: .infinity, alignment: .leading)
                             
                             Spacer()
@@ -54,8 +57,10 @@ struct WscView: View {
                 }
             }
         }
+        .padding(.top, 20)
         .padding(.leading)
         .padding(.trailing)
+        .background(Color(red: 0.16, green: 0.16, blue: 0.17))
         .onChange(of: scrollPosition) { target in
             scrollProxy?.scrollTo(target, anchor: .top)
         }
