@@ -20,6 +20,7 @@ struct ContentView: View {
     @State var sheet: Sheet = .content
 
     @EnvironmentObject var settings: Settings
+    @EnvironmentObject var theme: Theme
 
     var body: some View {
         
@@ -39,18 +40,21 @@ struct ContentView: View {
                 scrollPosition: $contentLocation.location
             )
             .environmentObject(settings)
+            .environmentObject(theme)
             
             let wlcView = CatechismView(
                 catechism: wlc,
                 scrollPosition: $contentLocation.location
             )
             .environmentObject(settings)
+            .environmentObject(theme)
             
             let wscView = CatechismView(
                 catechism: wsc,
                 scrollPosition: $contentLocation.location
             )
             .environmentObject(settings)
+            .environmentObject(theme)
             
             let tocView = TableOfContentsView(
                 content: contentLocation.content,
@@ -79,10 +83,13 @@ struct ContentView: View {
                 }
             )
             .environmentObject(settings)
+            .environmentObject(theme)
             
             let settingsView = SettingsView(
                 fontSize: settings.fontSize
-            ).environmentObject(settings)
+            )
+            .environmentObject(settings)
+            .environmentObject(theme)
             
             ZStack(alignment: .bottom) {
                 
@@ -104,7 +111,7 @@ struct ContentView: View {
                         VStack {
                             Image(systemName: "book")
                                 .resizable()
-                                .foregroundColor(.gray)
+                                .foregroundColor(theme.subduedIconColor)
                                 .frame(width: 24.0, height: 24.0)
                                 .onTapGesture {
                                     sheet = .content
@@ -113,7 +120,7 @@ struct ContentView: View {
                             
                             Text("Contents")
                                 .font(.system(size: 10))
-                                .foregroundColor(.gray)
+                                .foregroundColor(theme.subduedIconColor)
                                 .padding(.top, 0.2)
                         }
                         
@@ -123,7 +130,7 @@ struct ContentView: View {
                         VStack {
                             Image(systemName: "magnifyingglass")
                                 .resizable()
-                                .foregroundColor(.gray)
+                                .foregroundColor(theme.subduedIconColor)
                                 .frame(width: 24.0, height: 24.0)
                                 .onTapGesture {
                                     sheet = .search
@@ -132,7 +139,7 @@ struct ContentView: View {
                             
                             Text("Search")
                                 .font(.system(size: 10))
-                                .foregroundColor(.gray)
+                                .foregroundColor(theme.subduedIconColor)
                                 .padding(.top, 0.2)
                         }
                         
@@ -142,7 +149,7 @@ struct ContentView: View {
                         VStack {
                             Image(systemName: "gearshape")
                                 .resizable()
-                                .foregroundColor(.gray)
+                                .foregroundColor(theme.subduedIconColor)
                                 .frame(width: 24.0, height: 24.0)
                                 .onTapGesture {
                                     sheet = .settings
@@ -151,7 +158,7 @@ struct ContentView: View {
                             
                             Text("Settings")
                                 .font(.system(size: 10))
-                                .foregroundColor(.gray)
+                                .foregroundColor(theme.subduedIconColor)
                                 .padding(.top, 0.2)
                         }
                         
@@ -159,7 +166,7 @@ struct ContentView: View {
                     }
                     .padding(.top, 4)
                 }
-                .background(Color(red: 0.13, green: 0.13, blue: 0.13))
+                .background(theme.backgroundAccentColor)
             }
             .sheet(
                 isPresented: $isShowingSheet,

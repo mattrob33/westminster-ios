@@ -15,6 +15,8 @@ struct CatechismView: View {
 
     @Binding var scrollPosition: Int
     @State private var scrollProxy: ScrollViewProxy? = nil
+    
+    @EnvironmentObject var theme: Theme
 
     var body: some View {
         ScrollView {
@@ -48,7 +50,7 @@ struct CatechismView: View {
         .padding(.top, 20)
         .padding(.leading)
         .padding(.trailing)
-        .background(Color.themedBackground)
+        .background(theme.backgroundColor)
         .edgesIgnoringSafeArea(.all)
         .onChange(of: scrollPosition) { target in
             scrollProxy?.scrollTo(target, anchor: .top)

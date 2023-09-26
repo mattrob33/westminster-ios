@@ -10,6 +10,8 @@ import SwiftUI
 struct ProofsView: View {
 
     let proofs: [Proofs]
+    
+    @EnvironmentObject var theme: Theme
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -24,8 +26,8 @@ struct ProofsView: View {
     private func buildProofsText(_ proofs: Proofs) -> some View {
         let text = proofs.refs.joined(separator: "; ")
         Text("\(proofs.number). \(text)")
-            .appFont(size: 18)
-            .foregroundColor(.gold)
+            .font(theme.bodyFont)
+            .foregroundColor(theme.accentColor)
     }
 
 }

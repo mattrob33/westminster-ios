@@ -11,6 +11,8 @@ struct TableOfContentsView: View {
     
     @State var content: WestminsterContent
     
+    @EnvironmentObject var theme: Theme
+    
     var wcf: WCF
     var wlc: WLC
     var wsc: WSC
@@ -58,7 +60,7 @@ struct TableOfContentsView: View {
                 
                 Text("Done")
                     .font(.system(size: 16, weight: .bold))
-                    .foregroundColor(.gold)
+                    .foregroundColor(theme.accentColor)
                     .onTapGesture {
                         onTapDone()
                     }
@@ -86,6 +88,6 @@ struct TableOfContentsView: View {
                 wscView
             }
         }
-        .background(Color.themedBackground)
+        .background(theme.backgroundColor)
     }
 }

@@ -21,6 +21,7 @@ struct WcfView: View {
     @State private var showingProofsAlert = false
 
     @EnvironmentObject var settings: Settings
+    @EnvironmentObject var theme: Theme
 
     var body: some View {
         ScrollView {
@@ -33,12 +34,14 @@ struct WcfView: View {
                             
                             Text("\(romanNumeral(i+1)). \(chapter.title)")
                                 .font(.custom("EBGaramond-Medium", size: CGFloat(Double(settings.fontSize) * 1.1)))
+                                .foregroundColor(theme.primaryTextColor)
                                 .frame(maxWidth: .infinity, alignment: .center)
                                 .padding(.vertical)
-                            
+
                             ForEach(chapter.sections.indices) { j in
                                 let section = chapter.sections[j]
                                 Section(section: section)
+                                    .environmentObject(theme)
                                 ProofsView(proofs: section.proofs)
                                     .padding(.bottom, 24)
                             }
@@ -54,7 +57,7 @@ struct WcfView: View {
             }
         }
         .padding(.leading).padding(.trailing)
-        .background(Color.themedBackground)
+        .background(theme.backgroundColor)
         .onChange(of: scrollPosition) { target in
             scrollProxy?.scrollTo(target, anchor: .top)
         }
@@ -70,6 +73,8 @@ struct Section: View {
     
     let section: WcfSection
     
+    @EnvironmentObject var theme: Theme
+    
     var body: some View {
         let parts = section.text.split(usingRegex: "\\[[a-z]\\]")
         
@@ -79,8 +84,8 @@ struct Section: View {
             let isFootnote = parts[k].matches("\\[[a-z]\\]")
 
             let fontSize = isFootnote ? 16 : 22
-            let textColor: Color = isFootnote ? .gold : .text
-            
+            let textColor = isFootnote ? theme.accentColor : theme.primaryTextColor
+
             let text = isFootnote
                 ?
                 parts[k].removeAll("[").removeAll("]")

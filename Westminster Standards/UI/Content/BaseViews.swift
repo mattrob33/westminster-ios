@@ -9,6 +9,8 @@ import SwiftUI
 
 struct Title: View {
     
+    @EnvironmentObject var theme: Theme
+    
     let title: String
     
     init(_ title: String) {
@@ -25,6 +27,8 @@ struct Title: View {
 
 struct Question: View {
     
+    @EnvironmentObject var theme: Theme
+    
     let num: Int
     let question: String
     
@@ -39,6 +43,8 @@ struct Question: View {
 }
 
 struct Answer: View {
+    
+    @EnvironmentObject var theme: Theme
     
     let answer: String
     
@@ -62,7 +68,7 @@ struct Answer: View {
             )
             .font(.custom("EBGaramond-Regular", size: isFootnote ? 16 : 20))
             .baselineOffset(isFootnote ? 6 : 0)
-            .foregroundColor(isFootnote ? .gold : .text)
+            .foregroundColor(isFootnote ? theme.accentColor : theme.primaryTextColor)
         }
         
         return text

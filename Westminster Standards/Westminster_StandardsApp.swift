@@ -11,16 +11,19 @@ import SwiftUI
 struct Westminster_StandardsApp: App {
     
     @StateObject var settings = Settings()
+
+    var theme: Theme { .dark }
     
     var body: some Scene {
         WindowGroup {
             ContentView(
                 contentLocation: ContentLocation(
-                    content: WestminsterContent.wcf,
+                    content: .wcf,
                     location: 0
                 )
             )
             .environmentObject(settings)
+            .environmentObject(theme)
         }
     }
     

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TocPageView: View {
+    
+    @EnvironmentObject var theme: Theme
 
     var items: [String]
     var recentItem: Int
@@ -22,19 +24,19 @@ struct TocPageView: View {
                     Text("\(recentItem + 1). \(items[recentItem])")
                         .font(.system(size: 20, design: .default))
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .foregroundColor(.gold)
+                        .foregroundColor(theme.accentColor)
                     
                     Spacer()
                     
                     Text("❯")
                         .font(.system(size: 20, design: .default))
                         .frame(maxWidth: .infinity, alignment: .trailing)
-                        .foregroundColor(.gold)
+                        .foregroundColor(theme.accentColor)
                 }
                 .padding()
                 .background(
                     RoundedRectangle(cornerRadius: 4)
-                        .fill(Color.backgroundDarker)
+                        .fill(theme.backgroundAccentColor)
                 )
                 .onTapGesture {
                     onItemSelected(recentItem)
@@ -43,7 +45,7 @@ struct TocPageView: View {
                 ForEach(items.indices) { i in
                     Text("Q\(i + 1). \(items[i])")
                         .font(.system(size: 20, design: .default))
-                        .foregroundColor(.text)
+                        .foregroundColor(theme.primaryTextColor)
                         .padding(.top, 1)
                         .onTapGesture {
                             onItemSelected(i)
@@ -54,8 +56,8 @@ struct TocPageView: View {
             }
             .padding(.leading)
             .padding(.trailing)
-            .background(Color.themedBackground)
+            .background(theme.backgroundColor)
         }
-        .background(Color.themedBackground)
+        .background(theme.backgroundColor)
     }
 }

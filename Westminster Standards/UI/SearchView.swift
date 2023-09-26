@@ -14,6 +14,8 @@ struct SearchView: View {
     var wsc: WSC
 
     var onTapDone: () -> Void
+    
+    @EnvironmentObject var theme: Theme
 
     @State private var content: WestminsterContent = WestminsterContent.wcf
     @State private var searchText : String = ""
@@ -26,7 +28,7 @@ struct SearchView: View {
                 SearchBar(text: $searchText)
                 Text("Done")
                     .font(.system(size: 16, weight: .bold))
-                    .foregroundColor(.gold)
+                    .foregroundColor(theme.accentColor)
                     .onTapGesture {
                         onTapDone()
                     }
@@ -48,6 +50,7 @@ struct SearchView: View {
                 wlc: wlc,
                 wsc: wsc
             )
+            .environmentObject(theme)
             
             Spacer()
         }
@@ -90,6 +93,8 @@ struct SearchBar: UIViewRepresentable {
 
 struct SearchResultsView: View {
     
+    @EnvironmentObject var theme: Theme
+    
     @Binding var content: WestminsterContent
     @Binding var searchText: String
     
@@ -115,7 +120,7 @@ struct SearchResultsView: View {
                                         Text("\(i + 1).\(j + 1) (\(wcf.chapters[i].title))")
                                             .font(.system(size: 18, weight: .bold))
                                             .padding(.bottom, 2)
-                                        highlightSearchHits(matchedText: section.text, searchText: searchText)
+                                        highlightSearchHits(matchedText: section.text, searchText: searchText, theme: theme)
                                             .font(.system(size: 18))
                                     }
                                     .padding(.top)
@@ -134,13 +139,21 @@ struct SearchResultsView: View {
                             if matchesQuestion || matchesAnswer {
                                 VStack(alignment: .leading) {
                                     Group {
-                                        Text("Q\(i + 1). ") + highlightSearchHits(matchedText: question, searchText: searchText)
+                                        Text("Q\(i + 1). ") + highlightSearchHits(
+                                            matchedText: question,
+                                            searchText: searchText,
+                                            theme: theme
+                                        )
                                     }
                                     .font(.system(size: 18, weight: .bold))
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                     
                                     Group {
-                                        Text("A. ") + highlightSearchHits(matchedText: answer, searchText: searchText)
+                                        Text("A. ") + highlightSearchHits(
+                                            matchedText: answer,
+                                            searchText: searchText,
+                                            theme: theme
+                                        )
                                     }
                                     .font(.system(size: 18))
                                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -161,13 +174,21 @@ struct SearchResultsView: View {
                             if matchesQuestion || matchesAnswer {
                                 VStack(alignment: .leading) {
                                     Group {
-                                        Text("Q\(i + 1). ") + highlightSearchHits(matchedText: question, searchText: searchText)
+                                        Text("Q\(i + 1). ") + highlightSearchHits(
+                                            matchedText: question,
+                                            searchText: searchText,
+                                            theme: theme
+                                        )
                                     }
                                     .font(.system(size: 18, weight: .bold))
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                     
                                     Group {
-                                        Text("A. ") + highlightSearchHits(matchedText: answer, searchText: searchText)
+                                        Text("A. ") + highlightSearchHits(
+                                            matchedText: answer,
+                                            searchText: searchText,
+                                            theme: theme
+                                        )
                                     }
                                     .font(.system(size: 18))
                                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -188,7 +209,7 @@ struct SearchResultsView: View {
         .padding(.trailing)
     }
 
-    private func highlightSearchHits(matchedText: String, searchText: String) -> Text {
+    private func highlightSearchHits(matchedText: String, searchText: String, theme: Theme) -> Text {
         
         let sections = matchedText.components(separatedBy: searchText)
         
@@ -197,7 +218,10 @@ struct SearchResultsView: View {
         for i in sections.indices {
             compositeText = compositeText + Text("\(sections[i])")
             if i < (sections.endIndex - 1) {
-                compositeText = compositeText + Text(searchText).foregroundColor(.gold).underline(color: .gold)
+                compositeText = compositeText +
+                    Text(searchText)
+                    .foregroundColor(theme.accentColor)
+                    .underline(color: theme.accentColor)
             }
         }
 
