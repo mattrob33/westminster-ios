@@ -30,6 +30,7 @@
 		0FD4887B2AC3101400ACCF3E /* JsonQA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD4887A2AC3101400ACCF3E /* JsonQA.swift */; };
 		0FD488802AC3125000ACCF3E /* ProofsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD4887F2AC3125000ACCF3E /* ProofsView.swift */; };
 		0FD488822AC3126000ACCF3E /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD488812AC3126000ACCF3E /* String+Ext.swift */; };
+		0FD488842AC3176900ACCF3E /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD488832AC3176900ACCF3E /* View+Ext.swift */; };
 		0FEA1FF22A3A3932001242A0 /* wlc.json in Resources */ = {isa = PBXBuildFile; fileRef = 0FEA1FEF2A3A3930001242A0 /* wlc.json */; };
 		0FEA1FF42A3A3932001242A0 /* wsc.json in Resources */ = {isa = PBXBuildFile; fileRef = 0FEA1FF02A3A3931001242A0 /* wsc.json */; };
 		0FEA1FF62A3A3932001242A0 /* wcf.json in Resources */ = {isa = PBXBuildFile; fileRef = 0FEA1FF12A3A3931001242A0 /* wcf.json */; };
@@ -138,6 +139,7 @@
 		0FD4887A2AC3101400ACCF3E /* JsonQA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonQA.swift; sourceTree = "<group>"; };
 		0FD4887F2AC3125000ACCF3E /* ProofsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProofsView.swift; sourceTree = "<group>"; };
 		0FD488812AC3126000ACCF3E /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		0FD488832AC3176900ACCF3E /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
 		0FEA1FEF2A3A3930001242A0 /* wlc.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wlc.json; sourceTree = "<group>"; };
 		0FEA1FF02A3A3931001242A0 /* wsc.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wsc.json; sourceTree = "<group>"; };
 		0FEA1FF12A3A3931001242A0 /* wcf.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wcf.json; sourceTree = "<group>"; };
@@ -394,6 +396,7 @@
 				0FD488692AC28F8700ACCF3E /* Color+Ext.swift */,
 				0FD4887F2AC3125000ACCF3E /* ProofsView.swift */,
 				0FD488812AC3126000ACCF3E /* String+Ext.swift */,
+				0FD488832AC3176900ACCF3E /* View+Ext.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -653,6 +656,7 @@
 			files = (
 				D80949602788D5B1001AC162 /* WcfChapter.swift in Sources */,
 				D87199AE27931AF900F27816 /* Settings.swift in Sources */,
+				0FD488842AC3176900ACCF3E /* View+Ext.swift in Sources */,
 				D809496F2788EFF4001AC162 /* JsonWCF.swift in Sources */,
 				0FD488822AC3126000ACCF3E /* String+Ext.swift in Sources */,
 				D809498C278F92F9001AC162 /* TableOfContentsView.swift in Sources */,

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TableOfContentsView: View {
     
-    @State var content: Content
+    @State var content: WestminsterContent
     
     var wcf: WCF
     var wlc: WLC
@@ -19,7 +19,7 @@ struct TableOfContentsView: View {
     var recentWlcQuestion: Int
     var recentWscQuestion: Int
     
-    var onItemSelected: (Content, Int) -> Void
+    var onItemSelected: (WestminsterContent, Int) -> Void
     var onTapDone: () -> Void
 
     var body: some View {
@@ -69,9 +69,9 @@ struct TableOfContentsView: View {
             Divider()
             
             Picker("Content", selection: $content) {
-                Text("Confession").tag(Content.wcf)
-                Text("Larger").tag(Content.wlc)
-                Text("Shorter").tag(Content.wsc)
+                Text("Confession").tag(WestminsterContent.wcf)
+                Text("Larger").tag(WestminsterContent.wlc)
+                Text("Shorter").tag(WestminsterContent.wsc)
             }
             .pickerStyle(SegmentedPickerStyle())
             .padding(.horizontal)

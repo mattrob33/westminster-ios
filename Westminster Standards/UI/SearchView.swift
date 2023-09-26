@@ -15,7 +15,7 @@ struct SearchView: View {
 
     var onTapDone: () -> Void
 
-    @State private var content: Content = Content.wcf
+    @State private var content: WestminsterContent = WestminsterContent.wcf
     @State private var searchText : String = ""
 
     var body: some View {
@@ -34,9 +34,9 @@ struct SearchView: View {
             .padding(.leading).padding(.trailing)
             
             Picker("Content", selection: $content) {
-                Text("Confession").tag(Content.wcf)
-                Text("Larger").tag(Content.wlc)
-                Text("Shorter").tag(Content.wsc)
+                Text("Confession").tag(WestminsterContent.wcf)
+                Text("Larger").tag(WestminsterContent.wlc)
+                Text("Shorter").tag(WestminsterContent.wsc)
             }
             .pickerStyle(SegmentedPickerStyle())
             .padding(.leading).padding(.trailing)
@@ -90,7 +90,7 @@ struct SearchBar: UIViewRepresentable {
 
 struct SearchResultsView: View {
     
-    @Binding var content: Content
+    @Binding var content: WestminsterContent
     @Binding var searchText: String
     
     var wcf: WCF

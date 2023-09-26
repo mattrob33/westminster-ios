@@ -10,7 +10,7 @@ import SwiftUI
 struct ProofsView: View {
 
     let proofs: [Proofs]
-    
+
     var body: some View {
         VStack(alignment: .leading) {
             ForEach(proofs.indices) { k in
@@ -21,10 +21,10 @@ struct ProofsView: View {
     }
     
     @ViewBuilder
-    private func buildProofsText(_ proofs: Proofs) -> Text {
+    private func buildProofsText(_ proofs: Proofs) -> some View {
         let text = proofs.refs.joined(separator: "; ")
         Text("\(proofs.number). \(text)")
-            .font(.custom("EBGaramond-Regular", size: 18))
+            .appFont(size: 18)
             .foregroundColor(.gold)
     }
 

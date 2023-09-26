@@ -104,6 +104,7 @@ struct SectionPartText: View {
  
         Text(text)
                 .font(Font.custom("EBGaramond-Regular", size: CGFloat(fontSize)))
+                .appFont(size: fontSize)
                 .foregroundColor(Color(textColor))
                 .onTapGesture {
                     if isFootnote {
@@ -122,7 +123,7 @@ func buildSectionPartText(text: String, normalFontSize: Int, onTap: @escaping (S
     let textColor = isFootnote ? UIColor.blue : UIColor.textColor
 
     return Text(text)
-            .font(.custom("EBGaramond-Regular", size: CGFloat(fontSize)))
+            .appFont(size: fontSize)
             .foregroundColor(Color(textColor))
             .onTapGesture {
                 if isFootnote {

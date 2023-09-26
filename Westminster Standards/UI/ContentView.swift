@@ -200,13 +200,13 @@ enum Sheet {
     case settings
 }
 
-enum Content {
+enum WestminsterContent {
     case wcf
     case wlc
     case wsc
 }
 
 struct ContentLocation {
-    var content: Content
+    var content: WestminsterContent
     var location: Int
 }
