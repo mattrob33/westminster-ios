@@ -21,6 +21,8 @@
 		0F83B0AD2AC21CA900F4A059 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 0F83B0AC2AC21CA900F4A059 /* Fonts */; };
 		0F83B0AE2AC21CA900F4A059 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 0F83B0AC2AC21CA900F4A059 /* Fonts */; };
 		0F83B0AF2AC21CA900F4A059 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 0F83B0AC2AC21CA900F4A059 /* Fonts */; };
+		0F8761222AC28BD500230615 /* BaseViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8761212AC28BD500230615 /* BaseViews.swift */; };
+		0FD4886A2AC28F8700ACCF3E /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD488692AC28F8700ACCF3E /* Color+Ext.swift */; };
 		0FEA1FF22A3A3932001242A0 /* wlc.json in Resources */ = {isa = PBXBuildFile; fileRef = 0FEA1FEF2A3A3930001242A0 /* wlc.json */; };
 		0FEA1FF42A3A3932001242A0 /* wsc.json in Resources */ = {isa = PBXBuildFile; fileRef = 0FEA1FF02A3A3931001242A0 /* wsc.json */; };
 		0FEA1FF62A3A3932001242A0 /* wcf.json in Resources */ = {isa = PBXBuildFile; fileRef = 0FEA1FF12A3A3931001242A0 /* wcf.json */; };
@@ -128,6 +130,8 @@
 		0F54C0092A3A47E3006818F2 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		0F83B09D2AC20FFB00F4A059 /* Westminster-Standards-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Westminster-Standards-Info.plist"; path = "../Westminster-Standards-Info.plist"; sourceTree = "<group>"; };
 		0F83B0AC2AC21CA900F4A059 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
+		0F8761212AC28BD500230615 /* BaseViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViews.swift; sourceTree = "<group>"; };
+		0FD488692AC28F8700ACCF3E /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
 		0FEA1FEF2A3A3930001242A0 /* wlc.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wlc.json; sourceTree = "<group>"; };
 		0FEA1FF02A3A3931001242A0 /* wsc.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wsc.json; sourceTree = "<group>"; };
 		0FEA1FF12A3A3931001242A0 /* wcf.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wcf.json; sourceTree = "<group>"; };
@@ -379,6 +383,8 @@
 				D80948EC2788D2B9001AC162 /* ContentView.swift */,
 				D809498B278F92F9001AC162 /* TableOfContentsView.swift */,
 				D87199AF2793237400F27816 /* SettingsView.swift */,
+				0F8761212AC28BD500230615 /* BaseViews.swift */,
+				0FD488692AC28F8700ACCF3E /* Color+Ext.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -678,12 +684,14 @@
 				D809499B278FC528001AC162 /* WscQA.swift in Sources */,
 				D809499A278FC528001AC162 /* WSC.swift in Sources */,
 				D80949672788D956001AC162 /* LoadWcfUseCase.swift in Sources */,
+				0F8761222AC28BD500230615 /* BaseViews.swift in Sources */,
 				D87199B02793237400F27816 /* SettingsView.swift in Sources */,
 				D809497427892DDB001AC162 /* WcfView.swift in Sources */,
 				D89B891B278FC82100A326FD /* JsonWlcQA.swift in Sources */,
 				D809496D2788EFF4001AC162 /* JsonWcfSection.swift in Sources */,
 				D809495E2788D460001AC162 /* WcfSection.swift in Sources */,
 				D89B891C278FC82E00A326FD /* WlcQA.swift in Sources */,
+				0FD4886A2AC28F8700ACCF3E /* Color+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

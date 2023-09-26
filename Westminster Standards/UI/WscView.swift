@@ -22,26 +22,17 @@ struct WscView: View {
                 
                 VStack(alignment: .leading) {
                     
-                    Text("WSC")
-                        .font(.custom("EBGaramond-Bold", size: 32))
-                        .frame(maxWidth: .infinity, alignment: .center)
-                        .padding(.top, 72)
+                    Title("WSC")
                     
                     ForEach(wsc.questions.indices) { i in
                         VStack(alignment: .leading) {
                             let qa = wsc.questions[i]
                             
-                            Text("Q\(i + 1). \(qa.question)")
-                                .font(.custom("EBGaramond-Bold", size: 20))
-                                .foregroundColor(Color(red: 0.83, green: 0.84, blue: 0.85))
-                                .lineSpacing(8)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                .padding(.bottom, 8)
+                            Question(num: i + 1, question: qa.question)
                             
                             Spacer()
-                            
-                            buildAnswer(qa.answer)
-                                .padding(.bottom, 8)
+
+                            Answer(qa.answer)
                             
                             Spacer()
                             
@@ -70,36 +61,5 @@ struct WscView: View {
         .onChange(of: scrollPosition) { target in
             scrollProxy?.scrollTo(target, anchor: .top)
         }
-    }
-    
-    @ViewBuilder
-    func buildAnswer(_ answer: String) -> some View {
-        
-        let parts = answer.split(usingRegex: "\\[[a-z]\\]")
-        
-        var text = Text("")
-        
-        for part in parts {
-            let isFootnote = part.matches("\\[[a-z]\\]")
-            
-            text = text + Text(
-                isFootnote ?
-                part.removeAll("[").removeAll("]")
-                    :
-                    part
-            )
-            .font(.custom("EBGaramond-Regular", size: isFootnote ? 16 : 20))
-            .baselineOffset(isFootnote ? 6 : 0)
-            .foregroundColor(
-                isFootnote ?
-                    Color(red: 0.67, green: 0.62, blue: 0.44)
-                    :
-                    Color(red: 0.83, green: 0.84, blue: 0.85)
-            )
-        }
-        
-        return text
-            .lineSpacing(8)
-            .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
