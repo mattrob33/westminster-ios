@@ -34,7 +34,7 @@ struct Question: View {
     
     var body: some View {
         Text("Q\(num). \(question)")
-            .font(.custom("EBGaramond-Bold", size: 20))
+            .font(theme.headingFont)
             .foregroundColor(Color(red: 0.83, green: 0.84, blue: 0.85))
             .lineSpacing(8)
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -66,7 +66,7 @@ struct Answer: View {
                     :
                     part
             )
-            .font(.custom("EBGaramond-Regular", size: isFootnote ? 16 : 20))
+            .font(isFootnote ? theme.footnoteFont : theme.bodyFont)
             .baselineOffset(isFootnote ? 6 : 0)
             .foregroundColor(isFootnote ? theme.accentColor : theme.primaryTextColor)
         }

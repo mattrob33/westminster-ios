@@ -26,7 +26,7 @@ struct ProofsView: View {
     private func buildProofsText(_ proofs: Proofs) -> some View {
         let text = proofs.refs.joined(separator: "; ")
         Text("\(proofs.number). \(text)")
-            .font(theme.bodyFont)
+            .font(theme.footnoteFont)
             .foregroundColor(theme.accentColor)
     }
 

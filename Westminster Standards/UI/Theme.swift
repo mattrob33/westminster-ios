@@ -18,8 +18,10 @@ class Theme: ObservableObject {
     
     var subduedIconColor: Color { Color(red: 0.37, green: 0.38, blue: 0.4) }
 
-    let bodyFont: Font = .custom("EBGaramond-Regular", size: 20)
     let titleFont: Font = .custom("EBGaramond-Medium", size: 24)
+    let headingFont: Font = .custom("EBGaramond-Bold", size: 22)
+    let bodyFont: Font = .custom("EBGaramond-Regular", size: 24)
+    let footnoteFont: Font = .custom("EBGaramond-Regular", size: 18)
 }
 
 class LightTheme: Theme {

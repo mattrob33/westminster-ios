@@ -31,9 +31,9 @@ struct WcfView: View {
                     ForEach(wcf.chapters.indices) { i in
                         VStack(alignment: .leading) {
                             let chapter = wcf.chapters[i]
-                            
+
                             Text("\(romanNumeral(i+1)). \(chapter.title)")
-                                .font(.custom("EBGaramond-Medium", size: CGFloat(Double(settings.fontSize) * 1.1)))
+                                .font(theme.titleFont)
                                 .foregroundColor(theme.primaryTextColor)
                                 .frame(maxWidth: .infinity, alignment: .center)
                                 .padding(.vertical)
@@ -83,7 +83,6 @@ struct Section: View {
         for k in parts.indices {
             let isFootnote = parts[k].matches("\\[[a-z]\\]")
 
-            let fontSize = isFootnote ? 16 : 22
             let textColor = isFootnote ? theme.accentColor : theme.primaryTextColor
 
             let text = isFootnote
@@ -94,12 +93,12 @@ struct Section: View {
 
             view = view + Text(text)
                 .baselineOffset(isFootnote ? 8 : 0)
-                .font(Font.custom("EBGaramond-Regular", size: CGFloat(fontSize)))
+                .font(isFootnote ? theme.footnoteFont : theme.bodyFont)
                 .foregroundColor(textColor)
         }
         
         return view
-            .lineSpacing(6)
+            .lineSpacing(10)
             .frame(maxWidth: .infinity)
     }
 }
