@@ -137,7 +137,7 @@ func buildSectionPartText(text: String, normalFontSize: Int, onTap: @escaping (S
 
 func buildProofsText(_ proofs: Proofs) -> Text {
     let text = proofs.refs.joined(separator: "; ")
-    return Text("[\(proofs.letter)] \(text)")
+    return Text("\(proofs.letter). \(text)")
         .font(.custom("EBGaramond-Regular", size: CGFloat(18)))
         .foregroundColor(Color(red: 0.67, green: 0.62, blue: 0.44))
 }

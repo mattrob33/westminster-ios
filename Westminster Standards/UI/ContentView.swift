@@ -104,6 +104,7 @@ struct ContentView: View {
                         VStack {
                             Image(systemName: "book")
                                 .resizable()
+                                .foregroundColor(.gray)
                                 .frame(width: 24.0, height: 24.0)
                                 .onTapGesture {
                                     sheet = .content
@@ -112,6 +113,7 @@ struct ContentView: View {
                             
                             Text("Contents")
                                 .font(.system(size: 10))
+                                .foregroundColor(.gray)
                                 .padding(.top, 0.2)
                         }
                         
@@ -121,6 +123,7 @@ struct ContentView: View {
                         VStack {
                             Image(systemName: "magnifyingglass")
                                 .resizable()
+                                .foregroundColor(.gray)
                                 .frame(width: 24.0, height: 24.0)
                                 .onTapGesture {
                                     sheet = .search
@@ -129,6 +132,7 @@ struct ContentView: View {
                             
                             Text("Search")
                                 .font(.system(size: 10))
+                                .foregroundColor(.gray)
                                 .padding(.top, 0.2)
                         }
                         
@@ -138,6 +142,7 @@ struct ContentView: View {
                         VStack {
                             Image(systemName: "gearshape")
                                 .resizable()
+                                .foregroundColor(.gray)
                                 .frame(width: 24.0, height: 24.0)
                                 .onTapGesture {
                                     sheet = .settings
@@ -146,6 +151,7 @@ struct ContentView: View {
                             
                             Text("Settings")
                                 .font(.system(size: 10))
+                                .foregroundColor(.gray)
                                 .padding(.top, 0.2)
                         }
                         

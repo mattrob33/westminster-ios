@@ -22,6 +22,11 @@ struct WscView: View {
                 
                 VStack(alignment: .leading) {
                     
+                    Text("WSC")
+                        .font(.custom("EBGaramond-Bold", size: 32))
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .padding(.top, 72)
+                    
                     ForEach(wsc.questions.indices) { i in
                         VStack(alignment: .leading) {
                             let qa = wsc.questions[i]
@@ -29,14 +34,14 @@ struct WscView: View {
                             Text("Q\(i + 1). \(qa.question)")
                                 .font(.custom("EBGaramond-Bold", size: 20))
                                 .foregroundColor(Color(red: 0.83, green: 0.84, blue: 0.85))
+                                .lineSpacing(8)
                                 .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.bottom, 8)
                             
                             Spacer()
                             
-                            Text(qa.answer)
-                                .font(.custom("EBGaramond-Regular", size: 20))
-                                .foregroundColor(Color(red: 0.83, green: 0.84, blue: 0.85))
-                                .frame(maxWidth: .infinity, alignment: .leading)
+                            buildAnswer(qa.answer)
+                                .padding(.bottom, 8)
                             
                             Spacer()
                             
@@ -47,7 +52,7 @@ struct WscView: View {
                             
                             Spacer()
                         }
-                        .padding(.bottom, 20)
+                        .padding(.top, 24)
                         .id(i)
                     }
                 }
@@ -61,8 +66,40 @@ struct WscView: View {
         .padding(.leading)
         .padding(.trailing)
         .background(Color(red: 0.16, green: 0.16, blue: 0.17))
+        .edgesIgnoringSafeArea(.all)
         .onChange(of: scrollPosition) { target in
             scrollProxy?.scrollTo(target, anchor: .top)
         }
+    }
+    
+    @ViewBuilder
+    func buildAnswer(_ answer: String) -> some View {
+        
+        let parts = answer.split(usingRegex: "\\[[a-z]\\]")
+        
+        var text = Text("")
+        
+        for part in parts {
+            let isFootnote = part.matches("\\[[a-z]\\]")
+            
+            text = text + Text(
+                isFootnote ?
+                part.removeAll("[").removeAll("]")
+                    :
+                    part
+            )
+            .font(.custom("EBGaramond-Regular", size: isFootnote ? 16 : 20))
+            .baselineOffset(isFootnote ? 6 : 0)
+            .foregroundColor(
+                isFootnote ?
+                    Color(red: 0.67, green: 0.62, blue: 0.44)
+                    :
+                    Color(red: 0.83, green: 0.84, blue: 0.85)
+            )
+        }
+        
+        return text
+            .lineSpacing(8)
+            .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
