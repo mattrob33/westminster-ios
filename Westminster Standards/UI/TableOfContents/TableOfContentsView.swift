@@ -24,26 +24,26 @@ struct TableOfContentsView: View {
 
     var body: some View {
         
-        let wcfView = WcfTableOfContentsView(
-            wcf: wcf,
-            recentWcfChapter: recentWcfChapter,
-            onWcfChapterSelected: { chapter in
-                onItemSelected(.wcf, chapter)
+        let wcfView = TocPageView(
+            items: wcf.chapters.map { $0.title },
+            recentItem: recentWcfChapter,
+            onItemSelected: { question in
+                onItemSelected(.wcf, question)
             }
         )
         
-        let wlcView = CatechismTableOfContentsView(
-            catechism: wlc,
-            recentQuestion: recentWlcQuestion,
-            onQuestionSelected: { question in
+        let wlcView = TocPageView(
+            items: wlc.questions.map { $0.question },
+            recentItem: recentWlcQuestion,
+            onItemSelected: { question in
                 onItemSelected(.wlc, question)
             }
         )
         
-        let wscView = CatechismTableOfContentsView(
-            catechism: wsc,
-            recentQuestion: recentWscQuestion,
-            onQuestionSelected: { question in
+        let wscView = TocPageView(
+            items: wsc.questions.map { $0.question },
+            recentItem: recentWscQuestion,
+            onItemSelected: { question in
                 onItemSelected(.wsc, question)
             }
         )
@@ -85,109 +85,6 @@ struct TableOfContentsView: View {
             case .wsc:
                 wscView
             }
-        }
-        .background(Color.themedBackground)
-    }
-}
-
-
-struct WcfTableOfContentsView: View {
-
-    var wcf: WCF
-    var recentWcfChapter: Int
-    var onWcfChapterSelected: (Int) -> Void
-    
-    var body: some View {
-        
-        ScrollView {
-            VStack(alignment: .leading) {
-                
-                HStack {
-                    Text("\(recentWcfChapter + 1). \(wcf.chapters[recentWcfChapter].title)")
-                        .font(.system(size: 20, design: .default))
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .foregroundColor(.gold)
-                    
-                    Spacer()
-                    
-                    Text("❯")
-                        .font(.system(size: 20, design: .default))
-                        .frame(maxWidth: .infinity, alignment: .trailing)
-                        .foregroundColor(.gold)
-                }
-                .padding()
-                .background(
-                    RoundedRectangle(cornerRadius: 4)
-                        .fill(Color(red: 202/255, green: 236/255, blue: 252/255, opacity: 0.3))
-                )
-                .onTapGesture {
-                    onWcfChapterSelected(recentWcfChapter)
-                }
-                
-                ForEach(wcf.chapters.indices) { i in
-                    Text("\(i + 1). \(wcf.chapters[i].title)")
-                        .font(.system(size: 20, design: .default))
-                        .padding(.top, 1)
-                        .onTapGesture {
-                            onWcfChapterSelected(i)
-                        }
-                }
-            }
-            .padding(.leading)
-            .padding(.trailing)
-        }
-        .background(.background)
-    }
-}
-
-struct CatechismTableOfContentsView: View {
-    
-    var catechism: Catechism
-    var recentQuestion: Int
-    var onQuestionSelected: (Int) -> Void
-    
-    var body: some View {
-        
-        ScrollView {
-            VStack(alignment: .leading) {
-                
-                HStack {
-                    Text("\(recentQuestion + 1). \(catechism.questions[recentQuestion].question)")
-                        .font(.system(size: 20, design: .default))
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .foregroundColor(.gold)
-                    
-                    Spacer()
-                    
-                    Text("❯")
-                        .font(.system(size: 20, design: .default))
-                        .frame(maxWidth: .infinity, alignment: .trailing)
-                        .foregroundColor(.gold)
-                }
-                .padding()
-                .background(
-                    RoundedRectangle(cornerRadius: 4)
-                        .fill(Color.backgroundDarker)
-                )
-                .onTapGesture {
-                    onQuestionSelected(recentQuestion)
-                }
-                
-                ForEach(catechism.questions.indices) { i in
-                    Text("Q\(i + 1). \(catechism.questions[i].question)")
-                        .font(.system(size: 20, design: .default))
-                        .foregroundColor(.text)
-                        .padding(.top, 1)
-                        .onTapGesture {
-                            onQuestionSelected(i)
-                        }
-                    
-                    Divider()
-                }
-            }
-            .padding(.leading)
-            .padding(.trailing)
-            .background(Color.themedBackground)
         }
         .background(Color.themedBackground)
     }

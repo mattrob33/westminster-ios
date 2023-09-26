@@ -16,7 +16,7 @@ struct Westminster_StandardsApp: App {
         WindowGroup {
             ContentView(
                 contentLocation: ContentLocation(
-                    content: WestminsterContent.wsc,
+                    content: WestminsterContent.wcf,
                     location: 0
                 )
             )

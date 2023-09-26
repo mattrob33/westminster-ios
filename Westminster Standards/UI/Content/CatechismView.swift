@@ -29,15 +29,10 @@ struct CatechismView: View {
                             let qa = catechism.questions[i]
                             
                             Question(num: i + 1, question: qa.question)
-                            
                             Spacer()
-
                             Answer(qa.answer)
-                            
                             Spacer()
-                            
                             ProofsView(proofs: qa.proofs)
-                            
                             Spacer()
                         }
                         .padding(.top, 24)

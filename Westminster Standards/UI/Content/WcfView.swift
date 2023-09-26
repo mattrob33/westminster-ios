@@ -21,17 +21,6 @@ struct WcfView: View {
     @State private var showingProofsAlert = false
 
     @EnvironmentObject var settings: Settings
-    
-    private func romanNumeral(_ int: Int) -> String {
-        switch (int) {
-        case 1: return "I"
-        case 2: return "II"
-        case 3: return "III"
-        case 4: return "IV"
-        case 5: return "V"
-        default: return ""
-        }
-    }
 
     var body: some View {
         ScrollView {
@@ -45,27 +34,13 @@ struct WcfView: View {
                             Text("\(romanNumeral(i+1)). \(chapter.title)")
                                 .font(.custom("EBGaramond-Medium", size: CGFloat(Double(settings.fontSize) * 1.1)))
                                 .frame(maxWidth: .infinity, alignment: .center)
-                                .padding(.top)
+                                .padding(.vertical)
                             
                             ForEach(chapter.sections.indices) { j in
                                 let section = chapter.sections[j]
-
-                                let parts = section.text.split(usingRegex: "\\[[a-z]\\]")
-    
-                                    ForEach(parts.indices) { k in
-                                        SectionPartText(text: parts[k], fontSize: 20, onTap: { letter in
-                                            let letter = parts[k]
-                                                .removeAll("[")
-                                                .removeAll("]")
-                                            let proofs = section.proofs.first(where: { $0.number == letter })
-                                            proofRefs = proofs!.refs.joined(separator: "\n")
-                                            showingProofsAlert = true
-                                        })
-                                        .font(.custom("EBGaramond-Regular", size: CGFloat(settings.fontSize)))
-                                    }
-                                .frame(maxWidth: .infinity)
-                                
+                                Section(section: section)
                                 ProofsView(proofs: section.proofs)
+                                    .padding(.bottom, 24)
                             }
                         }
                         .padding(.bottom, 60)
@@ -79,6 +54,7 @@ struct WcfView: View {
             }
         }
         .padding(.leading).padding(.trailing)
+        .background(Color.themedBackground)
         .onChange(of: scrollPosition) { target in
             scrollProxy?.scrollTo(target, anchor: .top)
         }
@@ -90,47 +66,55 @@ struct WcfView: View {
     }
 }
 
-struct SectionPartText: View {
-
-    var text: String
-    var fontSize: Int
-    var onTap: (String) -> Void
-
+struct Section: View {
+    
+    let section: WcfSection
+    
     var body: some View {
-        let isFootnote = text.matches("\\[[a-z]\\]")
+        let parts = section.text.split(usingRegex: "\\[[a-z]\\]")
+        
+        var view = Text("")
+        
+        for k in parts.indices {
+            let isFootnote = parts[k].matches("\\[[a-z]\\]")
 
-        let fontSize = isFootnote ? fontSize - 2 : fontSize
-        let textColor = isFootnote ? UIColor.blue : UIColor.textColor
- 
-        Text(text)
+            let fontSize = isFootnote ? 16 : 22
+            let textColor: Color = isFootnote ? .gold : .text
+            
+            let text = isFootnote
+                ?
+                parts[k].removeAll("[").removeAll("]")
+                :
+                parts[k]
+
+            view = view + Text(text)
+                .baselineOffset(isFootnote ? 8 : 0)
                 .font(Font.custom("EBGaramond-Regular", size: CGFloat(fontSize)))
-                .appFont(size: fontSize)
-                .foregroundColor(Color(textColor))
-                .onTapGesture {
-                    if isFootnote {
-                        let letter = text.removeAll("")
-                        onTap(letter)
-                    }
-                }
+                .foregroundColor(textColor)
+        }
+        
+        return view
+            .lineSpacing(6)
+            .frame(maxWidth: .infinity)
     }
 }
 
-func buildSectionPartText(text: String, normalFontSize: Int, onTap: @escaping (String) -> Void) -> some View {
-
-    let isFootnote = text.matches("\\[[a-z]\\]")
-
-    let fontSize = isFootnote ? normalFontSize - 2 : normalFontSize
-    let textColor = isFootnote ? UIColor.blue : UIColor.textColor
-
-    return Text(text)
-            .appFont(size: fontSize)
-            .foregroundColor(Color(textColor))
-            .onTapGesture {
-                if isFootnote {
-                    let letter = text.removeAll("")
-                    onTap(letter)
-                }
-            }
+private func romanNumeral(_ num: Int) -> String {
+    let values: [Int] = [1, 4, 5, 9, 10, 40, 50]
+    let symbols: [String] = ["I", "IV", "V", "IX", "X", "XL", "L"]
+    var result = ""
+    var remaining = num
+    
+    var index = values.count - 1
+    while remaining > 0 {
+        while remaining >= values[index] {
+            result += symbols[index]
+            remaining -= values[index]
+        }
+        index -= 1
+    }
+    
+    return result
 }
 
 
