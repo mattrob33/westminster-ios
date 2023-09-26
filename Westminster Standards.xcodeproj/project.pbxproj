@@ -25,6 +25,7 @@
 		0FD4886A2AC28F8700ACCF3E /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD488692AC28F8700ACCF3E /* Color+Ext.swift */; };
 		0FD4886C2AC3093600ACCF3E /* QA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD4886B2AC3093600ACCF3E /* QA.swift */; };
 		0FD4886E2AC309A700ACCF3E /* Catechism.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD4886D2AC309A700ACCF3E /* Catechism.swift */; };
+		0FD488702AC30A4900ACCF3E /* CatechismView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD4886F2AC30A4900ACCF3E /* CatechismView.swift */; };
 		0FEA1FF22A3A3932001242A0 /* wlc.json in Resources */ = {isa = PBXBuildFile; fileRef = 0FEA1FEF2A3A3930001242A0 /* wlc.json */; };
 		0FEA1FF42A3A3932001242A0 /* wsc.json in Resources */ = {isa = PBXBuildFile; fileRef = 0FEA1FF02A3A3931001242A0 /* wsc.json */; };
 		0FEA1FF62A3A3932001242A0 /* wcf.json in Resources */ = {isa = PBXBuildFile; fileRef = 0FEA1FF12A3A3931001242A0 /* wcf.json */; };
@@ -134,6 +135,7 @@
 		0FD488692AC28F8700ACCF3E /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
 		0FD4886B2AC3093600ACCF3E /* QA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QA.swift; sourceTree = "<group>"; };
 		0FD4886D2AC309A700ACCF3E /* Catechism.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catechism.swift; sourceTree = "<group>"; };
+		0FD4886F2AC30A4900ACCF3E /* CatechismView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatechismView.swift; sourceTree = "<group>"; };
 		0FEA1FEF2A3A3930001242A0 /* wlc.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wlc.json; sourceTree = "<group>"; };
 		0FEA1FF02A3A3931001242A0 /* wsc.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wsc.json; sourceTree = "<group>"; };
 		0FEA1FF12A3A3931001242A0 /* wcf.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wcf.json; sourceTree = "<group>"; };
@@ -382,6 +384,7 @@
 				D89B8928278FEEEE00A326FD /* SearchView.swift */,
 				D8094989278F777E001AC162 /* WlcView.swift */,
 				D89B891E278FC8D100A326FD /* WscView.swift */,
+				0FD4886F2AC30A4900ACCF3E /* CatechismView.swift */,
 				D80948EC2788D2B9001AC162 /* ContentView.swift */,
 				D809498B278F92F9001AC162 /* TableOfContentsView.swift */,
 				D87199AF2793237400F27816 /* SettingsView.swift */,
@@ -672,6 +675,7 @@
 				D8094996278FC50A001AC162 /* LoadWlcUseCase.swift in Sources */,
 				D89B891F278FC8D100A326FD /* WscView.swift in Sources */,
 				D8094982278F75F3001AC162 /* LoadWscUseCase.swift in Sources */,
+				0FD488702AC30A4900ACCF3E /* CatechismView.swift in Sources */,
 				D89B8929278FEEEE00A326FD /* SearchView.swift in Sources */,
 				D8094994278FC2C7001AC162 /* LoadJsonUseCase.swift in Sources */,
 				D89B891A278FC81E00A326FD /* JsonWLC.swift in Sources */,

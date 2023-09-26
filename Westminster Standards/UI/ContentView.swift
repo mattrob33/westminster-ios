@@ -40,14 +40,14 @@ struct ContentView: View {
             )
             .environmentObject(settings)
             
-            let wlcView = WlcView(
-                wlc: wlc,
+            let wlcView = CatechismView(
+                catechism: wlc,
                 scrollPosition: $contentLocation.location
             )
             .environmentObject(settings)
             
-            let wscView = WscView(
-                wsc: wsc,
+            let wscView = CatechismView(
+                catechism: wsc,
                 scrollPosition: $contentLocation.location
             )
             .environmentObject(settings)

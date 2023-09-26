@@ -32,18 +32,18 @@ struct TableOfContentsView: View {
             }
         )
         
-        let wlcView = WlcTableOfContentsView(
-            wlc: wlc,
-            recentWlcQuestion: recentWlcQuestion,
-            onWlcQuestionSelected: { question in
+        let wlcView = CatechismTableOfContentsView(
+            catechism: wlc,
+            recentQuestion: recentWlcQuestion,
+            onQuestionSelected: { question in
                 onItemSelected(.wlc, question)
             }
         )
         
-        let wscView = WscTableOfContentsView(
-            wsc: wsc,
-            recentWscQuestion: recentWscQuestion,
-            onWscQuestionSelected: { question in
+        let wscView = CatechismTableOfContentsView(
+            catechism: wsc,
+            recentQuestion: recentWscQuestion,
+            onQuestionSelected: { question in
                 onItemSelected(.wsc, question)
             }
         )
@@ -140,61 +140,11 @@ struct WcfTableOfContentsView: View {
     }
 }
 
-struct WlcTableOfContentsView: View {
-
-    var wlc: WLC
-    var recentWlcQuestion: Int
-    var onWlcQuestionSelected: (Int) -> Void
-
-    var body: some View {
-        
-        ScrollView {
-            VStack(alignment: .leading) {
-                
-                HStack {
-                    Text("\(recentWlcQuestion + 1). \(wlc.questions[recentWlcQuestion].question)")
-                        .font(.system(size: 20, design: .default))
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .foregroundColor(.gold)
-                    
-                    Spacer()
-                    
-                    Text("❯")
-                        .font(.system(size: 20, design: .default))
-                        .frame(maxWidth: .infinity, alignment: .trailing)
-                        .foregroundColor(.gold)
-                }
-                .padding()
-                .background(
-                    RoundedRectangle(cornerRadius: 4)
-                        .fill(Color(red: 202/255, green: 236/255, blue: 252/255, opacity: 0.3))
-                )
-                .onTapGesture {
-                    onWlcQuestionSelected(recentWlcQuestion)
-                }
-                
-                ForEach(wlc.questions.indices) { i in
-                    Text("Q\(i + 1). \(wlc.questions[i].question)")
-                        .font(.system(size: 20, design: .default))
-                        .padding(.top, 1)
-                        .onTapGesture {
-                            onWlcQuestionSelected(i)
-                        }
-                }
-            }
-            .padding(.leading)
-            .padding(.trailing)
-        }
-        .background(.background)
-    }
-}
-
-
-struct WscTableOfContentsView: View {
+struct CatechismTableOfContentsView: View {
     
-    var wsc: WSC
-    var recentWscQuestion: Int
-    var onWscQuestionSelected: (Int) -> Void
+    var catechism: Catechism
+    var recentQuestion: Int
+    var onQuestionSelected: (Int) -> Void
     
     var body: some View {
         
@@ -202,7 +152,7 @@ struct WscTableOfContentsView: View {
             VStack(alignment: .leading) {
                 
                 HStack {
-                    Text("\(recentWscQuestion + 1). \(wsc.questions[recentWscQuestion].question)")
+                    Text("\(recentQuestion + 1). \(catechism.questions[recentQuestion].question)")
                         .font(.system(size: 20, design: .default))
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .foregroundColor(.gold)
@@ -220,16 +170,16 @@ struct WscTableOfContentsView: View {
                         .fill(Color.backgroundDarker)
                 )
                 .onTapGesture {
-                    onWscQuestionSelected(recentWscQuestion)
+                    onQuestionSelected(recentQuestion)
                 }
                 
-                ForEach(wsc.questions.indices) { i in
-                    Text("Q\(i + 1). \(wsc.questions[i].question)")
+                ForEach(catechism.questions.indices) { i in
+                    Text("Q\(i + 1). \(catechism.questions[i].question)")
                         .font(.system(size: 20, design: .default))
                         .foregroundColor(.text)
                         .padding(.top, 1)
                         .onTapGesture {
-                            onWscQuestionSelected(i)
+                            onQuestionSelected(i)
                         }
                     
                     Divider()
