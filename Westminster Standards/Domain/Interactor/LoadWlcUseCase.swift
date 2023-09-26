@@ -22,7 +22,7 @@ struct LoadWlcUseCase {
     private func parseWlc(rawData: Data) -> WLC? {
         let decoder = JSONDecoder()
         do {
-            let jsonWlc = try decoder.decode(JsonWLC.self, from: rawData)
+            let jsonWlc = try decoder.decode(JsonCatechism.self, from: rawData)
             return jsonWlc.toModel()
         }
         catch {
@@ -32,26 +32,10 @@ struct LoadWlcUseCase {
     }
 }
 
-extension JsonWLC {
+fileprivate extension JsonCatechism {
     
     func toModel() -> WLC {
         return WLC(questions: questions.map { $0.toModel() } )
-    }
-    
-}
-
-extension JsonWlcQA {
-    
-    func toModel() -> QA {
-        return QA(question: question, answer: answer, proofs: proofs.map { $0.toModel() })
-    }
-    
-}
-
-extension JsonWlcProofs {
-    
-    func toModel() -> Proofs {
-        return Proofs(letter: letter, refs: refs)
     }
     
 }

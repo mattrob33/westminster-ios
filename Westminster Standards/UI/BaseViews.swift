@@ -47,12 +47,12 @@ struct Answer: View {
     }
     
     var body: some View {
-        let parts = answer.split(usingRegex: "\\[[a-z]\\]")
+        let parts = answer.split(usingRegex: "\\[[0-9]+\\]")
         
         var text = Text("")
         
         for part in parts {
-            let isFootnote = part.matches("\\[[a-z]\\]")
+            let isFootnote = part.matches("\\[[0-9]+\\]")
             
             text = text + Text(
                 isFootnote ?

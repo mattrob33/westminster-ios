@@ -22,7 +22,7 @@ struct LoadWscUseCase {
     private func parseWsc(rawData: Data) -> WSC? {
         let decoder = JSONDecoder()
         do {
-            let jsonWsc = try decoder.decode(JsonWSC.self, from: rawData)
+            let jsonWsc = try decoder.decode(JsonCatechism.self, from: rawData)
             return jsonWsc.toModel()
         }
         catch {
@@ -32,7 +32,7 @@ struct LoadWscUseCase {
     }
 }
 
-extension JsonWSC {
+fileprivate extension JsonCatechism {
     
     func toModel() -> WSC {
         return WSC(questions: questions.map { $0.toModel() } )
@@ -40,7 +40,7 @@ extension JsonWSC {
     
 }
 
-extension JsonWscQA {
+extension JsonQA {
     
     func toModel() -> QA {
         return QA(question: question, answer: answer, proofs: proofs.map { $0.toModel() } )
@@ -48,10 +48,10 @@ extension JsonWscQA {
     
 }
 
-extension JsonWscProofs {
+extension JsonProofs {
     
     func toModel() -> Proofs {
-        return Proofs(letter: letter, refs: refs)
+        return Proofs(number: number, refs: refs)
     }
     
 }

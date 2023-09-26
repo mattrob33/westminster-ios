@@ -36,10 +36,7 @@ struct CatechismView: View {
                             
                             Spacer()
                             
-                            ForEach(qa.proofs.indices) { k in
-                                let proofs = qa.proofs[k]
-                                buildProofsText(proofs)
-                            }
+                            ProofsView(proofs: qa.proofs)
                             
                             Spacer()
                         }

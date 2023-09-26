@@ -8,7 +8,7 @@
 import Foundation
 
 struct Proofs: Hashable, Equatable {
-    var letter: String
+    var number: String
     var refs: [String]
     
     func hash(into hasher: inout Hasher) {
@@ -16,7 +16,7 @@ struct Proofs: Hashable, Equatable {
     }
     
     static func == (lhs: Proofs, rhs: Proofs) -> Bool {
-        if lhs.letter != rhs.letter { return false }
+        if lhs.number != rhs.number { return false }
         if lhs.refs.count != rhs.refs.count { return false }
 
         for i in lhs.refs.indices {

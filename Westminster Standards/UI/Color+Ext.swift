@@ -24,3 +24,11 @@ extension Color {
         return Color(red: 0.13, green: 0.13, blue: 0.13)
     }
 }
+
+extension UIColor{
+    static var textColor: UIColor{
+        return UIColor.init { (trait) -> UIColor in
+            return trait.userInterfaceStyle == .dark ? UIColor.white : UIColor.black
+        }
+    }
+}

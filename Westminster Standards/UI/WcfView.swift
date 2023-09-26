@@ -57,7 +57,7 @@ struct WcfView: View {
                                             let letter = parts[k]
                                                 .removeAll("[")
                                                 .removeAll("]")
-                                            let proofs = section.proofs.first(where: { $0.letter == letter })
+                                            let proofs = section.proofs.first(where: { $0.number == letter })
                                             proofRefs = proofs!.refs.joined(separator: "\n")
                                             showingProofsAlert = true
                                         })
@@ -65,10 +65,7 @@ struct WcfView: View {
                                     }
                                 .frame(maxWidth: .infinity)
                                 
-                                ForEach(section.proofs.indices) { k in
-                                    let proofs = section.proofs[k]
-                                    buildProofsText(proofs)
-                                }
+                                ProofsView(proofs: section.proofs)
                             }
                         }
                         .padding(.bottom, 60)
@@ -135,40 +132,4 @@ func buildSectionPartText(text: String, normalFontSize: Int, onTap: @escaping (S
             }
 }
 
-func buildProofsText(_ proofs: Proofs) -> Text {
-    let text = proofs.refs.joined(separator: "; ")
-    return Text("\(proofs.letter). \(text)")
-        .font(.custom("EBGaramond-Regular", size: CGFloat(18)))
-        .foregroundColor(Color(red: 0.67, green: 0.62, blue: 0.44))
-}
 
-extension String {
-    func split(usingRegex pattern: String) -> [String] {
-        let regex = try! NSRegularExpression(pattern: pattern)
-        let matches = regex.matches(in: self, range: NSRange(startIndex..., in: self))
-        let splits = [startIndex]
-            + matches
-                .map { Range($0.range, in: self)! }
-                .flatMap { [ $0.lowerBound, $0.upperBound ] }
-            + [endIndex]
-
-        return zip(splits, splits.dropFirst())
-            .map { String(self[$0 ..< $1])}
-    }
-    
-    func matches(_ regex: String) -> Bool {
-        return self.range(of: regex, options: .regularExpression, range: nil, locale: nil) != nil
-    }
-    
-    func removeAll(_ chars: String) -> String {
-        return replacingOccurrences(of: chars, with: "")
-    }
-}
-
-extension UIColor{
-    static var textColor: UIColor{
-        return UIColor.init { (trait) -> UIColor in
-            return trait.userInterfaceStyle == .dark ? UIColor.white : UIColor.black
-        }
-    }
-}
