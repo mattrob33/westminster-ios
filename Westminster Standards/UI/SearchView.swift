@@ -197,7 +197,7 @@ struct SearchResultsView: View {
         for i in sections.indices {
             compositeText = compositeText + Text("\(sections[i])")
             if i < (sections.endIndex - 1) {
-                compositeText = compositeText + Text(searchText).foregroundColor(Color.red).underline(color: .red)
+                compositeText = compositeText + Text(searchText).foregroundColor(.gold).underline(color: .gold)
             }
         }
 

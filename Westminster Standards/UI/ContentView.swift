@@ -17,7 +17,7 @@ struct ContentView: View {
     @State private var recentWlcQuestion: Int = 0
     @State private var recentWscQuestion: Int = 0
     
-    @State var sheet: Sheet? = nil
+    @State var sheet: Sheet = .content
 
     @EnvironmentObject var settings: Settings
 
@@ -167,24 +167,22 @@ struct ContentView: View {
                     isShowingSheet = false
                 },
                 content: {
-                    if let sheet = sheet {
-                        switch (sheet) {
-                        case .content:
-                            tocView
-                            
-                        case .search:
-                            SearchView(
-                                wcf: wcf,
-                                wlc: wlc,
-                                wsc: wsc,
-                                onTapDone: {
-                                    isShowingSheet = false
-                                }
-                            )
-                            
-                        case .settings:
-                            settingsView
-                        }
+                    switch (sheet) {
+                    case .content:
+                        tocView
+                        
+                    case .search:
+                        SearchView(
+                            wcf: wcf,
+                            wlc: wlc,
+                            wsc: wsc,
+                            onTapDone: {
+                                isShowingSheet = false
+                            }
+                        )
+                        
+                    case .settings:
+                        settingsView
                     }
                 }
             )
