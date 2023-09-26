@@ -26,7 +26,7 @@ struct SearchView: View {
                 SearchBar(text: $searchText)
                 Text("Done")
                     .font(.system(size: 16, weight: .bold))
-                    .foregroundColor(Color.accentColor)
+                    .foregroundColor(.gold)
                     .onTapGesture {
                         onTapDone()
                     }

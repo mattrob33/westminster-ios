@@ -15,4 +15,12 @@ extension Color {
     public static var text: Color {
         return Color(red: 0.83, green: 0.84, blue: 0.85)
     }
+    
+    public static var themedBackground: Color {
+        return Color(red: 0.16, green: 0.16, blue: 0.17)
+    }
+    
+    public static var backgroundDarker: Color {
+        return Color(red: 0.13, green: 0.13, blue: 0.13)
+    }
 }

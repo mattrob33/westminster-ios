@@ -56,7 +56,7 @@ struct WscView: View {
         .padding(.top, 20)
         .padding(.leading)
         .padding(.trailing)
-        .background(Color(red: 0.16, green: 0.16, blue: 0.17))
+        .background(Color.themedBackground)
         .edgesIgnoringSafeArea(.all)
         .onChange(of: scrollPosition) { target in
             scrollProxy?.scrollTo(target, anchor: .top)

@@ -52,13 +52,13 @@ struct TableOfContentsView: View {
             
             ZStack {
                 Text("Contents")
-                    .font(.system(size: 20, design: .serif))
+                    .font(.system(size: 20, design: .default))
                     .frame(maxWidth: .infinity, alignment: .center)
                     .padding(.top).padding(.trailing)
                 
                 Text("Done")
                     .font(.system(size: 16, weight: .bold))
-                    .foregroundColor(Color.accentColor)
+                    .foregroundColor(.gold)
                     .onTapGesture {
                         onTapDone()
                     }
@@ -74,6 +74,8 @@ struct TableOfContentsView: View {
                 Text("Shorter").tag(Content.wsc)
             }
             .pickerStyle(SegmentedPickerStyle())
+            .padding(.horizontal)
+            .padding(.vertical, 4)
             
             switch (content) {
             case .wcf:
@@ -84,6 +86,7 @@ struct TableOfContentsView: View {
                 wscView
             }
         }
+        .background(Color.themedBackground)
     }
 }
 
@@ -101,16 +104,16 @@ struct WcfTableOfContentsView: View {
                 
                 HStack {
                     Text("\(recentWcfChapter + 1). \(wcf.chapters[recentWcfChapter].title)")
-                        .font(.system(size: 20, design: .serif))
+                        .font(.system(size: 20, design: .default))
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .foregroundColor(Color.accentColor)
+                        .foregroundColor(.gold)
                     
                     Spacer()
                     
                     Text("❯")
-                        .font(.system(size: 20, design: .serif))
+                        .font(.system(size: 20, design: .default))
                         .frame(maxWidth: .infinity, alignment: .trailing)
-                        .foregroundColor(Color.accentColor)
+                        .foregroundColor(.gold)
                 }
                 .padding()
                 .background(
@@ -123,7 +126,7 @@ struct WcfTableOfContentsView: View {
                 
                 ForEach(wcf.chapters.indices) { i in
                     Text("\(i + 1). \(wcf.chapters[i].title)")
-                        .font(.system(size: 20, design: .serif))
+                        .font(.system(size: 20, design: .default))
                         .padding(.top, 1)
                         .onTapGesture {
                             onWcfChapterSelected(i)
@@ -150,16 +153,16 @@ struct WlcTableOfContentsView: View {
                 
                 HStack {
                     Text("\(recentWlcQuestion + 1). \(wlc.questions[recentWlcQuestion].question)")
-                        .font(.system(size: 20, design: .serif))
+                        .font(.system(size: 20, design: .default))
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .foregroundColor(Color.accentColor)
+                        .foregroundColor(.gold)
                     
                     Spacer()
                     
                     Text("❯")
-                        .font(.system(size: 20, design: .serif))
+                        .font(.system(size: 20, design: .default))
                         .frame(maxWidth: .infinity, alignment: .trailing)
-                        .foregroundColor(Color.accentColor)
+                        .foregroundColor(.gold)
                 }
                 .padding()
                 .background(
@@ -172,7 +175,7 @@ struct WlcTableOfContentsView: View {
                 
                 ForEach(wlc.questions.indices) { i in
                     Text("Q\(i + 1). \(wlc.questions[i].question)")
-                        .font(.system(size: 20, design: .serif))
+                        .font(.system(size: 20, design: .default))
                         .padding(.top, 1)
                         .onTapGesture {
                             onWlcQuestionSelected(i)
@@ -200,21 +203,21 @@ struct WscTableOfContentsView: View {
                 
                 HStack {
                     Text("\(recentWscQuestion + 1). \(wsc.questions[recentWscQuestion].question)")
-                        .font(.system(size: 20, design: .serif))
+                        .font(.system(size: 20, design: .default))
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .foregroundColor(Color.accentColor)
+                        .foregroundColor(.gold)
                     
                     Spacer()
                     
                     Text("❯")
-                        .font(.system(size: 20, design: .serif))
+                        .font(.system(size: 20, design: .default))
                         .frame(maxWidth: .infinity, alignment: .trailing)
-                        .foregroundColor(Color.accentColor)
+                        .foregroundColor(.gold)
                 }
                 .padding()
                 .background(
                     RoundedRectangle(cornerRadius: 4)
-                        .fill(Color(red: 202/255, green: 236/255, blue: 252/255, opacity: 0.3))
+                        .fill(Color.backgroundDarker)
                 )
                 .onTapGesture {
                     onWscQuestionSelected(recentWscQuestion)
@@ -222,16 +225,20 @@ struct WscTableOfContentsView: View {
                 
                 ForEach(wsc.questions.indices) { i in
                     Text("Q\(i + 1). \(wsc.questions[i].question)")
-                        .font(.system(size: 20, design: .serif))
+                        .font(.system(size: 20, design: .default))
+                        .foregroundColor(.text)
                         .padding(.top, 1)
                         .onTapGesture {
                             onWscQuestionSelected(i)
                         }
+                    
+                    Divider()
                 }
             }
             .padding(.leading)
             .padding(.trailing)
+            .background(Color.themedBackground)
         }
-        .background(.background)
+        .background(Color.themedBackground)
     }
 }
