@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct WSC: Hashable, Equatable {
+struct WSC: Catechism, Hashable, Equatable {
     let title = "Westminster Shorter Catechism"
     let abbrv = "WSC"
 
