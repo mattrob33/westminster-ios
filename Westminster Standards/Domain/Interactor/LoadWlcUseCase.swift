@@ -42,8 +42,8 @@ extension JsonWLC {
 
 extension JsonWlcQA {
     
-    func toModel() -> WlcQA {
-        return WlcQA(question: question, answer: answer, proofs: proofs.map { $0.toModel() })
+    func toModel() -> QA {
+        return QA(question: question, answer: answer, proofs: proofs.map { $0.toModel() })
     }
     
 }

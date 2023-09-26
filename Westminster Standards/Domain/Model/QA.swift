@@ -1,13 +1,13 @@
 //
-//  WscQA.swift
+//  QA.swift
 //  Westminster Standards
 //
-//  Created by Matt Robertson on 1/12/22.
+//  Created by Matt Robertson on 9/26/23.
 //
 
 import Foundation
 
-struct WscQA: Hashable, Equatable {
+struct QA: Hashable, Equatable {
     var question: String
     var answer: String
     var proofs: [Proofs]

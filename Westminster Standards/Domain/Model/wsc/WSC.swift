@@ -11,7 +11,7 @@ struct WSC: Hashable, Equatable {
     let title = "Westminster Shorter Catechism"
     let abbrv = "WSC"
 
-    var questions: [WscQA]
+    var questions: [QA]
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(abbrv)

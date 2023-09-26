@@ -23,6 +23,7 @@
 		0F83B0AF2AC21CA900F4A059 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 0F83B0AC2AC21CA900F4A059 /* Fonts */; };
 		0F8761222AC28BD500230615 /* BaseViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8761212AC28BD500230615 /* BaseViews.swift */; };
 		0FD4886A2AC28F8700ACCF3E /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD488692AC28F8700ACCF3E /* Color+Ext.swift */; };
+		0FD4886C2AC3093600ACCF3E /* QA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD4886B2AC3093600ACCF3E /* QA.swift */; };
 		0FEA1FF22A3A3932001242A0 /* wlc.json in Resources */ = {isa = PBXBuildFile; fileRef = 0FEA1FEF2A3A3930001242A0 /* wlc.json */; };
 		0FEA1FF42A3A3932001242A0 /* wsc.json in Resources */ = {isa = PBXBuildFile; fileRef = 0FEA1FF02A3A3931001242A0 /* wsc.json */; };
 		0FEA1FF62A3A3932001242A0 /* wcf.json in Resources */ = {isa = PBXBuildFile; fileRef = 0FEA1FF12A3A3931001242A0 /* wcf.json */; };
@@ -48,12 +49,10 @@
 		D8094994278FC2C7001AC162 /* LoadJsonUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8094993278FC2C6001AC162 /* LoadJsonUseCase.swift */; };
 		D8094996278FC50A001AC162 /* LoadWlcUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8094995278FC50A001AC162 /* LoadWlcUseCase.swift */; };
 		D809499A278FC528001AC162 /* WSC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8094998278FC528001AC162 /* WSC.swift */; };
-		D809499B278FC528001AC162 /* WscQA.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8094999278FC528001AC162 /* WscQA.swift */; };
 		D87199AE27931AF900F27816 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87199AD27931AF900F27816 /* Settings.swift */; };
 		D87199B02793237400F27816 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87199AF2793237400F27816 /* SettingsView.swift */; };
 		D89B891A278FC81E00A326FD /* JsonWLC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89B8916278FC6AD00A326FD /* JsonWLC.swift */; };
 		D89B891B278FC82100A326FD /* JsonWlcQA.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89B8917278FC6AD00A326FD /* JsonWlcQA.swift */; };
-		D89B891C278FC82E00A326FD /* WlcQA.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809499D278FC52B001AC162 /* WlcQA.swift */; };
 		D89B891D278FC83000A326FD /* WLC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809499E278FC52B001AC162 /* WLC.swift */; };
 		D89B891F278FC8D100A326FD /* WscView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89B891E278FC8D100A326FD /* WscView.swift */; };
 		D89B8926278FD6F400A326FD /* JsonWSC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89B8920278FC9B000A326FD /* JsonWSC.swift */; };
@@ -132,6 +131,7 @@
 		0F83B0AC2AC21CA900F4A059 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		0F8761212AC28BD500230615 /* BaseViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViews.swift; sourceTree = "<group>"; };
 		0FD488692AC28F8700ACCF3E /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
+		0FD4886B2AC3093600ACCF3E /* QA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QA.swift; sourceTree = "<group>"; };
 		0FEA1FEF2A3A3930001242A0 /* wlc.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wlc.json; sourceTree = "<group>"; };
 		0FEA1FF02A3A3931001242A0 /* wsc.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wsc.json; sourceTree = "<group>"; };
 		0FEA1FF12A3A3931001242A0 /* wcf.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wcf.json; sourceTree = "<group>"; };
@@ -162,8 +162,6 @@
 		D8094993278FC2C6001AC162 /* LoadJsonUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadJsonUseCase.swift; sourceTree = "<group>"; };
 		D8094995278FC50A001AC162 /* LoadWlcUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadWlcUseCase.swift; sourceTree = "<group>"; };
 		D8094998278FC528001AC162 /* WSC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSC.swift; sourceTree = "<group>"; };
-		D8094999278FC528001AC162 /* WscQA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WscQA.swift; sourceTree = "<group>"; };
-		D809499D278FC52B001AC162 /* WlcQA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WlcQA.swift; sourceTree = "<group>"; };
 		D809499E278FC52B001AC162 /* WLC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLC.swift; sourceTree = "<group>"; };
 		D87199AD27931AF900F27816 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		D87199AF2793237400F27816 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -336,6 +334,7 @@
 				D809499C278FC52B001AC162 /* wlc */,
 				D8094997278FC528001AC162 /* wsc */,
 				D805C4FB27A87307003A9AAF /* Proofs.swift */,
+				0FD4886B2AC3093600ACCF3E /* QA.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -422,7 +421,6 @@
 			isa = PBXGroup;
 			children = (
 				D8094998278FC528001AC162 /* WSC.swift */,
-				D8094999278FC528001AC162 /* WscQA.swift */,
 			);
 			path = wsc;
 			sourceTree = "<group>";
@@ -430,7 +428,6 @@
 		D809499C278FC52B001AC162 /* wlc */ = {
 			isa = PBXGroup;
 			children = (
-				D809499D278FC52B001AC162 /* WlcQA.swift */,
 				D809499E278FC52B001AC162 /* WLC.swift */,
 			);
 			path = wlc;
@@ -675,13 +672,13 @@
 				D8094994278FC2C7001AC162 /* LoadJsonUseCase.swift in Sources */,
 				D89B891A278FC81E00A326FD /* JsonWLC.swift in Sources */,
 				D80949622788D64D001AC162 /* WCF.swift in Sources */,
+				0FD4886C2AC3093600ACCF3E /* QA.swift in Sources */,
 				D809496E2788EFF4001AC162 /* JsonWcfChapter.swift in Sources */,
 				D89B891D278FC83000A326FD /* WLC.swift in Sources */,
 				D89B8926278FD6F400A326FD /* JsonWSC.swift in Sources */,
 				D805C4FC27A87307003A9AAF /* Proofs.swift in Sources */,
 				D89B8927278FD6F700A326FD /* JsonWscQA.swift in Sources */,
 				D80948EB2788D2B9001AC162 /* Westminster_StandardsApp.swift in Sources */,
-				D809499B278FC528001AC162 /* WscQA.swift in Sources */,
 				D809499A278FC528001AC162 /* WSC.swift in Sources */,
 				D80949672788D956001AC162 /* LoadWcfUseCase.swift in Sources */,
 				0F8761222AC28BD500230615 /* BaseViews.swift in Sources */,
@@ -690,7 +687,6 @@
 				D89B891B278FC82100A326FD /* JsonWlcQA.swift in Sources */,
 				D809496D2788EFF4001AC162 /* JsonWcfSection.swift in Sources */,
 				D809495E2788D460001AC162 /* WcfSection.swift in Sources */,
-				D89B891C278FC82E00A326FD /* WlcQA.swift in Sources */,
 				0FD4886A2AC28F8700ACCF3E /* Color+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
