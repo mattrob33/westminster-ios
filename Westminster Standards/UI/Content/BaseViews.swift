@@ -77,3 +77,33 @@ struct Answer: View {
             .padding(.bottom, 8)
     }
 }
+
+struct TopBar: View {
+    
+    @EnvironmentObject var theme: Theme
+    
+    let title: String
+    let isExpanded: Bool
+    let onTap: () -> ()
+
+    var body: some View {
+        VStack {
+            HStack(alignment: .center) {
+                Text(title)
+                    .font(theme.titleFont)
+                    .foregroundColor(theme.accentColor)
+                
+                Image(systemName: "arrowtriangle.down.circle")
+                    .foregroundColor(theme.accentColor)
+                    .rotationEffect(.degrees(isExpanded ? 180 : 0))
+                    .padding(.top, 2)
+            }
+            .padding(.top, 2)
+            .padding(.bottom, 8)
+            Divider()
+        }
+        .frame(maxWidth: .infinity)
+        .background(theme.backgroundAccentColor)
+        .onTapGesture(perform: onTap)
+    }
+}

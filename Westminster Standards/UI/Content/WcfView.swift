@@ -14,7 +14,10 @@ struct WcfView: View {
     @State private var currentChapter = 0
     @State private var recentChapter = 0
     
-    @State private var showToolbar = true
+    @State private var showTopBar = true
+    @State private var showBottomBar = true
+    
+    @State private var showPicker = false
 
     @Binding var scrollPosition: Int
     @State private var scrollProxy: ScrollViewProxy? = nil
@@ -23,67 +26,85 @@ struct WcfView: View {
     @EnvironmentObject var theme: Theme
 
     var body: some View {
-        ScrollView {
-            ScrollViewReader { proxy in
-                
-                VStack(alignment: .leading) {
+        ZStack {
+            ScrollView {
+                ScrollViewReader { proxy in
                     
-                    Spacer(minLength: 70)
-                        .id(0)
-                    
-                    ForEach(wcf.chapters.indices) { i in
-                        VStack(alignment: .leading) {
-                            let chapter = wcf.chapters[i]
+                    VStack(alignment: .leading) {
+                        
+                        Spacer(minLength: 70)
+                            .id(0)
+                        
+                        ForEach(wcf.chapters.indices) { i in
+                            VStack(alignment: .leading) {
+                                let chapter = wcf.chapters[i]
 
-                            Text("\(romanNumeral(i+1)). \(chapter.title)")
-                                .font(theme.titleFont)
-                                .foregroundColor(theme.primaryTextColor)
-                                .frame(maxWidth: .infinity, alignment: .center)
-                                .padding(.vertical)
+                                Text("\(romanNumeral(i+1)). \(chapter.title)")
+                                    .font(theme.titleFont)
+                                    .foregroundColor(theme.primaryTextColor)
+                                    .frame(maxWidth: .infinity, alignment: .center)
+                                    .padding(.vertical)
 
-                            ForEach(chapter.sections.indices) { j in
-                                let section = chapter.sections[j]
-                                Section(section: section)
-                                    .environmentObject(theme)
-                                ProofsView(proofs: section.proofs)
-                                    .padding(.bottom, 24)
+                                ForEach(chapter.sections.indices) { j in
+                                    let section = chapter.sections[j]
+                                    Section(section: section)
+                                        .environmentObject(theme)
+                                    ProofsView(proofs: section.proofs)
+                                        .padding(.bottom, 24)
+                                }
                             }
+                            .padding(.bottom, 60)
+                            .id(i + 1)
                         }
-                        .padding(.bottom, 60)
-                        .id(i + 1)
+                    }
+                    .onAppear {
+                        scrollProxy = proxy
+                        proxy.scrollTo(scrollPosition, anchor: .top)
                     }
                 }
-                .onAppear {
-                    scrollProxy = proxy
-                    proxy.scrollTo(scrollPosition, anchor: .top)
+            }
+            .padding(.top, 20)
+            .padding(.leading)
+            .padding(.trailing)
+            .onTapGesture {
+                withAnimation {
+                    showTopBar.toggle()
+                    showBottomBar.toggle()
                 }
             }
+            .toolbar(showBottomBar ? .visible : .hidden, for: .tabBar)
+            
+            if showPicker {
+                TocPageView(
+                    items: wcf.chapters.map { $0.title },
+                    recentItem: recentChapter,
+                    onItemSelected: { num in
+                        scrollPosition = num + 1
+                        showPicker = false
+                        withAnimation {
+                            showTopBar = false
+                            showBottomBar = false
+                        }
+                    }
+                )
+                .padding(.top, 50)
+            }
         }
-        .padding(.leading).padding(.trailing)
         .background(theme.backgroundColor)
+        .edgesIgnoringSafeArea(.all)
         .onChange(of: scrollPosition) { target in
             scrollProxy?.scrollTo(target, anchor: .top)
         }
-        .onTapGesture {
-            withAnimation {
-                showToolbar.toggle()
-            }
-        }
-        .toolbar(showToolbar ? .visible : .hidden, for: .tabBar)
         .overlay(alignment: .top) {
-            if showToolbar {
-                VStack {
-                    HStack {
-                        Text(wcf.title)
-                            .font(theme.titleFont)
-                            .foregroundColor(theme.accentColor)
-                            .padding(.top, 2)
-                            .padding(.bottom, 8)
+            if showTopBar {
+                TopBar(
+                    title: wcf.title,
+                    isExpanded: showPicker,
+                    onTap: {
+                        showPicker.toggle()
+                        showBottomBar = !showPicker
                     }
-                    Divider()
-                }
-                .frame(maxWidth: .infinity, alignment: .center)
-                .background(theme.backgroundAccentColor)
+                )
             }
         }
     }

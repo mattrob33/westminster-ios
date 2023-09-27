@@ -20,13 +20,14 @@ struct TocPageView: View {
         ScrollView {
             VStack(alignment: .leading) {
                 
-                HStack {
+                Spacer(minLength: 60)
+                
+                ZStack {
                     Text("\(recentItem + 1). \(items[recentItem])")
-                        .font(.system(size: 20, design: .default))
+                        .font(.system(size: 18, design: .default))
                         .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.trailing, 32)
                         .foregroundColor(theme.accentColor)
-                    
-                    Spacer()
                     
                     Text("❯")
                         .font(.system(size: 20, design: .default))
@@ -44,9 +45,9 @@ struct TocPageView: View {
                 
                 ForEach(items.indices) { i in
                     Text("Q\(i + 1). \(items[i])")
-                        .font(.system(size: 20, design: .default))
+                        .font(.system(size: 18, design: .default))
                         .foregroundColor(theme.primaryTextColor)
-                        .padding(.top, 1)
+                        .padding(.vertical, 4)
                         .onTapGesture {
                             onItemSelected(i)
                         }
@@ -54,6 +55,7 @@ struct TocPageView: View {
                     Divider()
                 }
             }
+            .padding(.bottom, 16)
             .padding(.leading)
             .padding(.trailing)
             .background(theme.backgroundColor)
