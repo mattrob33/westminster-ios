@@ -31,7 +31,6 @@
 		0FD488822AC3126000ACCF3E /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD488812AC3126000ACCF3E /* String+Ext.swift */; };
 		0FD488892AC325DF00ACCF3E /* TocPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD488882AC325DF00ACCF3E /* TocPageView.swift */; };
 		0FD4888B2AC352D400ACCF3E /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD4888A2AC352D400ACCF3E /* Theme.swift */; };
-		0FD4888D2AC359FD00ACCF3E /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD4888C2AC359FD00ACCF3E /* ThemeManager.swift */; };
 		0FEA1FF22A3A3932001242A0 /* wlc.json in Resources */ = {isa = PBXBuildFile; fileRef = 0FEA1FEF2A3A3930001242A0 /* wlc.json */; };
 		0FEA1FF42A3A3932001242A0 /* wsc.json in Resources */ = {isa = PBXBuildFile; fileRef = 0FEA1FF02A3A3931001242A0 /* wsc.json */; };
 		0FEA1FF62A3A3932001242A0 /* wcf.json in Resources */ = {isa = PBXBuildFile; fileRef = 0FEA1FF12A3A3931001242A0 /* wcf.json */; };
@@ -52,7 +51,6 @@
 		D809496F2788EFF4001AC162 /* JsonWCF.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809496A2788DB55001AC162 /* JsonWCF.swift */; };
 		D809497427892DDB001AC162 /* WcfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809497327892DDB001AC162 /* WcfView.swift */; };
 		D8094982278F75F3001AC162 /* LoadWscUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8094981278F75F2001AC162 /* LoadWscUseCase.swift */; };
-		D809498C278F92F9001AC162 /* TableOfContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D809498B278F92F9001AC162 /* TableOfContentsView.swift */; };
 		D8094994278FC2C7001AC162 /* LoadJsonUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8094993278FC2C6001AC162 /* LoadJsonUseCase.swift */; };
 		D8094996278FC50A001AC162 /* LoadWlcUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8094995278FC50A001AC162 /* LoadWlcUseCase.swift */; };
 		D809499A278FC528001AC162 /* WSC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8094998278FC528001AC162 /* WSC.swift */; };
@@ -141,7 +139,6 @@
 		0FD488812AC3126000ACCF3E /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		0FD488882AC325DF00ACCF3E /* TocPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TocPageView.swift; sourceTree = "<group>"; };
 		0FD4888A2AC352D400ACCF3E /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
-		0FD4888C2AC359FD00ACCF3E /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		0FEA1FEF2A3A3930001242A0 /* wlc.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wlc.json; sourceTree = "<group>"; };
 		0FEA1FF02A3A3931001242A0 /* wsc.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wsc.json; sourceTree = "<group>"; };
 		0FEA1FF12A3A3931001242A0 /* wcf.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wcf.json; sourceTree = "<group>"; };
@@ -167,7 +164,6 @@
 		D809496C2788DB55001AC162 /* JsonWcfSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonWcfSection.swift; sourceTree = "<group>"; };
 		D809497327892DDB001AC162 /* WcfView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WcfView.swift; sourceTree = "<group>"; };
 		D8094981278F75F2001AC162 /* LoadWscUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadWscUseCase.swift; sourceTree = "<group>"; };
-		D809498B278F92F9001AC162 /* TableOfContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableOfContentsView.swift; sourceTree = "<group>"; };
 		D8094993278FC2C6001AC162 /* LoadJsonUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadJsonUseCase.swift; sourceTree = "<group>"; };
 		D8094995278FC50A001AC162 /* LoadWlcUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadWlcUseCase.swift; sourceTree = "<group>"; };
 		D8094998278FC528001AC162 /* WSC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSC.swift; sourceTree = "<group>"; };
@@ -261,7 +257,6 @@
 			isa = PBXGroup;
 			children = (
 				0FD488882AC325DF00ACCF3E /* TocPageView.swift */,
-				D809498B278F92F9001AC162 /* TableOfContentsView.swift */,
 			);
 			path = TableOfContents;
 			sourceTree = "<group>";
@@ -423,7 +418,6 @@
 				D80948EC2788D2B9001AC162 /* ContentView.swift */,
 				D87199AF2793237400F27816 /* SettingsView.swift */,
 				0FD4888A2AC352D400ACCF3E /* Theme.swift */,
-				0FD4888C2AC359FD00ACCF3E /* ThemeManager.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -685,7 +679,6 @@
 				D87199AE27931AF900F27816 /* Settings.swift in Sources */,
 				D809496F2788EFF4001AC162 /* JsonWCF.swift in Sources */,
 				0FD488822AC3126000ACCF3E /* String+Ext.swift in Sources */,
-				D809498C278F92F9001AC162 /* TableOfContentsView.swift in Sources */,
 				0FD4887B2AC3101400ACCF3E /* JsonQA.swift in Sources */,
 				0FD4886E2AC309A700ACCF3E /* Catechism.swift in Sources */,
 				D80948ED2788D2B9001AC162 /* ContentView.swift in Sources */,
@@ -711,7 +704,6 @@
 				D809497427892DDB001AC162 /* WcfView.swift in Sources */,
 				D809496D2788EFF4001AC162 /* JsonWcfSection.swift in Sources */,
 				D809495E2788D460001AC162 /* WcfSection.swift in Sources */,
-				0FD4888D2AC359FD00ACCF3E /* ThemeManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
