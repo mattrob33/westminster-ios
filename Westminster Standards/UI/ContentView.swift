@@ -17,7 +17,7 @@ struct ContentView: View {
     @State private var recentWlcQuestion: Int = 0
     @State private var recentWscQuestion: Int = 0
     
-    @State var sheet: Sheet = .content
+    @State var sheet: Sheet = .search
 
     @EnvironmentObject var settings: Settings
     @EnvironmentObject var theme: Theme
@@ -56,34 +56,34 @@ struct ContentView: View {
             .environmentObject(settings)
             .environmentObject(theme)
             
-            let tocView = TableOfContentsView(
-                content: contentLocation.content,
-                wcf: wcf,
-                wlc: wlc,
-                wsc: wsc,
-                recentWcfChapter: recentWcfChapter,
-                recentWlcQuestion: recentWlcQuestion,
-                recentWscQuestion: recentWscQuestion,
-                onItemSelected: { newContent, item in
-                    contentLocation = ContentLocation(content: newContent, location: item)
-                    
-                    switch (newContent) {
-                    case .wcf:
-                        recentWcfChapter = item
-                    case .wlc:
-                        recentWlcQuestion = item
-                    case .wsc:
-                        recentWscQuestion = item
-                    }
-                    
-                    isShowingSheet = false
-                },
-                onTapDone: {
-                    isShowingSheet = false
-                }
-            )
-            .environmentObject(settings)
-            .environmentObject(theme)
+//            let tocView = TableOfContentsView(
+//                content: contentLocation.content,
+//                wcf: wcf,
+//                wlc: wlc,
+//                wsc: wsc,
+//                recentWcfChapter: recentWcfChapter,
+//                recentWlcQuestion: recentWlcQuestion,
+//                recentWscQuestion: recentWscQuestion,
+//                onItemSelected: { newContent, item in
+//                    contentLocation = ContentLocation(content: newContent, location: item)
+//                    
+//                    switch (newContent) {
+//                    case .wcf:
+//                        recentWcfChapter = item
+//                    case .wlc:
+//                        recentWlcQuestion = item
+//                    case .wsc:
+//                        recentWscQuestion = item
+//                    }
+//                    
+//                    isShowingSheet = false
+//                },
+//                onTapDone: {
+//                    isShowingSheet = false
+//                }
+//            )
+//            .environmentObject(settings)
+//            .environmentObject(theme)
             
             let settingsView = SettingsView(
                 fontSize: settings.fontSize
@@ -104,63 +104,63 @@ struct ContentView: View {
                 
                 VStack {
                     Divider()
-                    
+
                     HStack {
                         Spacer()
-                        
-                        VStack {
-                            Image(systemName: "book")
-                                .resizable()
-                                .foregroundColor(theme.subduedIconColor)
-                                .frame(width: 24.0, height: 24.0)
-                                .onTapGesture {
-                                    sheet = .content
-                                    isShowingSheet = true
-                                }
-                            
-                            Text("Contents")
-                                .font(.system(size: 10))
-                                .foregroundColor(theme.subduedIconColor)
-                                .padding(.top, 0.2)
-                        }
+
+                        tabBarItem(
+                            label: "WCF",
+                            imageName: "book",
+                            onTap: {
+                                contentLocation = ContentLocation(content: .wcf, location: recentWcfChapter)
+                            }
+                        )
                         
                         Spacer()
                         Spacer()
                         
-                        VStack {
-                            Image(systemName: "magnifyingglass")
-                                .resizable()
-                                .foregroundColor(theme.subduedIconColor)
-                                .frame(width: 24.0, height: 24.0)
-                                .onTapGesture {
-                                    sheet = .search
-                                    isShowingSheet = true
-                                }
-                            
-                            Text("Search")
-                                .font(.system(size: 10))
-                                .foregroundColor(theme.subduedIconColor)
-                                .padding(.top, 0.2)
-                        }
+                        tabBarItem(
+                            label: "WLC",
+                            imageName: "questionmark.square",
+                            onTap: {
+                                contentLocation = ContentLocation(content: .wlc, location: recentWlcQuestion)
+                            }
+                        )
                         
                         Spacer()
                         Spacer()
                         
-                        VStack {
-                            Image(systemName: "gearshape")
-                                .resizable()
-                                .foregroundColor(theme.subduedIconColor)
-                                .frame(width: 24.0, height: 24.0)
-                                .onTapGesture {
-                                    sheet = .settings
-                                    isShowingSheet = true
-                                }
-                            
-                            Text("Settings")
-                                .font(.system(size: 10))
-                                .foregroundColor(theme.subduedIconColor)
-                                .padding(.top, 0.2)
-                        }
+                        tabBarItem(
+                            label: "WSC",
+                            imageName: "questionmark.app.dashed",
+                            onTap: {
+                                contentLocation = ContentLocation(content: .wsc, location: recentWscQuestion)
+                            }
+                        )
+                        
+                        Spacer()
+                        Spacer()
+                        
+                        tabBarItem(
+                            label: "Search",
+                            imageName: "magnifyingglass",
+                            onTap: {
+                                sheet = .search
+                                isShowingSheet = true
+                            }
+                        )
+                        
+                        Spacer()
+                        Spacer()
+                        
+                        tabBarItem(
+                            label: "Settings",
+                            imageName: "gearshape",
+                            onTap: {
+                                sheet = .settings
+                                isShowingSheet = true
+                            }
+                        )
                         
                         Spacer()
                     }
@@ -175,8 +175,8 @@ struct ContentView: View {
                 },
                 content: {
                     switch (sheet) {
-                    case .content:
-                        tocView
+//                    case .content:
+//                        tocView
                         
                     case .search:
                         SearchView(
@@ -194,13 +194,32 @@ struct ContentView: View {
                 }
             )
         } else {
-            Text("No data")
+            Text("")
         }
+    }
+
+    @ViewBuilder
+    private func tabBarItem(
+        label: String,
+        imageName: String,
+        onTap: @escaping () -> ()
+    ) -> some View {
+        VStack {
+            Image(systemName: imageName)
+                .resizable()
+                .foregroundColor(theme.subduedIconColor)
+                .frame(width: 24.0, height: 24.0)
+
+            Text(label)
+                .font(.system(size: 10))
+                .foregroundColor(theme.subduedIconColor)
+                .padding(.top, 0.2)
+        }
+        .onTapGesture(perform: onTap)
     }
 }
 
 enum Sheet {
-    case content
     case search
     case settings
 }
