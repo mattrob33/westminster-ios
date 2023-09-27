@@ -29,10 +29,10 @@ struct ContentView: View {
         
         let loadWlcUseCase = LoadWlcUseCase()
         let wlc = loadWlcUseCase.execute()
-
+        
         let loadWscUseCase = LoadWscUseCase()
         let wsc = loadWscUseCase.execute()
-
+        
         if let wcf = wcf, let wlc = wlc, let wsc = wsc {
             
             let wcfView = WcfView(
@@ -56,145 +56,38 @@ struct ContentView: View {
             .environmentObject(settings)
             .environmentObject(theme)
             
-//            let tocView = TableOfContentsView(
-//                content: contentLocation.content,
-//                wcf: wcf,
-//                wlc: wlc,
-//                wsc: wsc,
-//                recentWcfChapter: recentWcfChapter,
-//                recentWlcQuestion: recentWlcQuestion,
-//                recentWscQuestion: recentWscQuestion,
-//                onItemSelected: { newContent, item in
-//                    contentLocation = ContentLocation(content: newContent, location: item)
-//                    
-//                    switch (newContent) {
-//                    case .wcf:
-//                        recentWcfChapter = item
-//                    case .wlc:
-//                        recentWlcQuestion = item
-//                    case .wsc:
-//                        recentWscQuestion = item
-//                    }
-//                    
-//                    isShowingSheet = false
-//                },
-//                onTapDone: {
-//                    isShowingSheet = false
-//                }
-//            )
-//            .environmentObject(settings)
-//            .environmentObject(theme)
-            
-            let settingsView = SettingsView(
-                fontSize: settings.fontSize
+            let searchView = SearchView(
+                wcf: wcf,
+                wlc: wlc,
+                wsc: wsc
             )
+            .background(theme.backgroundColor)
             .environmentObject(settings)
             .environmentObject(theme)
             
-            ZStack(alignment: .bottom) {
-                
-                switch contentLocation.content {
-                case .wcf:
-                    wcfView
-                case .wlc:
-                    wlcView
-                case .wsc:
-                    wscView
-                }
-                
-                VStack {
-                    Divider()
-
-                    HStack {
-                        Spacer()
-
-                        tabBarItem(
-                            label: "WCF",
-                            imageName: "book",
-                            onTap: {
-                                contentLocation = ContentLocation(content: .wcf, location: recentWcfChapter)
-                            }
-                        )
-                        
-                        Spacer()
-                        Spacer()
-                        
-                        tabBarItem(
-                            label: "WLC",
-                            imageName: "questionmark.square",
-                            onTap: {
-                                contentLocation = ContentLocation(content: .wlc, location: recentWlcQuestion)
-                            }
-                        )
-                        
-                        Spacer()
-                        Spacer()
-                        
-                        tabBarItem(
-                            label: "WSC",
-                            imageName: "questionmark.app.dashed",
-                            onTap: {
-                                contentLocation = ContentLocation(content: .wsc, location: recentWscQuestion)
-                            }
-                        )
-                        
-                        Spacer()
-                        Spacer()
-                        
-                        tabBarItem(
-                            label: "Search",
-                            imageName: "magnifyingglass",
-                            onTap: {
-                                sheet = .search
-                                isShowingSheet = true
-                            }
-                        )
-                        
-                        Spacer()
-                        Spacer()
-                        
-                        tabBarItem(
-                            label: "Settings",
-                            imageName: "gearshape",
-                            onTap: {
-                                sheet = .settings
-                                isShowingSheet = true
-                            }
-                        )
-                        
-                        Spacer()
+            TabView {
+                wcfView
+                    .tabItem {
+                        Label("WCF", systemImage: "book")
                     }
-                    .padding(.top, 4)
-                }
-                .background(theme.backgroundAccentColor)
+                
+                wlcView
+                    .tabItem {
+                        Label("WLC", systemImage: "questionmark.square")
+                    }
+                
+                wscView
+                    .tabItem {
+                        Label("WSC", systemImage: "questionmark.app.dashed")
+                    }
+                
+                searchView
+                    .tabItem {
+                        Label("Search", systemImage: "magnifyingglass")
+                    }
             }
-            .sheet(
-                isPresented: $isShowingSheet,
-                onDismiss: {
-                    isShowingSheet = false
-                },
-                content: {
-                    switch (sheet) {
-//                    case .content:
-//                        tocView
-                        
-                    case .search:
-                        SearchView(
-                            wcf: wcf,
-                            wlc: wlc,
-                            wsc: wsc,
-                            onTapDone: {
-                                isShowingSheet = false
-                            }
-                        )
-                        
-                    case .settings:
-                        settingsView
-                    }
-                }
-            )
-        } else {
-            Text("")
+            .toolbarBackground(theme.backgroundAccentColor, for: .tabBar)
+            .accentColor(theme.accentColor)
         }
     }
 

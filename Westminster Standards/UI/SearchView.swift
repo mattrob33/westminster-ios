@@ -13,8 +13,6 @@ struct SearchView: View {
     var wlc: WLC
     var wsc: WSC
 
-    var onTapDone: () -> Void
-    
     @EnvironmentObject var theme: Theme
 
     @State private var content: WestminsterContent = WestminsterContent.wcf
@@ -30,7 +28,7 @@ struct SearchView: View {
                     .font(.system(size: 16, weight: .bold))
                     .foregroundColor(theme.accentColor)
                     .onTapGesture {
-                        onTapDone()
+                        UIApplication.shared.endEditing()
                     }
             }
             .padding(.leading).padding(.trailing)
@@ -88,6 +86,12 @@ struct SearchBar: UIViewRepresentable {
 
     func updateUIView(_ uiView: UISearchBar, context: UIViewRepresentableContext<SearchBar>) {
         uiView.text = text
+    }
+}
+
+extension UIApplication {
+    func endEditing() {
+        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
 
