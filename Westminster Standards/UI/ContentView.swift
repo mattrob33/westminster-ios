@@ -55,7 +55,7 @@ struct ContentView: View {
             )
             .environmentObject(settings)
             .environmentObject(theme)
-            
+
             let searchView = SearchView(
                 wcf: wcf,
                 wlc: wlc,

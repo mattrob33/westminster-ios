@@ -13,12 +13,11 @@ struct WcfView: View {
 
     @State private var currentChapter = 0
     @State private var recentChapter = 0
+    
+    @State private var showToolbar = true
 
     @Binding var scrollPosition: Int
     @State private var scrollProxy: ScrollViewProxy? = nil
-    
-    @State private var proofRefs = ""
-    @State private var showingProofsAlert = false
 
     @EnvironmentObject var settings: Settings
     @EnvironmentObject var theme: Theme
@@ -61,11 +60,12 @@ struct WcfView: View {
         .onChange(of: scrollPosition) { target in
             scrollProxy?.scrollTo(target, anchor: .top)
         }
-        .alert(proofRefs, isPresented: $showingProofsAlert) {
-            Button("Close") {
-                showingProofsAlert = false
+        .onTapGesture {
+            withAnimation {
+                showToolbar.toggle()
             }
         }
+        .toolbar(showToolbar ? .visible : .hidden, for: .tabBar)
     }
 }
 

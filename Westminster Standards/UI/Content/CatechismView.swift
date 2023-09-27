@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CatechismView: View {
 
+    @State private var showToolbar = true
+    
     @State private var recentQuestion = 0
 
     @State var catechism: Catechism
@@ -54,6 +56,13 @@ struct CatechismView: View {
         .edgesIgnoringSafeArea(.all)
         .onChange(of: scrollPosition) { target in
             scrollProxy?.scrollTo(target, anchor: .top)
+            showToolbar = false
         }
+        .onTapGesture {
+            withAnimation {
+                showToolbar.toggle()
+            }
+        }
+        .toolbar(showToolbar ? .visible : .hidden, for: .tabBar)
     }
 }
