@@ -70,23 +70,27 @@ struct ContentView: View {
                     .tabItem {
                         Label("WCF", systemImage: "book")
                     }
+                    .toolbarBackground(theme.backgroundAccentColor, for: .tabBar)
                 
                 wlcView
                     .tabItem {
                         Label("WLC", systemImage: "questionmark.square")
                     }
+                    .toolbarBackground(theme.backgroundAccentColor, for: .tabBar)
                 
                 wscView
                     .tabItem {
                         Label("WSC", systemImage: "questionmark.app.dashed")
                     }
+                    .toolbarBackground(theme.backgroundAccentColor, for: .tabBar)
                 
                 searchView
                     .tabItem {
                         Label("Search", systemImage: "magnifyingglass")
                     }
+                    .toolbarBackground(theme.backgroundAccentColor, for: .tabBar)
+                
             }
-            .toolbarBackground(theme.backgroundAccentColor, for: .tabBar)
             .accentColor(theme.accentColor)
         }
     }

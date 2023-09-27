@@ -26,7 +26,8 @@ struct CatechismView: View {
                 
                 VStack(alignment: .leading) {
                     
-                    Title(catechism.abbrv)
+                    Spacer(minLength: 70)
+                        .id(0)
                     
                     ForEach(catechism.questions.indices) { i in
                         VStack(alignment: .leading) {
@@ -40,7 +41,7 @@ struct CatechismView: View {
                             Spacer()
                         }
                         .padding(.top, 24)
-                        .id(i)
+                        .id(i + 1)
                     }
                 }
                 .onAppear {
@@ -64,5 +65,21 @@ struct CatechismView: View {
             }
         }
         .toolbar(showToolbar ? .visible : .hidden, for: .tabBar)
+        .overlay(alignment: .top) {
+            if showToolbar {
+                VStack {
+                    HStack {
+                        Text(catechism.title)
+                            .font(theme.titleFont)
+                            .foregroundColor(theme.accentColor)
+                            .padding(.top, 2)
+                            .padding(.bottom, 8)
+                    }
+                    Divider()
+                }
+                .frame(maxWidth: .infinity, alignment: .center)
+                .background(theme.backgroundAccentColor)
+            }
+        }
     }
 }

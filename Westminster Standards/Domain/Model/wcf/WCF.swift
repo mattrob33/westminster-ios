@@ -9,7 +9,7 @@ import Foundation
 
 /// The WCF.
 struct WCF: Hashable, Equatable {
-    let title = "Westminster Confession of Faith"
+    let title = "Confession"
     let abbrv = "WCF"
 
     var chapters: [WcfChapter]

@@ -27,6 +27,10 @@ struct WcfView: View {
             ScrollViewReader { proxy in
                 
                 VStack(alignment: .leading) {
+                    
+                    Spacer(minLength: 70)
+                        .id(0)
+                    
                     ForEach(wcf.chapters.indices) { i in
                         VStack(alignment: .leading) {
                             let chapter = wcf.chapters[i]
@@ -46,7 +50,7 @@ struct WcfView: View {
                             }
                         }
                         .padding(.bottom, 60)
-                        .id(i)
+                        .id(i + 1)
                     }
                 }
                 .onAppear {
@@ -66,6 +70,22 @@ struct WcfView: View {
             }
         }
         .toolbar(showToolbar ? .visible : .hidden, for: .tabBar)
+        .overlay(alignment: .top) {
+            if showToolbar {
+                VStack {
+                    HStack {
+                        Text(wcf.title)
+                            .font(theme.titleFont)
+                            .foregroundColor(theme.accentColor)
+                            .padding(.top, 2)
+                            .padding(.bottom, 8)
+                    }
+                    Divider()
+                }
+                .frame(maxWidth: .infinity, alignment: .center)
+                .background(theme.backgroundAccentColor)
+            }
+        }
     }
 }
 

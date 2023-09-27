@@ -8,7 +8,7 @@
 import Foundation
 
 struct WLC: Catechism, Hashable, Equatable {
-    let title = "Westminster Larger Catechism"
+    let title = "Larger Catechism"
     let abbrv = "WLC"
 
     var questions: [QA]
