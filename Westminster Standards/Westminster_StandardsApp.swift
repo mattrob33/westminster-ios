@@ -12,8 +12,6 @@ struct Westminster_StandardsApp: App {
     
     @StateObject var settings = Settings()
 
-    var theme: Theme { .dark }
-    
     var body: some Scene {
         WindowGroup {
             ContentView(
@@ -23,7 +21,6 @@ struct Westminster_StandardsApp: App {
                 )
             )
             .environmentObject(settings)
-            .environmentObject(theme)
         }
     }
     

@@ -8,6 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @Environment(\.colorScheme) var colorScheme
+    
+    var theme: Theme {
+        switch colorScheme {
+        case .light: Theme.light
+        case .dark: Theme.dark
+        default: Theme.light
+        }
+    }
 
     @State var contentLocation: ContentLocation
 
@@ -20,7 +30,6 @@ struct ContentView: View {
     @State var sheet: Sheet = .search
 
     @EnvironmentObject var settings: Settings
-    @EnvironmentObject var theme: Theme
 
     var body: some View {
         

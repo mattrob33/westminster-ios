@@ -40,7 +40,7 @@ struct WcfView: View {
                                 let chapter = wcf.chapters[i]
 
                                 Text("\(romanNumeral(i+1)). \(chapter.title)")
-                                    .font(theme.titleFont)
+                                    .font(theme.headingFont)
                                     .foregroundColor(theme.primaryTextColor)
                                     .frame(maxWidth: .infinity, alignment: .center)
                                     .padding(.vertical)
@@ -124,7 +124,7 @@ struct Section: View {
         for k in parts.indices {
             let isFootnote = parts[k].matches("\\[[a-z]\\]")
 
-            let textColor = isFootnote ? theme.accentColor : theme.primaryTextColor
+            let textColor = isFootnote ? theme.accentColor : theme.secondaryTextColor
 
             let text = isFootnote
                 ?

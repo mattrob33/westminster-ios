@@ -35,7 +35,7 @@ struct Question: View {
     var body: some View {
         Text("Q\(num). \(question)")
             .font(theme.headingFont)
-            .foregroundColor(Color(red: 0.83, green: 0.84, blue: 0.85))
+            .foregroundColor(theme.primaryTextColor)
             .lineSpacing(8)
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.bottom, 8)
@@ -68,7 +68,7 @@ struct Answer: View {
             )
             .font(isFootnote ? theme.footnoteFont : theme.bodyFont)
             .baselineOffset(isFootnote ? 6 : 0)
-            .foregroundColor(isFootnote ? theme.accentColor : theme.primaryTextColor)
+            .foregroundColor(isFootnote ? theme.accentColor : theme.secondaryTextColor)
         }
         
         return text
