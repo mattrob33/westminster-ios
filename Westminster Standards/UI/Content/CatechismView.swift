@@ -64,6 +64,7 @@ struct CatechismView: View {
                 }
             }
             .toolbar(showBottomBar ? .visible : .hidden, for: .tabBar)
+            .statusBarHidden(showBottomBar ? false : true)
             
             if showPicker {
                 TocPageView(
