@@ -13,6 +13,6 @@ struct JsonWcfSection: Decodable {
 }
 
 struct JsonWcfProofs: Decodable {
-    var letter: String
+    var number: String
     var refs: [String]
 }

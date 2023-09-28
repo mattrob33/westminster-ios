@@ -118,12 +118,12 @@ struct Section: View {
     @EnvironmentObject var theme: Theme
     
     var body: some View {
-        let parts = section.text.split(usingRegex: "\\[[a-z]\\]")
+        let parts = section.text.split(usingRegex: "\\[[0-9]+\\]")
         
         var view = Text("")
         
         for k in parts.indices {
-            let isFootnote = parts[k].matches("\\[[a-z]\\]")
+            let isFootnote = parts[k].matches("\\[[0-9]+\\]")
 
             let textColor = isFootnote ? theme.accentColor : theme.secondaryTextColor
 

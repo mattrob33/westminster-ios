@@ -59,7 +59,7 @@ extension JsonWcfSection {
 extension JsonWcfProofs {
     
     func toModel() -> Proofs {
-        return Proofs(number: letter, refs: refs)
+        return Proofs(number: number, refs: refs)
     }
     
 }
