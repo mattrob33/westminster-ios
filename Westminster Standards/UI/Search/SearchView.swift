@@ -95,21 +95,34 @@ struct SearchResultsView: View {
 
 func highlightSearchHits(matchedText: String, searchText: String, theme: Theme) -> Text {
     
-    let sections = matchedText.components(separatedBy: searchText)
+    let matchIndices = matchedText.indices(of: searchText, options: .caseInsensitive)
+    
+    let len = searchText.count
     
     var compositeText = Text("")
     
-    for i in sections.indices {
+    var prevIndex = matchedText.startIndex
+    
+    for startIndex in matchIndices {
         
-        compositeText = compositeText + Text("\(sections[i])")
+        let beforeMatch = matchedText[prevIndex..<startIndex]
 
-        if i < (sections.endIndex - 1) {
-            compositeText = compositeText +
-                Text(searchText)
+        compositeText = compositeText + Text(beforeMatch)
+        
+        let endIndex = matchedText.index(startIndex, offsetBy: len)
+        let match = String(matchedText[startIndex..<endIndex])
+        
+        compositeText = compositeText +
+            Text(match)
                 .foregroundColor(theme.accentColor)
                 .underline(color: theme.accentColor)
-        }
-    }
 
+        prevIndex = endIndex
+    }
+    
+    let afterFinalMatch = matchedText[prevIndex...]
+
+    compositeText = compositeText + Text(afterFinalMatch)
+    
     return compositeText
 }
