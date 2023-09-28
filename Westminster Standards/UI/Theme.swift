@@ -8,7 +8,7 @@
 import SwiftUI
 
 class Theme: ObservableObject {
-    var accentColor: Color { Color(red: 0.58, green: 0.52, blue: 0.34) }
+    var accentColor: Color { Color(red: 180/255, green: 160/255, blue: 115/255) }
 
     var backgroundColor: Color { Color(red: 1.0, green: 1.0, blue: 1.0) }
     var backgroundAccentColor: Color { Color(red: 0.95, green: 0.95, blue: 0.95) }
@@ -25,7 +25,7 @@ class Theme: ObservableObject {
 }
 
 class LightTheme: Theme {
-    override var accentColor: Color { Color(red: 0.58, green: 0.52, blue: 0.34) }
+    override var accentColor: Color { Color(red: 180/255, green: 160/255, blue: 115/255) }
     
     override var backgroundColor: Color { Color(red: 1.0, green: 1.0, blue: 1.0) }
     override var backgroundAccentColor: Color { Color(red: 0.95, green: 0.95, blue: 0.95) }
