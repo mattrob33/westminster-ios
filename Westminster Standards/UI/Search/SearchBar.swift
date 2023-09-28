@@ -22,6 +22,10 @@ struct SearchBar: UIViewRepresentable {
         func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
             text = searchText
         }
+        
+        func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+            UIApplication.shared.endEditing()
+        }
     }
 
     func makeCoordinator() -> SearchBar.Coordinator {
@@ -32,6 +36,7 @@ struct SearchBar: UIViewRepresentable {
         let searchBar = UISearchBar(frame: .zero)
         searchBar.delegate = context.coordinator
         searchBar.searchBarStyle = .minimal
+        
         return searchBar
     }
 

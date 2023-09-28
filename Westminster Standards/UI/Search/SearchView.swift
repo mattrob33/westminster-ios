@@ -24,6 +24,7 @@ struct SearchView: View {
             
             HStack {
                 SearchBar(text: $searchText)
+
                 Text("Done")
                     .font(.system(size: 16, weight: .bold))
                     .foregroundColor(theme.accentColor)
