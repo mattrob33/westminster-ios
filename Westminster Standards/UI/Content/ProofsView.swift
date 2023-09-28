@@ -17,6 +17,7 @@ struct ProofsView: View {
         VStack(alignment: .leading) {
             ForEach(proofs.indices) { k in
                 buildProofsText(proofs[k])
+                    .padding(.bottom, 1)
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
