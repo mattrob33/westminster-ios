@@ -29,16 +29,34 @@ struct SearchWcfView: View {
                     
                     if section.text.localizedCaseInsensitiveContains(searchText) {
                         VStack(alignment: .leading) {
-                            Text("\(i + 1).\(j + 1) (\(wcf.chapters[i].title))")
-                                .font(.system(size: 18, weight: .bold))
-                                .padding(.bottom, 2)
-                            highlightSearchHits(matchedText: section.text, searchText: searchText, theme: theme)
-                                .font(.system(size: 18))
+                            Hit(
+                                chapter: i + 1,
+                                section: j + 1,
+                                title: wcf.chapters[i].title
+                            )
+                            
+                            highlightSearchHits(
+                                matchedText: section.text.replacingOccurrences(of: "\\[[0-9]+\\]", with: "", options: .regularExpression),
+                                searchText: searchText,
+                                theme: theme
+                            )
+                            .font(.system(size: 18))
                         }
                         .padding(.top)
                     }
                 }
             }
         }
+    }
+    
+    @ViewBuilder
+    private func Hit(
+        chapter: Int,
+        section: Int,
+        title: String
+    ) -> some View {
+        Text("\(chapter + 1).\(section + 1) - \(title)")
+            .font(.system(size: 18, weight: .bold))
+            .padding(.bottom, 2)
     }
 }

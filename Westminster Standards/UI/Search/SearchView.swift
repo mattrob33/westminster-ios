@@ -100,7 +100,9 @@ func highlightSearchHits(matchedText: String, searchText: String, theme: Theme) 
     var compositeText = Text("")
     
     for i in sections.indices {
+        
         compositeText = compositeText + Text("\(sections[i])")
+
         if i < (sections.endIndex - 1) {
             compositeText = compositeText +
                 Text(searchText)

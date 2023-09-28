@@ -38,16 +38,18 @@ struct SearchCatechismView: View {
                             )
                         }
                         .font(.system(size: 18, weight: .bold))
+                        .padding(.bottom, 2)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         
                         Group {
                             Text("A. ") + highlightSearchHits(
-                                matchedText: answer,
+                                matchedText: answer.replacingOccurrences(of: "\\[[0-9]+\\]", with: "", options: .regularExpression),
                                 searchText: searchText,
                                 theme: theme
                             )
                         }
                         .font(.system(size: 18))
+                        .padding(.bottom, 4)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
