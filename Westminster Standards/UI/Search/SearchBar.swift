@@ -10,6 +10,7 @@ import SwiftUI
 struct SearchBar: UIViewRepresentable {
 
     @Binding var text: String
+    @Binding var tab: WestminsterContent
 
     class Coordinator: NSObject, UISearchBarDelegate {
 
@@ -36,12 +37,29 @@ struct SearchBar: UIViewRepresentable {
         let searchBar = UISearchBar(frame: .zero)
         searchBar.delegate = context.coordinator
         searchBar.searchBarStyle = .minimal
+        switch tab {
+        case .wcf:
+            searchBar.placeholder = "Search the Confession"
+        case .wlc:
+            searchBar.placeholder = "Search the Larger Catechism"
+        case .wsc:
+            searchBar.placeholder = "Search the Shorter Catechism"
+        }
         
         return searchBar
     }
 
-    func updateUIView(_ uiView: UISearchBar, context: UIViewRepresentableContext<SearchBar>) {
-        uiView.text = text
+    func updateUIView(_ searchBar: UISearchBar, context: UIViewRepresentableContext<SearchBar>) {
+        searchBar.text = text
+        
+        switch tab {
+        case .wcf:
+            searchBar.placeholder = "Search the Confession"
+        case .wlc:
+            searchBar.placeholder = "Search the Larger Catechism"
+        case .wsc:
+            searchBar.placeholder = "Search the Shorter Catechism"
+        }
     }
 }
 

@@ -15,22 +15,29 @@ struct SearchView: View {
 
     @EnvironmentObject var theme: Theme
 
-    @State private var content: WestminsterContent = WestminsterContent.wcf
+    @State private var content: WestminsterContent = .wcf
+    
     @State private var searchText : String = ""
+    
+    @FocusState private var searchBarFocused: Bool
 
     var body: some View {
         
         VStack {
             
             HStack {
-                SearchBar(text: $searchText)
+                SearchBar(text: $searchText, tab: $content)
+                    .focused($searchBarFocused)
 
-                Text("Done")
-                    .font(.system(size: 16, weight: .bold))
-                    .foregroundColor(theme.accentColor)
-                    .onTapGesture {
-                        UIApplication.shared.endEditing()
-                    }
+                if searchBarFocused {
+                    Text("Done")
+                        .font(.system(size: 16))
+                        .foregroundColor(theme.accentColor)
+                        .onTapGesture {
+                            UIApplication.shared.endEditing()
+                            searchBarFocused = false
+                        }
+                }
             }
             .padding(.leading).padding(.trailing)
             
@@ -71,20 +78,26 @@ struct SearchResultsView: View {
     var body: some View {
         ScrollView {
             ScrollViewReader { proxy in
-                VStack {
-                    switch (content) {
-                    case .wcf:
-                        SearchWcfView(wcf, search: $searchText)
+                ZStack {
+                    Text("No results in \(content.abbrv())")
+                        .padding()
+                    
+                    VStack {
+                        switch (content) {
+                        case .wcf:
+                            SearchWcfView(wcf, search: $searchText)
 
-                    case .wlc:
-                        SearchCatechismView(wlc, search: $searchText)
-                        
-                    case .wsc:
-                        SearchCatechismView(wsc, search: $searchText)
+                        case .wlc:
+                            SearchCatechismView(wlc, search: $searchText)
+                            
+                        case .wsc:
+                            SearchCatechismView(wsc, search: $searchText)
+                        }
                     }
-                }
-                .onChange(of: content) { content in
-                    proxy.scrollTo(0, anchor: .top)
+                    .background(theme.backgroundColor)
+                    .onChange(of: content) { content in
+                        proxy.scrollTo(0, anchor: .top)
+                    }
                 }
             }
             
@@ -126,4 +139,14 @@ func highlightSearchHits(matchedText: String, searchText: String, theme: Theme) 
     compositeText = compositeText + Text(afterFinalMatch)
     
     return compositeText
+}
+
+extension WestminsterContent {
+    func abbrv() -> String {
+        switch self {
+        case .wcf: return "WCF"
+        case .wlc: return "WLC"
+        case .wsc: return "WSC"
+        }
+    }
 }
