@@ -29,6 +29,14 @@ struct ProofsView: View {
         Text("\(proofs.number). \(text)")
             .font(theme.footnoteFont)
             .foregroundColor(theme.accentColor)
+            .onTapGesture {
+                if
+                    let url = URL(string: "https://www.esv.org/verses/\(text)"),
+                    UIApplication.shared.canOpenURL(url)
+                {
+                    UIApplication.shared.open(url)
+                }
+            }
     }
 
 }
