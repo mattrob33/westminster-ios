@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol Catechism {
+protocol Catechism: Identifiable {
     var title: String { get }
     var abbrv: String { get }
     var questions: [QA] { get }

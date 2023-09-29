@@ -8,6 +8,9 @@
 import Foundation
 
 struct WSC: Catechism, Hashable, Equatable {
+    
+    let id = UUID()
+    
     let title = "Shorter Catechism"
     let abbrv = "WSC"
 

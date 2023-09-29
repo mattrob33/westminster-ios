@@ -8,7 +8,10 @@
 import Foundation
 
 /// The WCF.
-struct WCF: Hashable, Equatable {
+struct WCF: Hashable, Equatable, Identifiable {
+    
+    let id = UUID()
+    
     let title = "Confession"
     let abbrv = "WCF"
 

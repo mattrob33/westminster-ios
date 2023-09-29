@@ -7,7 +7,10 @@
 
 import Foundation
 
-struct Proofs: Hashable, Equatable {
+struct Proofs: Hashable, Equatable, Identifiable {
+    
+    let id = UUID()
+
     var number: String
     var refs: [String]
     

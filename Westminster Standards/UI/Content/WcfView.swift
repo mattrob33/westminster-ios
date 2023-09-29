@@ -30,23 +30,20 @@ struct WcfView: View {
             ScrollView {
                 ScrollViewReader { proxy in
                     
-                    VStack(alignment: .leading) {
+                    LazyVStack(alignment: .leading) {
                         
                         Spacer(minLength: 70)
                             .id(0)
                         
-                        ForEach(wcf.chapters.indices) { i in
-                            VStack(alignment: .leading) {
-                                let chapter = wcf.chapters[i]
-
+                        ForEachWithIndex(wcf.chapters) { i, chapter in
+                            LazyVStack(alignment: .leading) {
                                 Text("\(romanNumeral(i+1)). \(chapter.title)")
                                     .font(theme.headingFont)
                                     .foregroundColor(theme.primaryTextColor)
                                     .frame(maxWidth: .infinity, alignment: .center)
                                     .padding(.vertical)
 
-                                ForEach(chapter.sections.indices) { j in
-                                    let section = chapter.sections[j]
+                                ForEachWithIndex(chapter.sections) { j, section in
                                     Section(section: section)
                                         .environmentObject(theme)
                                     ProofsView(proofs: section.proofs)
@@ -163,4 +160,12 @@ private func romanNumeral(_ num: Int) -> String {
     return result
 }
 
-
+func ForEachWithIndex<Data: RandomAccessCollection, Content: View>(
+    _ data: Data,
+    @ViewBuilder content: @escaping (Data.Index, Data.Element) -> Content
+) -> some View where Data.Element: Identifiable, Data.Element: Hashable
+{
+    ForEach(Array(zip(data.indices, data)), id: \.1) { index, element in
+        content(index, element)
+    }
+}

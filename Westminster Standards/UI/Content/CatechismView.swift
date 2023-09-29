@@ -16,7 +16,7 @@ struct CatechismView: View {
     
     @State private var recentQuestion = 0
 
-    @State var catechism: Catechism
+    @State var catechism: any Catechism
 
     @Binding var scrollPosition: Int
     @State private var scrollProxy: ScrollViewProxy? = nil
@@ -28,15 +28,13 @@ struct CatechismView: View {
             ScrollView {
                 ScrollViewReader { proxy in
                     
-                    VStack(alignment: .leading) {
+                    LazyVStack(alignment: .leading) {
                         
                         Spacer(minLength: 70)
                             .id(0)
                         
-                        ForEach(catechism.questions.indices) { i in
+                        ForEachWithIndex(catechism.questions) { i, qa in
                             VStack(alignment: .leading) {
-                                let qa = catechism.questions[i]
-                                
                                 Question(num: i + 1, question: qa.question)
                                 Spacer()
                                 Answer(qa.answer)

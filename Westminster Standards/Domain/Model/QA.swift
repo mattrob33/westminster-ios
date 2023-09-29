@@ -7,7 +7,10 @@
 
 import Foundation
 
-struct QA: Hashable, Equatable {
+struct QA: Hashable, Equatable, Identifiable {
+    
+    let id = UUID()
+    
     var question: String
     var answer: String
     var proofs: [Proofs]

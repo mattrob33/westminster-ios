@@ -9,12 +9,12 @@ import SwiftUI
 
 struct SearchCatechismView: View {
 
-    var catechism: Catechism
+    var catechism: any Catechism
     @Binding var searchText: String
 
     @EnvironmentObject var theme: Theme
     
-    init(_ catechism: Catechism, search searchText: Binding<String>) {
+    init(_ catechism: any Catechism, search searchText: Binding<String>) {
         self.catechism = catechism
         self._searchText = searchText
     }

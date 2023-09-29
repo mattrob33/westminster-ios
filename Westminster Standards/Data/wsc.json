@@ -152,8 +152,21 @@
     },
     {
       "question": "How doth God execute his decrees?",
-      "answer": "God executeth his decrees in the works of creation and providence.",
-      "proofs": []
+      "answer": "God executeth his decrees in the works of creation[1] and providence.[2]",
+      "proofs": [
+        {
+          "number": "1",
+          "refs": [
+            "Rev 4:11"
+          ]
+        },
+        {
+          "number": "2",
+          "refs": [
+            "Dan 4:35"
+          ]
+        }
+      ]
     },
     {
       "question": "What is the work of creation?",

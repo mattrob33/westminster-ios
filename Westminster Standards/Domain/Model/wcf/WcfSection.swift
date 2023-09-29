@@ -8,7 +8,10 @@
 import Foundation
 
 /// A section of the WCF.
-struct WcfSection: Hashable, Equatable {
+struct WcfSection: Hashable, Equatable, Identifiable {
+    
+    let id = UUID()
+    
     var text: String
     var proofs: [Proofs]
     

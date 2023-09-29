@@ -14,9 +14,9 @@ struct ProofsView: View {
     @EnvironmentObject var theme: Theme
 
     var body: some View {
-        VStack(alignment: .leading) {
-            ForEach(proofs.indices) { k in
-                buildProofsText(proofs[k])
+        LazyVStack(alignment: .leading) {
+            ForEach(proofs) { proofs in
+                buildProofsText(proofs)
                     .padding(.bottom, 1)
             }
         }
