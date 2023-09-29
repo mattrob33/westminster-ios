@@ -13,8 +13,6 @@ struct CatechismView: View {
     @State private var showBottomBar = true
 
     @State private var showPicker = false
-    
-    @State private var recentQuestion = 0
 
     @State var catechism: any Catechism
 
@@ -67,7 +65,6 @@ struct CatechismView: View {
             if showPicker {
                 TocPageView(
                     items: catechism.questions.map { $0.question },
-                    recentItem: recentQuestion,
                     onItemSelected: { num in
                         scrollPosition = num + 1
                         showPicker = false

@@ -23,10 +23,6 @@ struct ContentView: View {
 
     @State private var isShowingSheet = false
 
-    @State private var recentWcfChapter: Int = 0
-    @State private var recentWlcQuestion: Int = 0
-    @State private var recentWscQuestion: Int = 0
-    
     @State var sheet: Sheet = .search
 
     @EnvironmentObject var settings: Settings

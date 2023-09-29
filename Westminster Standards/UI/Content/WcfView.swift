@@ -12,7 +12,6 @@ struct WcfView: View {
     @State var wcf: WCF
 
     @State private var currentChapter = 0
-    @State private var recentChapter = 0
     
     @State private var showTopBar = true
     @State private var showBottomBar = true
@@ -75,7 +74,6 @@ struct WcfView: View {
             if showPicker {
                 TocPageView(
                     items: wcf.chapters.map { $0.title },
-                    recentItem: recentChapter,
                     onItemSelected: { num in
                         scrollPosition = num + 1
                         showPicker = false
