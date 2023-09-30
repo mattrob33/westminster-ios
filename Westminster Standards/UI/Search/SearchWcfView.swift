@@ -40,7 +40,8 @@ struct SearchWcfView: View {
                                 searchText: searchText,
                                 theme: theme
                             )
-                            .font(.system(size: 18))
+                            .font(theme.bodyFont)
+                            .foregroundColor(theme.secondaryTextColor)
                         }
                         .padding(.top)
                     }
@@ -55,8 +56,9 @@ struct SearchWcfView: View {
         section: Int,
         title: String
     ) -> some View {
-        Text("\(chapter + 1).\(section + 1) - \(title)")
-            .font(.system(size: 18, weight: .bold))
+        Text("\(chapter).\(section) - \(title)")
+            .font(theme.headingFont)
+            .foregroundColor(theme.primaryTextColor)
             .padding(.bottom, 2)
     }
 }

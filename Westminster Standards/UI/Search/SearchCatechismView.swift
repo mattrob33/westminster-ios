@@ -37,7 +37,8 @@ struct SearchCatechismView: View {
                                 theme: theme
                             )
                         }
-                        .font(.system(size: 18, weight: .bold))
+                        .font(theme.headingFont)
+                        .foregroundColor(theme.primaryTextColor)
                         .padding(.bottom, 2)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         
@@ -48,7 +49,8 @@ struct SearchCatechismView: View {
                                 theme: theme
                             )
                         }
-                        .font(.system(size: 18))
+                        .font(theme.bodyFont)
+                        .foregroundColor(theme.secondaryTextColor)
                         .padding(.bottom, 4)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     }
